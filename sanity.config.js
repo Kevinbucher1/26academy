@@ -1,18 +1,26 @@
+// /studio/sanity.config.js
+
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
-import {visionTool} from '@sanity/vision'
-import {schemaTypes} from './schemaTypes'
+import {schemaTypes} from './schemas'
+import {codeInput} from '@sanity/code-input' // <-- 1. Importer le plugin
+
 
 export default defineConfig({
   name: 'default',
-  title: 'test26academy',
+  title: 'Mon Site de Formation', // Le nom qui s'affiche en haut du Studio
 
+  // Remplacez par les infos de votre projet
   projectId: '29lzrddu',
   dataset: 'production',
 
-  plugins: [structureTool(), visionTool()],
+  plugins: [
+    structureTool(),
+    codeInput(), // <-- 2. Ajouter le plugin à la liste
+  ],
 
   schema: {
+    // <-- 2. UTILISER LA LISTE IMPORTÉE ICI
     types: schemaTypes,
   },
 })
