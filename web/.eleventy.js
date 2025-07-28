@@ -1,7 +1,9 @@
 // web/.eleventy.js
 module.exports = function(eleventyConfig) {
-  // Cette configuration dit à Eleventy de chercher les fichiers dans "src"
-  // et de construire le site final dans "_site".
+
+  // Cette ligne dit à Eleventy de copier le dossier css dans le site final
+  eleventyConfig.addPassthroughCopy("src/assets/css");
+
   return {
     dir: {
       input: "src",
