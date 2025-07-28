@@ -1,0 +1,28 @@
+---
+# Cette section "pagination" dit à Eleventy :
+# "Pour chaque élément dans les données 'formations', crée une page."
+pagination:
+  data: formations
+  size: 1
+  alias: formation
+# Cette section "permalink" définit l'URL de chaque page créée.
+# Ex: /formations/formation-test/
+permalink: "/formations/{{ formation.slug.current }}/"
+---
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ formation.title }}</title>
+</head>
+<body>
+  {# Ici, on affiche les détails de la formation en cours #}
+  <h1>{{ formation.title }}</h1>
+  <p><strong>Catégorie :</strong> {{ formation.category }}</p>
+  <hr>
+  <h2>Description</h2>
+  <p>{{ formation.presentation.description }}</p>
+
+  <a href="/">Retour à l'accueil</a>
+</body>
+</html>

@@ -1,13 +1,38 @@
-{# web/src/index.njk #}
+{# Fichier : web/src/index.njk #}
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mon Site de Formation</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - 26 Academy</title>
 </head>
 <body>
-  <h1>Bienvenue sur le site de 26 Academy</h1>
-  <p>Cette page est construite avec Eleventy.</p>
+
+    <header>
+        <h1>Bienvenue sur le site de 26 Academy</h1>
+    </header>
+
+    <main>
+        <h2>Nos formations</h2>
+        
+        {# On vérifie s'il y a des formations avant d'essayer de les afficher #}
+        {% if formations and formations.length > 0 %}
+            <ul>
+                {# On boucle sur chaque 'item' dans notre liste de 'formations' #}
+                {% for item in formations %}
+                <li>
+                    {# On crée un lien vers la page de la formation en utilisant son slug #}
+                    <a href="/formations/{{ item.slug.current }}/">
+                        {{ item.title }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Aucune formation n'est disponible pour le moment.</p>
+        {% endif %}
+    </main>
+
 </body>
 </html>
