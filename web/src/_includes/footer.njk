@@ -1,0 +1,44 @@
+{# web/src/_includes/footer.njk #}
+<footer class="gradient-bg text-white">
+    <div class="container mx-auto px-6 py-12">
+         <div class="grid md:grid-cols-4 gap-8">
+            <div>
+                <img src="https://www.26academy.com/app/themes/course-builder/assets/images/icons/logo_1.svg" alt="Logo 26 Academy" class="h-10 mb-4 filter invert brightness-0">
+                <p class="text-sm opacity-80">La formation pour les leaders de demain.</p>
+            </div>
+            <div>
+                <h5 class="font-semibold text-lg">Nos services</h5>
+                <ul class="mt-4 space-y-2 text-sm opacity-80">
+                    <li><a href="#" class="hover:opacity-100">Formations</a></li>
+                    <li><a href="#" class="hover:opacity-100">Financement</a></li>
+                    <li><a href="#" class="hover:opacity-100">Certification</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-semibold text-lg">À propos</h5>
+                <ul class="mt-4 space-y-2 text-sm opacity-80">
+                    <li><a href="#" class="hover:opacity-100">Blog</a></li>
+                    <li><a href="#" class="hover:opacity-100">FAQ</a></li>
+                    <li><a href="#" class="hover:opacity-100">Nous contacter</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-semibold text-lg">Suivez-nous</h5>
+                <div class="flex space-x-4 mt-4">
+                    <a href="#" class="opacity-80 hover:opacity-100"><i data-lucide="linkedin" class="h-5 w-5"></i></a>
+                    <a href="#" class="opacity-80 hover:opacity-100"><i data-lucide="twitter" class="h-5 w-5"></i></a>
+                    <a href="#" class="opacity-80 hover:opacity-100"><i data-lucide="youtube" class="h-5 w-5"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-12 border-t border-white/20 pt-8 text-center text-xs opacity-70">
+            <p>© 2025 26 Academy. Tous droits réservés.</p>
+            <p class="mt-2"><a href="#" class="hover:opacity-100">Mentions légales</a> | <a href="#" class="hover:opacity-100">CGV</a></p>
+        </div>
+    </div>
+</footer>
+
+{# Ce script est nécessaire pour que les icônes du footer s'affichent #}
+<script>
+    lucide.createIcons();
+</script>
