@@ -1,5 +1,16 @@
 {
   "dependencies": {
+    "@11ty/eleventy": "^3.1.2",
     "@sanity/client": "^7.8.1"
-  }
+  },
+  "name": "web",
+  "version": "1.0.0",
+  "main": ".eleventy.js",
+  "scripts": {
+      "build": "eleventy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
