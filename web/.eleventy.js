@@ -1,18 +1,17 @@
-// Fichier : web/.eleventy.js
-
 module.exports = function(eleventyConfig) {
-
-  // Cette ligne copie le dossier des assets (CSS, images...) dans le site final
+  // Copie les assets (CSS, images) vers le site final
   eleventyConfig.addPassthroughCopy("src/assets");
 
   return {
-    // On définit explicitement les formats de templates qu'Eleventy doit reconnaître
-    templateFormats: ["njk", "md", "html"],
-
-    // On définit la structure des dossiers
+    // Les formats de fichiers qu'Eleventy doit traiter comme des templates
+    templateFormats: ["md", "njk", "html"],
+    
+    // La structure des dossiers
     dir: {
       input: "src",
-      output: "_site"
+      output: "_site",
+      includes: "_includes",
+      data: "_data"
     }
   };
 };
