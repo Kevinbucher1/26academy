@@ -1,15 +1,22 @@
-// /studio/schemas/category.js
-
+// studio/schemas/category.js
 export default {
   name: 'category',
-  title: 'Catégorie',
+  title: 'Catégorie de Formation',
   type: 'document',
   fields: [
     {
       name: 'title',
-      title: 'Titre de la catégorie',
+      title: 'Titre',
       type: 'string',
-      validation: Rule => Rule.required(),
+    },
+    {
+      name: 'slug',
+      title: 'URL (Slug)',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 96,
+      },
     },
     {
       name: 'description',
@@ -17,4 +24,4 @@ export default {
       type: 'text',
     },
   ],
-};
+}
