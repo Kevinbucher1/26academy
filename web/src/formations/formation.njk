@@ -5,96 +5,105 @@ pagination:
   alias: formation
 permalink: "/formations/{{ formation.slug.current }}/"
 layout: base.njk
-title: "{{ formation.title }}"
+# SEO : On passe le titre et la description au layout
+title: "{{ formation.seo.metaTitle or formation.title }}"
+metaDescription: "{{ formation.seo.metaDescription }}"
 ---
 
-{# On utilise Tailwind CSS pour une mise en page rapide #}
-<div class="container mx-auto px-6 py-12">
-    <article class="formation-detail">
+<section class="relative h-[70vh] min-h-[500px] flex items-center text-white overflow-hidden">
+    <div class="absolute inset-0 z-0">
+        {% if formation.hero_section.video_url %}
+            <video src="{{ formation.hero_section.video_url }}" autoplay loop muted playsinline class="w-full h-full object-cover"></video>
+        {% endif %}
+        <div class="absolute inset-0 bg-gray-900/60"></div>
+    </div>
+    <div class="container mx-auto px-6 z-10">
+        <div class="max-w-2xl">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
+                Devenez <span class="text-brand">{{ formation.title }}</span>.
+            </h1>
+            <p class="mt-4 text-lg md:text-xl text-gray-200">{{ formation.hero_section.subtitle }}</p>
+            <a href="#" class="mt-8 inline-block btn-primary">{{ formation.hero_section.cta_button_text }}</a>
+        </div>
+    </div>
+</section>
 
-        {# Section Principale (Hero) #}
-        <section class="formation-detail__hero text-center mb-12">
-            {% if formation.hero_logo %}
-                {# Note: Vous aurez besoin d'un filtre pour les images Sanity pour optimiser les URL #}
-                <img src="{{ formation.hero_logo.asset._ref | sanityImageUrl }}" alt="Logo pour {{ formation.title }}" class="mx-auto h-24 mb-6">
-            {% endif %}
-            <h1 class="text-4xl md:text-6xl font-extrabold text-brand-dark">{{ formation.title }}</h1>
-            <p class="text-xl text-gray-600 mt-4">Catégorie : {{ formation.category }}</p>
-            {% if formation.is_cpf_eligible %}
-                <span class="mt-4 inline-block bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Éligible CPF</span>
-            {% endif %}
-        </section>
-
-        {# Section Présentation et Points Clés #}
-        <section class="formation-detail__presentation grid md:grid-cols-3 gap-8 mb-12">
-            <div class="md:col-span-2">
-                <h2 class="text-3xl font-bold text-brand-dark mb-4">Présentation</h2>
-                <p class="text-gray-700 leading-relaxed">{{ formation.presentation.description }}</p>
+{% if formation.features_section %}
+<section class="py-20 bg-white text-gray-800">
+    <div class="container mx-auto px-6">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {% for feature in formation.features_section %}
+            <div class="bg-gray-50 border border-gray-200 p-6 rounded-xl text-center transition-transform hover:-translate-y-2">
+                <i data-lucide="{{ feature.icon }}" class="mx-auto h-10 w-10 text-brand"></i>
+                <h3 class="font-bold text-lg mt-4 text-gray-900">{{ feature.title }}</h3>
+                <p class="text-gray-600 text-sm mt-2">{{ feature.description }}</p>
             </div>
-            <div>
-                <h3 class="text-2xl font-bold text-brand-dark mb-4">Points Clés</h3>
-                <ul class="space-y-3">
-                    {% for point in formation.presentation.key_points %}
-                        <li class="flex items-start">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-brand-primary mr-3 mt-1 flex-shrink-0"></i>
-                            <div>
-                                <span class="font-semibold">{{ point.title }}:</span>
-                                <span class="text-gray-600">{{ point.subtitle }}</span>
-                            </div>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </section>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
 
-        {# Section Pédagogie #}
-        <section class="formation-detail__learning bg-gray-50 p-8 rounded-lg mb-12">
-            <h2 class="text-3xl font-bold text-brand-dark mb-6 text-center">Informations Pédagogiques</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-xl font-semibold mb-3">Objectifs</h3>
-                    <ul class="list-disc list-inside text-gray-700">
-                        {% for objective in formation.learning_info.objectives %}
-                            <li>{{ objective }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold mb-3">Pré-requis</h3>
-                    <p class="text-gray-700">{{ formation.learning_info.prerequisites }}</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold mb-3">Public Visé</h3>
-                    <p class="text-gray-700">{{ formation.learning_info.target_audience }}</p>
+
+{% if formation.audience_section %}
+<section class="py-20 bg-white text-gray-800">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">{{ formation.audience_section.title }}</h2>
+        <p class="text-gray-600 mb-12 max-w-2xl mx-auto">{{ formation.audience_section.subtitle }}</p>
+        <div class="grid md:grid-cols-3 gap-8">
+            {% for card in formation.audience_section.audience_cards %}
+            <div class="bg-white rounded-2xl overflow-hidden group border border-gray-200 hover:shadow-lg transition-shadow">
+                <img src="{{ card.image.asset._ref | sanityImageUrl }}" alt="{{ card.image.alt or card.title }}" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+                <div class="p-6 text-left">
+                    <h3 class="font-bold text-xl text-gray-900">{{ card.title }}</h3>
+                    <p class="text-gray-600 mt-2">{{ card.description }}</p>
                 </div>
             </div>
-        </section>
-        
-        {# Section Modules du Programme #}
-        <section class="formation-detail__modules mb-12">
-            <h2 class="text-3xl font-bold text-brand-dark mb-8 text-center">Modules du Programme</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {% for module in formation.program_modules %}
-                    <div class="module-card border rounded-lg overflow-hidden shadow-sm">
-                        {% if module.image %}
-                            <img src="{{ module.image.asset._ref | sanityImageUrl }}" alt="{{ module.title }}" class="w-full h-48 object-cover">
-                        {% endif %}
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold">{{ module.title }}</h3>
-                            <p class="text-sm text-gray-500 mt-1">Durée : {{ module.duration }}</p>
-                            <div class="text-gray-700 mt-4 prose max-w-none">
-                                {{ module.details | portableText | safe }}
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-        </section>
-        
-        <a href="/" class="btn btn-secondary mt-8">
-            <i data-lucide="arrow-left" class="mr-2 h-5 w-5"></i>
-            Retour à l'accueil
-        </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
 
-    </article>
-</div>
+{% if formation.program_modules %}
+<section class="py-20 bg-white text-gray-800">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-12">Découvrez le programme</h2>
+        <div class="max-w-3xl mx-auto space-y-4">
+            {% for module in formation.program_modules %}
+            <div class="accordion-item bg-gray-50 rounded-lg border border-gray-200">
+                <button class="accordion-header w-full p-5 flex justify-between items-center text-left text-lg font-semibold">
+                    <span>{{ module.title }}</span>
+                    <i data-lucide="chevron-down" class="icon"></i>
+                </button>
+                <div class="accordion-content px-5">
+                    <p class="pb-5 text-gray-600">{{ module.details }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+{% if formation.pricing_section %}
+<section class="py-20 bg-white text-gray-800">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">{{ formation.pricing_section.title }}</h2>
+        <p class="text-gray-600 mb-12 max-w-2xl mx-auto">{{ formation.pricing_section.subtitle }}</p>
+        <div class="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
+            {% for card in formation.pricing_section.pricing_cards %}
+            <div class="p-8 rounded-2xl flex flex-col text-left {% if card.is_featured %}bg-brand text-white transform md:scale-105{% else %}bg-white border border-gray-200{% endif %}">
+                <h3 class="text-xl font-bold {% if not card.is_featured %}text-gray-900{% endif %}">{{ card.title }}</h3>
+                <p class="mt-2 flex-grow {% if card.is_featured %}opacity-90{% else %}text-gray-600{% endif %}">{{ card.description }}</p>
+                <div class="my-6">
+                    <span class="text-4xl font-extrabold {% if not card.is_featured %}text-gray-900{% endif %}">{{ card.price }}</span>
+                    <span class="{% if card.is_featured %}opacity-80{% else %}text-gray-500{% endif %}">{{ card.price_details }}</span>
+                </div>
+                <a href="#" class="w-full text-center mt-auto py-3 rounded-full transition-colors {% if card.is_featured %}bg-white text-brand font-bold{% else %}bg-gray-100 text-gray-800 font-semibold hover:bg-gray-200{% endif %}">{{ card.cta_text }}</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}

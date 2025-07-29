@@ -1,125 +1,99 @@
-// /studio/schemas/formation.js
-
+// studio/schemas/formation.js
 export default {
-  // `name` est l'identifiant unique dans le code
   name: 'formation',
-  // `title` est le nom qui s'affiche dans le Sanity Studio
   title: 'Formation',
-  // `type` définit que c'est un document à part entière
   type: 'document',
-  // `fields` est le tableau qui contient tous les champs de ce document
   fields: [
+    // --- Infos générales ---
+    { name: 'title', title: 'Titre de la formation', type: 'string', validation: Rule => Rule.required() },
+    { name: 'slug', title: 'URL (Slug)', type: 'slug', options: { source: 'title' }, validation: Rule => Rule.required() },
+    { name: 'category', title: 'Catégorie', type: 'reference', to: [{type: 'category'}], validation: Rule => Rule.required() },
+
+    // --- Section Principale (Hero) ---
     {
-      name: 'title',
-      title: 'Nom de la formation',
-      type: 'string',
-      // La validation garantit qu'un titre est toujours fourni
-      validation: Rule => Rule.required(),
-    },
-    {
-      name: 'slug',
-      title: 'URL (Slug)',
-      type: 'slug',
-      // Génère automatiquement le slug à partir du champ 'title'
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
-      validation: Rule => Rule.required(),
-    },
-    {
-      name: 'category',
-      title: 'Catégorie',
-      // `reference` crée un lien vers un autre type de document
-      type: 'reference',
-      to: [{ type: 'category' }],
-      validation: Rule => Rule.required(),
-    },
-    {
-      name: 'is_cpf_eligible',
-      title: 'Éligible CPF',
-      type: 'boolean',
-      // Valeur par défaut quand on crée une nouvelle formation
-      initialValue: false,
-    },
-    {
-      name: 'hero_logo',
-      title: 'Logo de la section principale',
-      type: 'image',
-      options: {
-        hotspot: true, // Permet de mieux contrôler le recadrage de l'image
-      },
-    },
-    {
-      name: 'presentation',
-      title: 'Présentation',
-      type: 'object',
+      name: 'hero_section', title: 'Section Principale (Hero)', type: 'object',
       fields: [
-        { name: 'certification_title', title: 'Titre de la certification', type: 'string' },
-        { name: 'certification_code', title: 'Code de la certification', type: 'string' },
-        { name: 'description', title: 'Description principale', type: 'text' },
-        {
-          name: 'key_points',
-          title: 'Points Clés',
-          type: 'array',
-          // `of` définit les types d'éléments autorisés dans le tableau
+        { name: 'subtitle', title: 'Sous-titre', type: 'text', description: "La phrase d'accroche sous le titre principal." },
+        { name: 'cta_button_text', title: 'Texte du bouton CTA', type: 'string', initialValue: 'Découvrir le programme' },
+        { name: 'video_url', title: 'URL de la vidéo de fond (optionnel)', type: 'url' },
+      ],
+    },
+
+    // --- Section des 4 Atouts ---
+    {
+      name: 'features_section', title: 'Section des 4 Atouts', type: 'array',
+      of: [{
+        type: 'object',
+        fields: [
+          { name: 'icon', title: 'Nom de l\'icône Lucide', type: 'string', description: 'Ex: video, award, infinity, users' },
+          { name: 'title', title: 'Titre', type: 'string' },
+          { name: 'description', title: 'Description', type: 'text' },
+        ],
+      }],
+    },
+
+    // --- Section Public Visé ---
+    {
+      name: 'audience_section', title: 'Section Public Visé', type: 'object',
+      fields: [
+        { name: 'title', title: 'Titre de la section', type: 'string', initialValue: 'Une formation pour tous les profils' },
+        { name: 'subtitle', title: 'Sous-titre', type: 'text' },
+        { 
+          name: 'audience_cards', title: 'Cartes "Public"', type: 'array',
           of: [{
             type: 'object',
             fields: [
-              { name: 'title', title: 'Titre', type: 'string' },
-              { name: 'subtitle', title: 'Sous-titre', type: 'string' },
+              { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } },
+              { name: 'title', title: 'Titre de la carte', type: 'string' },
+              { name: 'description', title: 'Description', type: 'text' },
             ],
           }],
         },
       ],
     },
+
+    // --- Section Programme (Accordéon) ---
     {
-      name: 'learning_info',
-      title: 'Informations Pédagogiques',
-      type: 'object',
-      fields: [
-        { name: 'objectives', title: 'Objectifs', type: 'array', of: [{ type: 'string' }] },
-        { name: 'prerequisites', title: 'Pré-requis', type: 'text' },
-        { name: 'target_audience', title: 'Public visé', type: 'text' },
-      ],
-    },
-    {
-      name: 'program_modules',
-      title: 'Modules du Programme',
-      type: 'array',
+      name: 'program_modules', title: 'Modules du Programme (Accordéon)', type: 'array',
+      description: "Chaque élément sera une section dépliable dans l'accordéon.",
       of: [{
-        name: 'module',
-        title: 'Module',
         type: 'object',
         fields: [
           { name: 'title', title: 'Titre du module', type: 'string' },
-          { name: 'image', title: 'Image', type: 'image' },
-          { name: 'duration', title: 'Durée', type: 'string' },
-          // Portable Text pour du contenu riche (gras, listes, etc.)
-          { name: 'details', title: 'Détails du module', type: 'array', of: [{ type: 'block' }] },
+          { name: 'details', title: 'Détails du module (texte simple)', type: 'text' },
         ],
       }],
     },
+
+    // --- Section Tarifs ---
     {
-      name: 'metrics',
-      title: 'Indicateurs',
-      type: 'object',
+      name: 'pricing_section', title: 'Section Tarifs', type: 'object',
       fields: [
-        { name: 'certification_details', title: 'Détails de la certification', type: 'text' },
-        { name: 'rating', title: 'Note (sur 5)', type: 'number', validation: Rule => Rule.min(0).max(5) },
-        { name: 'success_rate', title: 'Taux de réussite (%)', type: 'number', validation: Rule => Rule.min(0).max(100) },
-        { name: 'learner_count', title: 'Nombre d\'apprenants', type: 'number' },
+        { name: 'title', title: 'Titre de la section', type: 'string', initialValue: 'Des formations accessibles à tous' },
+        { name: 'subtitle', title: 'Sous-titre', type: 'text' },
+        {
+          name: 'pricing_cards', title: 'Cartes de tarifs', type: 'array',
+          of: [{
+            type: 'object',
+            fields: [
+              { name: 'title', title: 'Titre de l\'offre', type: 'string' },
+              { name: 'description', title: 'Description', type: 'text' },
+              { name: 'price', title: 'Prix', type: 'string' },
+              { name: 'price_details', title: 'Détails du prix', type: 'string' },
+              { name: 'cta_text', title: 'Texte du bouton', type: 'string' },
+              { name: 'is_featured', title: 'Mettre en avant ?', type: 'boolean', initialValue: false },
+            ],
+          }],
+        },
       ],
     },
-    // Intégration du schéma SEO réutilisable
+
+    // --- Section SEO ---
     {
       name: 'seo',
-      title: 'Optimisation SEO',
+      title: 'Paramètres SEO',
       type: 'seo',
-      options: {
-        collapsible: true, // Permet de replier la section dans l'interface
-        collapsed: false,
-      },
+      options: { collapsible: true, collapsed: true },
     },
   ],
 };
