@@ -1,0 +1,27 @@
+---
+pagination:
+  data: categories
+  size: 1
+  alias: category
+permalink: "/formations/{{ category.slug.current }}/"
+---
+{# On définit le titre de la page dynamiquement #}
+{% set title = category.title %}
+
+{# On dit à cette page d'utiliser le layout de base #}
+{% layout "base.njk" %}
+
+<div class="container mx-auto px-6 py-12">
+    <h1 class="text-4xl font-bold mb-2">Formations : {{ category.title }}</h1>
+    <p class="text-gray-600 mb-8">{{ category.description }}</p>
+
+    <div class="grid md:grid-cols-3 gap-6">
+        {# On filtre la liste globale de formations pour n'afficher que celles de la catégorie courante #}
+        {% set formationsInCategory = formations | where("category", category.title) %}
+        {% for formation in formationsInCategory %}
+            <a href="/formations/{{ formation.slug.current }}/" class="border p-6 rounded-lg hover:shadow-lg transition-shadow">
+                <h2 class="text-2xl font-bold text-brand-dark">{{ formation.title }}</h2>
+            </a>
+        {% endfor %}
+    </div>
+</div>
