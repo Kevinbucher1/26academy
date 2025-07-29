@@ -1,12 +1,38 @@
+const { toHTML } = require('@portabletext/to-html');
+const imageUrlBuilder = require('@sanity/image-url');
+const { createClient } = require('@sanity/client');
+
+// On configure un client Sanity pour pouvoir traiter les images
+const client = createClient({
+  projectId: process.env.SANITY_PROJECT_ID,
+  dataset: process.env.SANITY_DATASET,
+  apiVersion: '2025-07-29', // Date du jour
+  useCdn: true,
+});
+
+const builder = imageUrlBuilder(client);
+
 module.exports = function(eleventyConfig) {
-  // Copie les assets (CSS, images) vers le site final
+  
+  // 1. Copie des assets (votre code)
   eleventyConfig.addPassthroughCopy("src/assets");
 
+  // 2. Filtre pour convertir le "Portable Text" de Sanity en HTML
+  eleventyConfig.addFilter("portableText", (value) => {
+    return value ? toHTML(value) : '';
+  });
+
+  // 3. Filtre pour générer des URL d'images optimisées depuis Sanity
+  eleventyConfig.addFilter("sanityImageUrl", (ref) => {
+    if (!ref) {
+      return ''; // Retourne une chaîne vide si l'image n'existe pas
+    }
+    return builder.image(ref).auto('format').url();
+  });
+
+  // 4. Configuration des dossiers et formats (votre code)
   return {
-    // Les formats de fichiers qu'Eleventy doit traiter comme des templates
     templateFormats: ["md", "njk", "html"],
-    
-    // La structure des dossiers
     dir: {
       input: "src",
       output: "_site",

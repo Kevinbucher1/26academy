@@ -1,28 +1,100 @@
 ---
-# Cette section "pagination" dit à Eleventy :
-# "Pour chaque élément dans les données 'formations', crée une page."
 pagination:
   data: formations
   size: 1
   alias: formation
-# Cette section "permalink" définit l'URL de chaque page créée.
-# Ex: /formations/formation-test/
 permalink: "/formations/{{ formation.slug.current }}/"
+layout: base.njk
+title: "{{ formation.title }}"
 ---
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>{{ formation.title }}</title>
-</head>
-<body>
-  {# Ici, on affiche les détails de la formation en cours #}
-  <h1>{{ formation.title }}</h1>
-  <p><strong>Catégorie :</strong> {{ formation.category }}</p>
-  <hr>
-  <h2>Description</h2>
-  <p>{{ formation.presentation.description }}</p>
 
-  <a href="/">Retour à l'accueil</a>
-</body>
-</html>
+{# On utilise Tailwind CSS pour une mise en page rapide #}
+<div class="container mx-auto px-6 py-12">
+    <article class="formation-detail">
+
+        {# Section Principale (Hero) #}
+        <section class="formation-detail__hero text-center mb-12">
+            {% if formation.hero_logo %}
+                {# Note: Vous aurez besoin d'un filtre pour les images Sanity pour optimiser les URL #}
+                <img src="{{ formation.hero_logo.asset._ref | sanityImageUrl }}" alt="Logo pour {{ formation.title }}" class="mx-auto h-24 mb-6">
+            {% endif %}
+            <h1 class="text-4xl md:text-6xl font-extrabold text-brand-dark">{{ formation.title }}</h1>
+            <p class="text-xl text-gray-600 mt-4">Catégorie : {{ formation.category }}</p>
+            {% if formation.is_cpf_eligible %}
+                <span class="mt-4 inline-block bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Éligible CPF</span>
+            {% endif %}
+        </section>
+
+        {# Section Présentation et Points Clés #}
+        <section class="formation-detail__presentation grid md:grid-cols-3 gap-8 mb-12">
+            <div class="md:col-span-2">
+                <h2 class="text-3xl font-bold text-brand-dark mb-4">Présentation</h2>
+                <p class="text-gray-700 leading-relaxed">{{ formation.presentation.description }}</p>
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold text-brand-dark mb-4">Points Clés</h3>
+                <ul class="space-y-3">
+                    {% for point in formation.presentation.key_points %}
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-brand-primary mr-3 mt-1 flex-shrink-0"></i>
+                            <div>
+                                <span class="font-semibold">{{ point.title }}:</span>
+                                <span class="text-gray-600">{{ point.subtitle }}</span>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+
+        {# Section Pédagogie #}
+        <section class="formation-detail__learning bg-gray-50 p-8 rounded-lg mb-12">
+            <h2 class="text-3xl font-bold text-brand-dark mb-6 text-center">Informations Pédagogiques</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-3">Objectifs</h3>
+                    <ul class="list-disc list-inside text-gray-700">
+                        {% for objective in formation.learning_info.objectives %}
+                            <li>{{ objective }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-3">Pré-requis</h3>
+                    <p class="text-gray-700">{{ formation.learning_info.prerequisites }}</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-3">Public Visé</h3>
+                    <p class="text-gray-700">{{ formation.learning_info.target_audience }}</p>
+                </div>
+            </div>
+        </section>
+        
+        {# Section Modules du Programme #}
+        <section class="formation-detail__modules mb-12">
+            <h2 class="text-3xl font-bold text-brand-dark mb-8 text-center">Modules du Programme</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {% for module in formation.program_modules %}
+                    <div class="module-card border rounded-lg overflow-hidden shadow-sm">
+                        {% if module.image %}
+                            <img src="{{ module.image.asset._ref | sanityImageUrl }}" alt="{{ module.title }}" class="w-full h-48 object-cover">
+                        {% endif %}
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold">{{ module.title }}</h3>
+                            <p class="text-sm text-gray-500 mt-1">Durée : {{ module.duration }}</p>
+                            <div class="text-gray-700 mt-4 prose max-w-none">
+                                {{ module.details | portableText | safe }}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+        
+        <a href="/" class="btn btn-secondary mt-8">
+            <i data-lucide="arrow-left" class="mr-2 h-5 w-5"></i>
+            Retour à l'accueil
+        </a>
+
+    </article>
+</div>
