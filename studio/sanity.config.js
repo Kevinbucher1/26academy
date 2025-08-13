@@ -3,6 +3,7 @@
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {schemaTypes} from './schemas'
+import {media} from 'sanity-plugin-media'
 import {codeInput} from '@sanity/code-input' // <-- 1. Importer le plugin
 
 
