@@ -16,7 +16,8 @@ export default defineConfig({
 
   plugins: [
     structureTool(),
-    codeInput(), // <-- 2. Ajouter le plugin à la liste
+    codeInput(),
+    media(),
   ],
 
   schema: {
