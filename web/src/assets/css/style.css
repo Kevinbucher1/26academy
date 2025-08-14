@@ -260,6 +260,13 @@ body {
     border-color: var(--primary);
 }
 
+@media (max-width: 768px) {
+    .cta-container-centered {
+        display: flex;
+        justify-content: center;
+    }
+}
+
 /* ==========================================================================
    5. Animations & Utilities
    ========================================================================== */
@@ -306,6 +313,25 @@ body {
 .border-soft { border-color: var(--border); }
 .icon { width: 20px; height: 20px; fill: currentColor; }
 
+@media (max-width: 768px) {
+    .logos {
+        /* La durée d'origine est de 40s ou 120s. On la passe à 25s. */
+        /* N'hésitez pas à ajuster cette valeur si c'est encore trop lent/rapide. */
+        animation-duration: 25s !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Met un fond violet uni à la section */
+    .testimonials-section {
+        background: hsl(var(--primary)) !important;
+    }
+    
+    /* Cache le dégradé blanc */
+    .testimonials-section .gradient-overlay {
+        display: none;
+    }
+}
 
 /* ==========================================================================
    6. Header / Navigation
@@ -405,6 +431,39 @@ body {
 }
 @media (min-width: 1024px) {
     .hero-content { padding-top: 6rem; }
+}
+
+@media (max-width: 768px) {
+    .hero-image-container {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Centre le bloc de texte */
+    .hero .text-left {
+        text-align: center;
+        margin-top: 2rem;
+    }
+    
+    /* Rend les boutons plus grands et les empile proprement */
+    .hero .flex-col.sm\:flex-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero .flex-col a {
+        width: 100%;
+        max-width: 350px; /* Limite la largeur sur les petits écrans */
+        padding: 1rem;
+        font-size: 1rem; /* Assure une bonne taille de police */
+    }
+
+    /* Agrandit l'icône dans le bouton */
+    .hero .flex-col a svg {
+        width: 1.25rem; /* 20px */
+        height: 1.25rem;
+    }
 }
 
 
