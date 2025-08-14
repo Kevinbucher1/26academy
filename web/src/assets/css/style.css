@@ -136,6 +136,17 @@ body {
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
+.btn-outline-light {
+    background-color: white;
+    color: #6644FF; /* ou var(--primary) si la couleur correspond */
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    background-color: #faf5ff; /* Un léger fond violet pour le survol */
+}
+
 
 /* Buttons */
 .btn {
