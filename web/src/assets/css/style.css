@@ -123,6 +123,20 @@ body {
    4. Components (Buttons, Cards)
    ========================================================================== */
 
+/* Vous pouvez ajouter ceci dans la section 4. Components */
+.tag-primary {
+    display: inline-block;
+    background: var(--primary); /* Ici, ça fonctionne car la variable contient bien tout le 'hsl(...)' */
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 8px 16px;
+    border-radius: 9999px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+
 /* Buttons */
 .btn {
     display: inline-flex;
