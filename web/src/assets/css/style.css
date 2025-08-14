@@ -243,6 +243,19 @@ body {
     color: white; /* Le texte devient blanc */
 }
 
+.btn-gradient-primary {
+    background: linear-gradient(to right, #7c3aed, #2563eb);
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-gradient-primary:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+    box-shadow: 0 10px 20px rgba(96, 95, 128, 0.3);
+}
+
 /* ==========================================================================
    5. Animations & Utilities
    ========================================================================== */
