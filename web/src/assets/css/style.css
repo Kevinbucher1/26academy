@@ -118,6 +118,20 @@ body { font-family: 'Inter', sans-serif; background-color: var(--background); co
 
 .cta-container-centered { display: flex; justify-content: center; }
 
+.trustpilot-badge {
+    display: inline-block; /* Pour que le lien se comporte comme un bloc */
+    background-color: var(--primary); /* Fond violet uni */
+    color: white;
+    padding: 0.75rem 1.5rem; /* Espace intérieur */
+    border-radius: 9999px; /* Bords entièrement arrondis */
+    text-decoration: none; /* Retire le soulignement du lien */
+    transition: transform 0.3s ease; /* Ajoute une transition douce */
+}
+
+.trustpilot-badge:hover {
+    transform: scale(1.05); /* Effet de zoom au survol */
+}
+
 /* ==========================================================================
    5. Animations & Utilities
    ========================================================================== */
