@@ -218,7 +218,8 @@ body {
 }
 
 .btn-gradient {
-    background: linear-gradient(to right, hsl(var(--primary)), #FF6B35);
+    /* La seule chose qui change est la suppression du 'hsl()' autour de var(--primary) */
+    background: linear-gradient(to right, var(--primary), #FF6B35);
     color: white;
     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -232,12 +233,14 @@ body {
 .btn-outline-light {
     background-color: white;
     color: #7c3aed;
-    border: 1px solid rgba(168, 85, 247, 0.3);
-    transition: background-color 0.3s ease;
+    border: 1px solid #d1d5db; /* Bordure grise/légèrement violette par défaut */
+    transition: all 0.3s ease; /* 'all' pour une transition douce des couleurs et du fond */
 }
 
 .btn-outline-light:hover {
-    background-color: #faf5ff; /* Un léger fond violet pour le survol */
+    background-color: var(--primary);
+    border-color: var(--primary); /* La bordure devient aussi violette */
+    color: white; /* Le texte devient blanc */
 }
 
 /* ==========================================================================
