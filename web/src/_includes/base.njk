@@ -26,26 +26,47 @@
 
     {% include "footer.njk" %}
 
+
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', () => {
+        // Initialisation des icônes
+        if (typeof lucide !== 'undefined') {
             lucide.createIcons();
-            const accordionHeaders = document.querySelectorAll('.accordion-header');
-            accordionHeaders.forEach(header => {
-                header.addEventListener('click', () => {
-                    const accordionItem = header.closest('.accordion-item');
-                    const content = accordionItem.querySelector('.accordion-content');
-                    const isOpen = accordionItem.classList.contains('open');
-                    if (!isOpen) {
-                        accordionItem.classList.add('open');
-                        content.style.maxHeight = content.scrollHeight + 'px';
-                    } else {
-                         accordionItem.classList.remove('open');
-                         content.style.maxHeight = null;
-                    }
-                });
-            });
+        }
+
+        // --- Gestion du Menu Mobile ---
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = menuToggle.querySelector('i');
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.toggle('is-open');
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+            
+            // Change l'icône menu/croix
+            menuIcon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
+            lucide.createIcons();
         });
-    </script>
+
+        // --- Gestion de la Fenêtre Modale ---
+        const modalTriggers = document.querySelectorAll('.modal-trigger');
+        const modal = document.getElementById('rappel-modal');
+        const modalCloseBtns = document.querySelectorAll('.modal-close-btn');
+
+        const openModal = () => modal.classList.add('is-open');
+        const closeModal = () => modal.classList.remove('is-open');
+
+        modalTriggers.forEach(trigger => trigger.addEventListener('click', openModal));
+        modalCloseBtns.forEach(btn => btn.addEventListener('click', closeModal));
+        
+        // Fermer la modale en cliquant sur l'arrière-plan
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+    });
+</script>
 
 </body>
 </html>

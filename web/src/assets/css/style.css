@@ -199,6 +199,73 @@ body { font-family: 'Inter', sans-serif; background-color: var(--background); co
 .footer-bottom a:hover { opacity: 1; }
 .footer-social i {width: 1.25rem; height: 1.25rem; }
 
+
+/* ==========================================================================
+   10. Header & Navigation (Nouveaux Styles)
+   ========================================================================== */
+
+/* Liens de navigation Desktop */
+.nav-link {
+    padding: 0.5rem 0.75rem;
+    border-radius: 9999px;
+    transition: background-color 0.3s ease;
+}
+.nav-link:hover {
+    background-color: #f3f4f6; /* gray-100 */
+}
+
+/* Dropdown "Formations" */
+.dropdown-container {
+    position: relative;
+}
+.dropdown-menu {
+    display: none; /* Caché par défaut */
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.dropdown-container:hover .dropdown-menu {
+    display: block; /* Visible au survol */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Menu Mobile */
+.mobile-nav {
+    display: none; /* Caché par défaut */
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5rem;
+    gap: 2rem;
+}
+.mobile-nav.is-open {
+    display: flex; /* Visible quand la classe .is-open est ajoutée */
+}
+.mobile-nav-link {
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    width: 100%;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+.mobile-nav-link:hover {
+    background-color: #f3f4f6; /* gray-100 */
+}
+
+/* Fenêtre Modale */
+.modal-overlay {
+    display: none; /* Cachée par défaut */
+}
+.modal-overlay.is-open {
+    display: flex; /* Visible quand .is-open est ajoutée */
+}
+.modal-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary);
+    border-color: var(--primary);
+}
+
 /* ==========================================================================
    STYLES POUR MOBILE UNIQUEMENT (Regroupés et Corrigés)
    ========================================================================== */
