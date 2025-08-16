@@ -203,12 +203,11 @@ body { font-family: 'Inter', sans-serif; background-color: var(--background); co
    ========================================================================== */
 @media (max-width: 768px) {
     .section { padding: 3rem 0; }
-    .section.hero h1 {
-    font-size: 3.25rem; /* Augmentation d'environ 30% par rapport à 2.5rem */}
+    .section.hero h1 {font-size: 4rem; }
 
     /* --- HERO SECTION --- */
     section.hero .hero-image-container { display: none; }
-    section.hero .text-left { text-align: center; margin-top: 3rem; display: flex; flex-direction: column; align-items: center; }
+    section.hero .text-left { text-align: center; margin-top: 2.7rem; display: flex; flex-direction: column; align-items: center; }
     section.hero .flex-col.sm\:flex-row { flex-direction: column; align-items: center; width: 100%; }
     section.hero .flex-col a { width: 100%; max-width: 400px; padding: 1rem; font-size: 1rem; box-sizing: border-box; }
     section.hero .flex-col a svg { width: 1.5rem; height: 1.5rem; }
