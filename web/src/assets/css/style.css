@@ -219,6 +219,7 @@ body { font-family: 'Inter', sans-serif; background-color: var(--background); co
     section.testimonials-section { background: var(--primary) !important; }
     section.testimonials-section .gradient-overlay { display: none; }
     section.testimonials-section .grid-3 { grid-template-columns: 1fr; }
+    section.testimonials-section [style*="backdrop-filter"] {display: flex;    justify-content: center; }
     .text-center > .bg-gradient-to-r {margin-left: auto;  margin-right: auto; }
     
     /* --- SECTION 100% Experience --- */
