@@ -281,7 +281,7 @@ body { font-family: 'Inter', sans-serif; background-color: var(--background); co
     section.hero .flex-col a svg { width: 1.5rem; height: 1.5rem; }
 
     /* --- CARROUSELS DE LOGOS --- */
-    .logos { animation-duration: 20s !important; }
+    .logos { animation-duration: 40s !important; }
 
     /* --- SECTION AVIS (TESTIMONIALS) --- */
     section.testimonials-section { background: var(--primary) !important; }
