@@ -294,3 +294,80 @@ body { font-family: 'Inter', sans-serif; background-color: var(--background); co
     section .grid-3 { grid-template-columns: 1fr; }
 
 }
+
+
+/* ==========================================================================
+   STYLES SPÉCIFIQUES À LA PAGE RECRUTEMENT
+   ========================================================================== */
+
+/* --- Hero Section (Recrutement) --- */
+.hero-gradient { position: absolute; inset: 0; background: linear-gradient(to bottom right, hsl(var(--primary) / 0.2), hsl(var(--background)), hsl(262.1 83.3% 57.8% / 0.2)); }
+.hero-bg { position: absolute; inset: 0; background-image: url('/lovable-uploads/8a3b65ba-9cdd-4b11-a8d9-83de078b25ad.png'); background-size: cover; background-position: center; opacity: 0.15; }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, hsl(var(--background) / 0.6), transparent); }
+.hero-content { position: relative; z-index: 10; text-align: center; padding-top: 8rem; }
+.hero-title { background: linear-gradient(135deg, var(--primary), var(--purple-500)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero-subtitle { font-size: clamp(1.25rem, 3vw, 2rem); color: var(--muted-foreground); margin-bottom: 5rem; max-width: 4xl; margin-left: auto; margin-right: auto; }
+.hero-cta { display: flex; flex-direction: column; gap: 2rem; align-items: center; justify-content: center; margin-bottom: 6rem; }
+.hero-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; max-width: 5xl; margin: 0 auto; }
+.hero-card { padding: 2rem; }
+.hero-card:hover { background: rgba(255, 255, 255, 0.2); }
+.hero-card-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+.hero-card-icon { padding: 0.75rem; border-radius: 50%; background: hsla(251, 85%, 64%, 0.2); }
+.hero-card-icon svg { width: 1.5rem; height: 1.5rem; color: var(--primary); }
+.hero-card-title { font-size: 1.5rem; font-weight: 700; color: var(--foreground); }
+.hero-card-content { color: var(--muted-foreground); font-size: 1.125rem; }
+.role-item { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
+.role-item svg { width: 1rem; height: 1rem; color: var(--primary); flex-shrink: 0; }
+
+/* --- Quote Section --- */
+.quote-section { margin-top: 4rem; max-width: 5xl; margin-left: auto; margin-right: auto; }
+.quote-card { position: relative; padding: 3rem 4rem; text-align: center; background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.3)); backdrop-filter: blur(10px); border-radius: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1); transition: all 0.5s ease; }
+.quote-card:hover { box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15); }
+.quote-mark { position: absolute; font-family: serif; font-size: 4rem; color: var(--primary); opacity: 0.2; }
+.quote-mark.open { top: 1.5rem; left: 2rem; }
+.quote-mark.close { bottom: 1.5rem; right: 2rem; }
+.quote-text { font-size: clamp(1.5rem, 4vw, 2.5rem); font-weight: 600; line-height: 1.4; color: var(--primary); font-style: italic; position: relative; z-index: 10; }
+.quote-divider { margin-top: 2rem; display: flex; justify-content: center; }
+.quote-divider-line { width: 6rem; height: 0.25rem; background: linear-gradient(to right, transparent, var(--primary), transparent); border-radius: 9999px; }
+
+/* --- Advantages Section --- */
+.advantages-section { padding: 6rem 0; background: linear-gradient(to bottom, var(--background), hsla(251, 85%, 64%, 0.05)); }
+.advantages-header { text-align: center; margin-bottom: 5rem; }
+.advantages-title { margin-bottom: 2rem; color: var(--foreground); }
+.advantages-subtitle { font-size: 1.25rem; color: var(--muted-foreground); max-width: 3xl; margin: 0 auto; }
+.advantages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; max-width: 7xl; margin: 0 auto; }
+.advantage-card { background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(10px); border: none; border-radius: 1rem; overflow: hidden; transition: all 0.5s ease; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); }
+.advantage-card:hover { background: rgba(255, 255, 255, 0.8); transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); }
+.advantage-image { aspect-ratio: 16/9; overflow: hidden; position: relative; }
+.advantage-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; }
+.advantage-card:hover .advantage-image img { transform: scale(1.1); }
+.advantage-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent); }
+.advantage-content { padding: 2rem 2.5rem; }
+.advantage-header { display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 1.5rem; }
+.advantage-title { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; color: var(--foreground); display: flex; align-items: center; gap: 0.75rem; }
+.advantage-description { color: var(--muted-foreground); font-size: 1.125rem; }
+
+/* --- CTA Section (Recrutement) --- */
+.cta-section { padding: 6rem 0; background: linear-gradient(to right, hsla(251, 85%, 64%, 0.1), hsla(270, 91%, 65%, 0.05), hsla(251, 85%, 64%, 0.1)); }
+.cta-content { text-align: center; max-width: 5xl; margin: 0 auto; }
+.cta-title { background: linear-gradient(135deg, var(--primary), var(--purple-500)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.cta-subtitle { font-size: clamp(1.25rem, 3vw, 1.5rem); color: var(--muted-foreground); margin-bottom: 4rem; max-width: 4xl; margin-left: auto; margin-right: auto; }
+.cta-buttons { display: flex; flex-direction: column; gap: 1.5rem; align-items: center; justify-content: center; }
+.btn-primary svg { margin-left: 0.75rem; width: 1.5rem; height: 1.5rem; }
+
+/* --- Responsive pour Recrutement --- */
+@media (min-width: 640px) {
+    .hero-cta, .cta-buttons {
+        flex-direction: row;
+    }
+}
+@media (min-width: 768px) {
+    .advantages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 1024px) {
+    .hero-content {
+        padding-top: 6rem;
+    }
+}
