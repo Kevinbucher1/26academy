@@ -203,7 +203,7 @@ body { font-family: 'Inter', sans-serif; background-color: var(--background); co
    ========================================================================== */
 @media (max-width: 768px) {
     .section { padding: 3rem 0; }
-    .section.hero h1 {font-size: 4rem; }
+    section.hero h1 {font-size: 4rem; }
 
     /* --- HERO SECTION --- */
     section.hero .hero-image-container { display: none; }
