@@ -275,7 +275,7 @@ body { font-family: 'Inter', sans-serif; background-color: var(--background); co
 
     /* --- HERO SECTION --- */
     section.hero .hero-image-container { display: none; }
-    section.hero .text-left { text-align: center; margin-top: 2.7rem; display: flex; flex-direction: column; align-items: center; }
+    section.hero .text-left { text-align: center; margin-top: 3.3rem; display: flex; flex-direction: column; align-items: center; }
     section.hero .flex-col.sm\:flex-row { flex-direction: column; align-items: center; width: 100%; }
     section.hero .flex-col a { width: 100%; max-width: 400px; padding: 1rem; font-size: 1rem; box-sizing: border-box; }
     section.hero .flex-col a svg { width: 1.5rem; height: 1.5rem; }
