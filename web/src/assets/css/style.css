@@ -160,11 +160,6 @@ body { font-family: 'Inter', sans-serif; background-color: var(--background); co
 .navbar-actions { display: flex; align-items: center; gap: 1rem; }
 @media (min-width: 768px) { .navbar-nav { display: flex; } }
 
-/* ==========================================================================
-   7. Specific Page Sections (Recrutement)
-   ========================================================================== */
-.hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-/* ... (autres styles spécifiques à la page recrutement omis pour la clarté, mais ils seraient ici) ... */
 
 /* ==========================================================================
    8. Logo Slider (Used on both pages)
@@ -303,7 +298,7 @@ body { font-family: 'Inter', sans-serif; background-color: var(--background); co
 /* --- Hero Section (Recrutement) --- */
 .hero-gradient { position: absolute; inset: 0; background: linear-gradient(to bottom right, hsl(var(--primary) / 0.2), hsl(var(--background)), hsl(262.1 83.3% 57.8% / 0.2)); }
 .hero-bg { position: absolute; inset: 0; background-image: url('/lovable-uploads/8a3b65ba-9cdd-4b11-a8d9-83de078b25ad.png'); background-size: cover; background-position: center; opacity: 0.15; }
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, hsl(var(--background) / 0.6), transparent); }
+.hero-overlay { position: absolute; inset: 0;     background: linear-gradient(to top, hsla(0, 0%, 100%, 0.6), transparent); }
 .hero-content { position: relative; z-index: 10; text-align: center; padding-top: 8rem; }
 .hero-title { background: linear-gradient(135deg, var(--primary), var(--purple-500)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .hero-subtitle { font-size: clamp(1.25rem, 3vw, 2rem); color: var(--muted-foreground); margin-bottom: 5rem; max-width: 4xl; margin-left: auto; margin-right: auto; }
@@ -319,6 +314,14 @@ body { font-family: 'Inter', sans-serif; background-color: var(--background); co
 .role-item { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
 .role-item svg { width: 1rem; height: 1rem; color: var(--primary); flex-shrink: 0; }
 .recruitment-hero-title {font-size: 2.25rem; }
+.hero-particles {position: absolute;inset: 0;overflow: hidden;}
+.hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; background: linear-gradient(135deg, hsla(251, 85%, 64%, 0.2), var(--background), hsla(270, 91%, 65%, 0.2)); }
+
+.particle {position: absolute;width: 8px;height: 8px;background: var(--primary); border-radius: 50%; opacity: 0.3; animation: pulse 2s infinite;}
+.particle:nth-child(1) { top: 25%; left: 25%; animation-delay: 0s; }
+.particle:nth-child(2) { top: 75%; right: 33%; animation-delay: 1s; }
+.particle:nth-child(3) { bottom: 25%; left: 33%; animation-delay: 2s; }
+
 
 /* --- Quote Section --- */
 .quote-section { margin-top: 4rem; max-width: 5xl; margin-left: auto; margin-right: auto; }
