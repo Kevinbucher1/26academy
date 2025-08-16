@@ -203,7 +203,7 @@ body { font-family: 'Inter', sans-serif; background-color: var(--background); co
    ========================================================================== */
 @media (max-width: 768px) {
     .section { padding: 3rem 0; }
-    section.hero h1 {font-size: 4rem; }
+    section.hero h1 {font-size: 3.3rem; }
 
     /* --- HERO SECTION --- */
     section.hero .hero-image-container { display: none; }
@@ -213,13 +213,15 @@ body { font-family: 'Inter', sans-serif; background-color: var(--background); co
     section.hero .flex-col a svg { width: 1.5rem; height: 1.5rem; }
 
     /* --- CARROUSELS DE LOGOS --- */
-    .logos { animation-duration: 20s !important; }
+    .logos { animation-duration: 12s !important; }
 
     /* --- SECTION AVIS (TESTIMONIALS) --- */
     section.testimonials-section { background: var(--primary) !important; }
     section.testimonials-section .gradient-overlay { display: none; }
     section.testimonials-section .grid-3 { grid-template-columns: 1fr; }
+    .text-center > .bg-gradient-to-r {margin-left: auto;  margin-right: auto; }
     
     /* --- SECTION 100% Experience --- */
     section .grid-3 { grid-template-columns: 1fr; }
+
 }
