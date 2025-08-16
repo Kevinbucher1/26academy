@@ -318,6 +318,7 @@ body { font-family: 'Inter', sans-serif; background-color: var(--background); co
 .hero-card-content { color: var(--muted-foreground); font-size: 1.125rem; }
 .role-item { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
 .role-item svg { width: 1rem; height: 1rem; color: var(--primary); flex-shrink: 0; }
+.recruitment-hero-title {font-size: 2.25rem; }
 
 /* --- Quote Section --- */
 .quote-section { margin-top: 4rem; max-width: 5xl; margin-left: auto; margin-right: auto; }
@@ -367,7 +368,8 @@ body { font-family: 'Inter', sans-serif; background-color: var(--background); co
     }
 }
 @media (min-width: 1024px) {
-    .hero-content {
-        padding-top: 6rem;
-    }
+    .hero-content {padding-top: 6rem;}
+    .recruitment-hero-title {font-size: 4rem; }
 }
+
+
