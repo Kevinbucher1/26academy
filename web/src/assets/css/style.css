@@ -379,3 +379,34 @@ body { font-family: 'Inter', sans-serif; background-color: var(--background); co
    .advantages-grid {display: flex; flex-direction: column; align-items: center; }
    .advantage-card {width: 90%; max-width: 400px; }
 }
+
+
+/* ==========================================================================
+   STYLES SPÉCIFIQUES À LA PAGE BLOCTEL (À AJOUTER)
+   ========================================================================== */
+
+/* --- Styles pour le contenu éditorial (texte long) --- */
+.prose { color: hsl(var(--foreground));   max-width: 65ch;}
+.prose-lg {    font-size: 1.125rem; /* 18px */    line-height: 1.7;}
+.prose p {    margin-bottom: 1.5rem;}
+.prose a {    color: hsl(var(--primary));    text-decoration: none;}
+.prose a:hover {    text-decoration: underline;}
+.prose ul {    list-style: none;  padding-left: 1.5rem;   margin-bottom: 1.5rem;}
+.prose ul li {    margin-bottom: 0.75rem;}
+
+
+/* --- Composants spécifiques à la page Bloctel --- */
+/* Séparateur de section */
+.section-separator {display: flex;justify-content: center;padding: 1rem 0;}
+.section-separator-line {width: 6rem;height: 0.125rem;background: linear-gradient(to right, transparent, #a855f7, transparent);   opacity: 0.6;}
+
+.text-purple-accent {    color: #6644FF;}
+.bg-primary\/10 {    background-color: hsla(var(--primary), 0.1);}
+.border-l-4 {    border-left-width: 4px;}
+.prose .space-y-3 > * + * {    margin-top: 0.75rem;}
+
+/* --- Responsive pour la nouvelle section Hero --- */
+@media (max-width: 768px) {
+    .order-1 { order: 1; }
+    .order-2 { order: 2; }
+}
