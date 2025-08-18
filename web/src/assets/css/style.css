@@ -323,6 +323,7 @@ body { font-family: 'Inter', sans-serif; background-color: var(--background); co
 .particle:nth-child(3) { bottom: 25%; left: 33%; animation-delay: 2s; }
 
 .votre-conteneur-parent {display: flex; justify-content: center; align-items: flex-start; gap: 5rem; /* Espace entre vos deux blocs */}
+.carte-avec-ombre {  border-radius: 16px;   box-shadow: 0 0 40px hsla(262, 50%, 60%, 0.15);}
 
 
 /* --- Quote Section --- */
