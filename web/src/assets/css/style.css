@@ -322,6 +322,8 @@ body { font-family: 'Inter', sans-serif; background-color: var(--background); co
 .particle:nth-child(2) { top: 75%; right: 33%; animation-delay: 1s; }
 .particle:nth-child(3) { bottom: 25%; left: 33%; animation-delay: 2s; }
 
+.votre-conteneur-parent {display: flex; justify-content: center; align-items: flex-start; gap: 5rem; /* Espace entre vos deux blocs */}
+
 
 /* --- Quote Section --- */
 .quote-section { margin-top: 4rem; max-width: 5xl; margin-left: auto; margin-right: auto; }
