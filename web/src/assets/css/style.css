@@ -132,6 +132,12 @@ body { font-family: 'Inter', sans-serif; background-color: var(--background); co
     transform: scale(1.05); /* Effet de zoom au survol */
 }
 
+/* Force l'image du Hero de la homepage à rester en arrière-plan */
+.hero-image-container {
+  position: relative; /* Nécessaire pour que z-index s'applique */
+  z-index: -1;      /* Place cet élément sur un calque inférieur (derrière le texte) */
+}
+
 /* ==========================================================================
    5. Animations & Utilities
    ========================================================================== */
@@ -290,7 +296,7 @@ body { font-family: 'Inter', sans-serif; background-color: var(--background); co
 
 }
 
-@media (max-width: 1450px) {
+@media (max-width: 1300px) {
     section.hero .hero-image-container { display: none; }
 
 
