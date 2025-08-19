@@ -132,10 +132,9 @@ body { font-family: 'Inter', sans-serif; background-color: var(--background); co
     transform: scale(1.05); /* Effet de zoom au survol */
 }
 
-/* Force l'image du Hero de la homepage à rester en arrière-plan */
-.hero-image-container {
-    position: relative; /* Essentiel pour activer le z-index */
-    z-index: 2;         /* Assure que le texte est AU-DESSUS de l'image (qui est à z-index: 1) */
+.text-left {
+  position: relative; /* Active la superposition pour le conteneur du texte */
+  z-index: 2;         /* Place le texte AU-DESSUS de l'image (qui est à z-index: 1) */
 }
 
 /* ==========================================================================
