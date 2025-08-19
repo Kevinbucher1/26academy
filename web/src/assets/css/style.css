@@ -411,3 +411,74 @@ body { font-family: 'Inter', sans-serif; background-color: var(--background); co
     .order-2 { order: 2; }
 }
 
+
+/* ==========================================================================
+   AJOUTS PROVENANT DE LA PAGE FINANCEMENT (CORRIGÉ)
+   ========================================================================== */
+
+/* --- 1. Classes Utilitaires Manquantes --- */
+.max-w-5xl { max-width: 64rem; margin: 0 auto; }
+.max-w-4xl { max-width: 56rem; margin: 0 auto; }
+.max-w-sm { max-width: 24rem; }
+.py-24 { padding-top: 6rem; padding-bottom: 6rem; }
+.pt-32 { padding-top: 8rem; }
+.mb-16 { margin-bottom: 4rem; }
+.mb-20 { margin-bottom: 5rem; }
+.mb-24 { margin-bottom: 6rem; }
+.leading-tight { line-height: 1.1; } /* J'ai ajusté cette valeur pour un meilleur rendu */
+.rounded-xl { border-radius: 0.75rem; }
+
+/* --- 2. Styles de Composants Spécifiques (Financement) --- */
+.bg-blue-50 { background-color: hsl(217, 91%, 95%); }
+.bg-orange-50 { background-color: hsl(33, 100%, 96%); }
+.bg-green-50 { background-color: hsl(138, 76%, 97%); }
+.text-blue-600 { color: hsl(221, 83%, 53%); }
+.text-blue-700 { color: hsl(221, 83%, 43%); }
+.text-blue-800 { color: hsl(221, 83%, 33%); }
+.text-orange-600 { color: hsl(24, 93%, 53%); }
+.text-orange-700 { color: hsl(24, 93%, 43%); }
+.text-orange-800 { color: hsl(24, 93%, 33%); }
+.text-green-600 { color: hsl(142, 76%, 36%); }
+.text-green-700 { color: hsl(142, 76%, 26%); }
+.text-green-800 { color: hsl(142, 76%, 16%); }
+.info-box-padding { padding: 1.5rem; }
+
+/* --- 3. Styles de Sections Uniques (Financement) --- */
+/* Arrière-plan unique pour la bannière Financement */
+.financement-hero-gradient { position: absolute; inset: 0; background: linear-gradient(135deg, hsl(251 85% 64% / 0.2), hsl(var(--background)), hsl(270 68% 55% / 0.2)); }
+.financement-hero-image { position: absolute; inset: 0; background-image: url('/Header-background.webp'); background-size: cover; background-position: center; opacity: 0.15; }
+.financement-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, hsl(var(--background) / 0.6), transparent); }
+
+/* Section Hero (Financement) */
+.hero-section { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.hero-background { position: absolute; inset: 0; }
+
+/* NOUVEAU : Correction de la taille du titre de la bannière */
+.hero-section .h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem); /* Taille réduite pour correspondre à l'image */
+    font-weight: 700; /* Poids de police normal pour les titres */
+}
+
+/* Section CPF */
+.cpf-section { background: linear-gradient(to right, hsl(217, 91%, 97%), hsl(262, 83%, 98%)); }
+.cpf-logo { max-width: 24rem; width: 100%; border-radius: 1rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); }
+
+/* Section FAQ (Accordéon) */
+details { background: hsl(var(--background)); border-radius: 0.5rem; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); border: 1px solid hsl(var(--border)); margin-bottom: 1rem; }
+summary { padding: 1.5rem; font-size: 1.125rem; font-weight: 600; cursor: pointer; list-style: none; position: relative; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: '+'; position: absolute; right: 1.5rem; top: 50%; transform: translateY(-50%); font-size: 1.25rem; transition: transform 0.2s; }
+details[open] summary::after { content: '−'; }
+details div { padding: 0 1.5rem 1.5rem; color: hsl(var(--foreground)); line-height: 1.6; }
+
+/* --- 4. Styles Responsives Spécifiques (Financement) --- */
+@media (max-width: 768px) {
+  .cpf-content-column { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .hero-section .btn-lg { margin-bottom: 5rem; }
+}
+@media (min-width: 1024px) {
+    #cpf .grid { display: flex; align-items: center; }
+    #cpf .grid > div { flex-basis: 50%; }
+    #cpf .grid > div:last-child { display: flex; justify-content: center; align-items: center; }
+    #autres-financements .grid { grid-template-columns: repeat(3, 1fr); }
+}
