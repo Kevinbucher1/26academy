@@ -481,4 +481,8 @@ details div { padding: 0 1.5rem 1.5rem; color: hsl(var(--foreground)); line-heig
     #cpf .grid > div { flex-basis: 50%; }
     #cpf .grid > div:last-child { display: flex; justify-content: center; align-items: center; }
     #autres-financements .grid { grid-template-columns: repeat(3, 1fr); }
+    .hero-section .container,
+  .cpf-section .container {
+    max-width: 60rem; /* 960px, ce qui est plus étroit que les 1200px par défaut */
+  }
 }
