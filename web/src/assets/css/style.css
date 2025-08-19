@@ -415,6 +415,29 @@ body { font-family: 'Inter', sans-serif; background-color: var(--background); co
 /* ==========================================================================
    AJOUTS PROVENANT DE LA PAGE FINANCEMENT (NON-REDONDANT)
    ========================================================================== */
+/* --- Styles MANQUANTS pour l'arrière-plan de la section Hero (Financement) --- */
+
+.hero-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, hsl(251 85% 64% / 0.2), hsl(var(--background)), hsl(270 68% 55% / 0.2));
+}
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+    background-image: url('/Header-background.webp');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, hsl(var(--background) / 0.6), transparent);
+}
+
 
 /* --- 1. Classes Utilitaires Manquantes --- */
 
