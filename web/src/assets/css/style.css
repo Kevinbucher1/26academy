@@ -134,12 +134,8 @@ body { font-family: 'Inter', sans-serif; background-color: var(--background); co
 
 /* Force l'image du Hero de la homepage à rester en arrière-plan */
 .hero-image-container {
-   position: absolute; /* Positionne l'image par rapport à la section */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1; /* Place l'image sur la couche de base (inférieure) */
+    position: relative; /* Essentiel pour activer le z-index */
+    z-index: 2;         /* Assure que le texte est AU-DESSUS de l'image (qui est à z-index: 1) */
 }
 
 /* ==========================================================================
