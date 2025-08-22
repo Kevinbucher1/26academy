@@ -296,7 +296,7 @@ body { font-family: 'Inter', sans-serif; background-color: var(--background); co
 }
 
 @media (max-width: 1300px) {
-    section.hero .hero-image-container { display: none; }
+    section.homepage-hero .hero-image-container { display: none; }
 
 
 /* ==========================================================================
