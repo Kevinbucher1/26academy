@@ -35,3 +35,6 @@ dist/
 
 # Dotenv and similar local-only files
 *.local
+
+# Fichiers d'environnement locaux
+web/.env

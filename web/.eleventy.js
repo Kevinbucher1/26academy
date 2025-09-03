@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const { toHTML } = require('@portabletext/to-html');
 const imageUrlBuilder = require('@sanity/image-url');
 const { createClient } = require('@sanity/client');
