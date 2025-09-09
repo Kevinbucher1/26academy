@@ -135,6 +135,7 @@ body { font-family: 'Inter', sans-serif; background-color: var(--background); co
 .text-left {
   position: relative; /* Active la superposition pour le conteneur du texte */
   z-index: 2;         /* Place le texte AU-DESSUS de l'image (qui est à z-index: 1) */
+  text-align: left;
 }
 
 /* ==========================================================================

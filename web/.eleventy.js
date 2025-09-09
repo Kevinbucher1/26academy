@@ -19,6 +19,13 @@ module.exports = function(eleventyConfig) {
   // 1. Copie des assets (votre code)
   eleventyConfig.addPassthroughCopy("src/assets");
 
+eleventyConfig.addFilter("log", (value) => {
+    console.log("--- DEBUG ---");
+    console.log(value);
+    console.log("--- FIN DEBUG ---");
+    return value; // On retourne la valeur pour ne pas casser la suite
+  });
+
   // 2. Filtre pour convertir le "Portable Text" de Sanity en HTML
   eleventyConfig.addFilter("portableText", (value) => {
     return value ? toHTML(value) : '';
