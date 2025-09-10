@@ -10,7 +10,7 @@ const client = createClient({
   token: process.env.SANITY_API_TOKEN, // On utilise la clé d'accès que vous venez d'ajouter
 });
 
-const query = `*[_type == "parcours" && defined(slug.current)]{
+const query = `*[_type == "parcours" && defined(slug.current) && !(_id in path("drafts.**"))]{
   ...,
   category->{
     title
