@@ -179,9 +179,9 @@
 <section class="py-20 px-6 gradient-offers">
     <div class="container mx-auto max-w-6xl">
         <h2 class="text-4xl font-bold text-center mb-16 text-white underline">Nos offres</h2>
-        <div class="grid lg:grid-cols-{{ p.offres.length }} gap-8 max-w-6xl mx-auto">
+        <div class="flex flex-wrap justify-center items-stretch gap-8">
             {% for offre in p.offres %}
-            <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-primary">
+            <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-primary w-full max-w-xs">
                 <div class="text-center mb-8">
                     <h3 class="text-2xl font-bold text-black mb-4 italic text-primary">{{ offre.titre }}</h3>
                     <div class="text-4xl font-bold text-primary mb-1">{{ offre.prix }}</div>
@@ -210,7 +210,7 @@
 
 {% if p.financements and p.financements.length > 0 %}
 <section class="py-16 px-6 bg-white">
-    <div class="container mx-auto max-w-6xl">
+    <div class="container mx-auto max-w-7xl">
         <h2 class="text-3xl font-bold text-center mb-12 text-primary">Solutions de financement possibles</h2>
         <div class="grid md:grid-cols-{{ p.financements.length }} gap-4 px-5 sm:px-0">
             {% for f in p.financements %}
@@ -240,45 +240,19 @@
             <p class="text-gray-600">Découvrez vos perspectives d'évolution professionnelle</p>
         </div>
         <div class="space-y-4">
-            {% if p.postesAccessibles and p.postesAccessibles.length > 0 %}
-            <details class="bg-white rounded-xl shadow-sm border border-primary">
-                <summary class="text-lg font-semibold text-primary">POSTES ACCESSIBLES</summary>
-                <div>
-                    <ul class="space-y-2 text-gray-700 list-disc list-inside marker:text-primary">
-                        {% for item in p.postesAccessibles %}
-                        <li class="bg-gray-50 p-3 rounded-lg">{{ item }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </details>
-            {% endif %}
-
-            {% if p.competencesCles and p.competencesCles.length > 0 %}
-            <details class="bg-white rounded-xl shadow-sm border border-primary">
-                <summary class="text-lg font-semibold text-primary">COMPÉTENCES CLÉS</summary>
-                <div>
-                    <ul class="space-y-2 text-gray-700 list-disc list-inside marker:text-primary">
-                        {% for item in p.competencesCles %}
-                        <li class="bg-gray-50 p-3 rounded-lg">{{ item }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </details>
-            {% endif %}
-
-            {% if p.evolutionCarriere and p.evolutionCarriere.length > 0 %}
-            <details class="bg-white rounded-xl shadow-sm border border-primary">
-                <summary class="text-lg font-semibold text-primary">ÉVOLUTION DE CARRIÈRE</summary>
-                <div>
-                    <ul class="space-y-2 text-gray-700 list-disc list-inside marker:text-primary">
-                        {% for item in p.evolutionCarriere %}
-                        <li class="bg-gray-50 p-3 rounded-lg">{{ item }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </details>
-            {% endif %}
+    {% for bloc in p.apresFormation %}
+    <details class="bg-white rounded-xl shadow-sm border border-primary">
+        <summary class="text-lg font-semibold text-primary">{{ bloc.titre | upper }}</summary>
+        <div>
+            <ul class="space-y-2 text-gray-700 list-disc list-inside marker:text-primary">
+                {% for item in bloc.elements %}
+                <li class="bg-gray-50 p-3 rounded-lg">{{ item }}</li>
+                {% endfor %}
+            </ul>
         </div>
+    </details>
+    {% endfor %}
+</div>
     </div>
 </section>
 
