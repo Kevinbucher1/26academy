@@ -240,26 +240,34 @@ export default {
     },
 
     // --- Section "Que faire après la formation" ---
-    {
-      name: 'postesAccessibles',
-      title: 'Postes Accessibles',
+     {
+      name: 'apresFormation',
+      title: 'Que faire après la formation',
       type: 'array',
       group: 'content',
-      of: [{ type: 'string' }],
-    },
-    {
-      name: 'competencesCles',
-      title: 'Compétences Clés',
-      type: 'array',
-      group: 'content',
-      of: [{ type: 'string' }],
-    },
-    {
-      name: 'evolutionCarriere',
-      title: 'Évolution de Carrière',
-      type: 'array',
-      group: 'content',
-      of: [{ type: 'string' }],
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              name: 'titre',
+              title: 'Titre du bloc', // Ex: "Postes accessibles"
+              type: 'string'
+            },
+            {
+              name: 'elements',
+              title: 'Points clés', // Ex: "Comptable junior", "Assistant comptable"...
+              type: 'array',
+              of: [{ type: 'string' }]
+            }
+          ],
+          preview: {
+            select: {
+              title: 'titre'
+            }
+          }
+        }
+      ]
     },
 
     // --- Section "Informations complémentaires" ---
