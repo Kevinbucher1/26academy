@@ -189,6 +189,39 @@ export default {
       ],
     },
 
+    // --- Section "BLOC PHOTO INTERMEDIAIRE" ---
+
+     {
+      name: 'blocIntermediaire',
+      title: 'Bloc personnalisé (Image + Texte)',
+      type: 'object',
+      group: 'content',
+      fields: [
+        {
+          name: 'activer',
+          title: 'Activer ce bloc ?',
+          type: 'boolean',
+          description: 'Cochez cette case pour afficher ce bloc sur la page.',
+          initialValue: false,
+        },
+        {
+          name: 'image',
+          title: 'Image',
+          type: 'image',
+        },
+        {
+          name: 'titre',
+          title: 'Titre (H2)',
+          type: 'string',
+        },
+        {
+          name: 'contenu',
+          title: 'Contenu du paragraphe',
+          type: 'text',
+        },
+      ],
+    },
+
     // --- Section "Nos offres" ---
     {
       name: 'offres',
