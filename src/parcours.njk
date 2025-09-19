@@ -1,5 +1,5 @@
 ---js
-{
+module.exports = {
   pagination: {
     data: "parcours",
     size: 1,
@@ -11,11 +11,11 @@
     title: data => data.p.metaTitle || data.p.titre,
     metaDescription: data => data.p.metaDescription,
     openGraphImage: data => data.p.openGraphImage,
-    head: `<link rel="stylesheet" href="/assets/css/parcours.css">`
+    head: `<link rel="stylesheet" href="/assets/css/parcours.css">`,
+    slug: data => data.p.slug.current
   }
-}
+};
 ---
-
 
 {# --- Contenu HTML de la page --- #}
 
@@ -29,13 +29,13 @@
                 </h1>
                 
                {% if p.sousTitrePrincipal %}
-<p class="mb-6 text-white/90 font-semibold leading-tight" style="font-size: 1.2rem;">
-    <b>{{ p.sousTitrePrincipal }}, </b>
-    {% if p.codeRNCP %}
-        <em class="rncp-code">{{ p.codeRNCP }}</em>
-    {% endif %}
-</p>
-{% endif %}
+                <p class="mb-6 text-white/90 font-semibold leading-tight" style="font-size: 1.2rem;">
+                    <b>{{ p.sousTitrePrincipal }}, </b>
+                    {% if p.codeRNCP %}
+                        <em class="rncp-code">{{ p.codeRNCP }}</em>
+                    {% endif %}
+                </p>
+                {% endif %}
                 
                 {% if p.descriptionHero %}
                 <p class="text-base mb-12 text-white/80 leading-relaxed">
@@ -43,9 +43,8 @@
                 </p>
                 {% endif %}
                 
-                <div class="flex flex-wrap gap-4 justify-center sm:justify-start mb-12 sm:mb-0">
-
-                    <a href="{{ p.urlFormulaire or '#' }}">
+                <div class="flex flex-wrap gap-4 justify-center sm:justify-start mb-8 sm:mb-0">
+                    <a href="/form-parcours?formation={{ p.slug.current }}">
                         <button class="border-white bg-white text-[#6644FF] hover:bg-gray-50 hover:text-[#6644FF] rounded-full px-12 py-3 font-bold text-base transition-all hover:scale-105 shadow-lg">
                             Commencer la formation
                         </button>
@@ -74,20 +73,19 @@
         <div class="grid md:grid-cols-{{ p.informationsPratiques.length }} gap-4 px-5 sm:px-0">
             {% for info in p.informationsPratiques %}
             <div class="bg-white border-2 border-primary rounded-xl shadow-sm p-4 sm:p-6 text-center flex flex-col" style="background-color: rgba(102, 68, 255, 0.05);">
-    <div class="mb-3">
-        <span class="inline-block px-2 py-1 text-xs font-medium text-white rounded-full bg-primary">
-            {{ info.titre }}
-        </span>
-    </div>
-    
-    <div class="flex-grow flex items-center justify-center">
-        {% if info.logo %}
-            <img src="{{ info.logo | sanityImageUrl }}" alt="{{ info.titre }}" class="w-16 h-auto mt-2" />
-        {% else %}
-            <p class="text-sm text-gray-600 leading-tight sm:leading-relaxed">{{ info.valeur | nl2br | safe }}</p>
-        {% endif %}
-    </div>
-</div>
+                <div class="mb-3">
+                    <span class="inline-block px-2 py-1 text-xs font-medium text-white rounded-full bg-primary">
+                        {{ info.titre }}
+                    </span>
+                </div>
+                <div class="flex-grow flex items-center justify-center">
+                    {% if info.logo %}
+                        <img src="{{ info.logo | sanityImageUrl }}" alt="{{ info.titre }}" class="w-16 h-auto mt-2" />
+                    {% else %}
+                        <p class="text-sm text-gray-600 leading-tight sm:leading-relaxed">{{ info.valeur | nl2br | safe }}</p>
+                    {% endif %}
+                </div>
+            </div>
             {% endfor %}
         </div>
     </div>
@@ -97,7 +95,6 @@
 <section class="py-16 px-6 gradient-bg">
     <div class="container mx-auto max-w-6xl">
         <div class="grid lg:grid-cols-3 gap-8 items-start mb-12">
-            
             {% if p.objectifs and p.objectifs.length > 0 %}
             <div class="flex flex-col h-full mb-4 sm:mb-0">
                 <h2 class="text-3xl font-bold mb-4 sm:mb-8 text-white text-center underline">Objectifs</h2>
@@ -141,7 +138,7 @@
             {% endif %}
         </div>
         <div class="text-center mt-12">
-            <a href="{{ p.urlFormulaire or '#' }}">
+             <a href="/form-parcours?formation={{ p.slug.current }}">
                 <button class="bg-white text-primary hover:bg-gray-50 rounded-full px-12 py-3 font-semibold text-lg transition-all hover:scale-105 shadow-lg">
                     Commencer la formation
                 </button>
@@ -159,7 +156,7 @@
         </div>
         <div class="space-y-4">
             {% for comp in p.programme.competences %}
-            <details class="bg-white rounded-xl shadow-sm border border-primary">
+            <details class="bg-white rounded-xl shadow-sm">
                 <summary class="text-base font-semibold text-primary italic">{{ comp.titre }}</summary>
                 <div>
                     <ul class="space-y-2 text-gray-700 list-disc list-inside marker:text-primary">
@@ -179,7 +176,6 @@
 <section class="bg-white py-16 lg:py-24">
     <div class="max-w-6xl mx-auto px-6">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center">
-            
             <div class="lg:col-span-1">
                 {% if p.blocIntermediaire.image %}
                 <img src="{{ p.blocIntermediaire.image | sanityImageUrl }}" 
@@ -187,10 +183,9 @@
                      class="rounded-xl shadow-lg w-full">
                 {% endif %}
             </div>
-
             <div class="lg:col-span-2">
                 {% if p.blocIntermediaire.titre %}
-                <h2 class="text-3xl font-bold text-primary mb-4">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">
                     {{ p.blocIntermediaire.titre }}
                 </h2>
                 {% endif %}
@@ -201,7 +196,6 @@
                 </p>
                 {% endif %}
             </div>
-
         </div>
     </div>
 </section>
@@ -210,7 +204,7 @@
 
 {% if p.offres and p.offres.length > 0 %}
 <section class="py-20 px-6 gradient-offers">
-    <div class="container mx-auto max-w-6xl">
+    <div class="container mx-auto max-w-7xl">
         <h2 class="text-4xl font-bold text-center mb-16 text-white underline">Nos offres</h2>
         <div class="flex flex-wrap justify-center items-stretch gap-8">
             {% for offre in p.offres %}
@@ -231,7 +225,7 @@
             {% endfor %}
         </div>
         <div class="text-center mt-20">
-            <a href="{{ p.urlFormulaire or '#' }}">
+            <a href="/form-parcours?formation={{ p.slug.current }}">
                 <button class="gradient-btn text-white rounded-full px-14 py-3 font-semibold text-lg transition-all hover:scale-105 shadow-lg">
                     Commencer la formation
                 </button>
@@ -243,7 +237,7 @@
 
 {% if p.financements and p.financements.length > 0 %}
 <section class="py-16 px-6 bg-white">
-    <div class="container mx-auto max-w-7xl">
+    <div class="container mx-auto max-w-6xl">
         <h2 class="text-3xl font-bold text-center mb-12 text-primary">Solutions de financement possibles</h2>
         <div class="grid md:grid-cols-{{ p.financements.length }} gap-4 px-5 sm:px-0">
             {% for f in p.financements %}
@@ -256,7 +250,7 @@
             {% endfor %}
         </div>
         <div class="text-center mt-16">
-           <a href="{{ p.urlFormulaire or '#' }}">
+           <a href="/form-parcours?formation={{ p.slug.current }}">
                <button class="gradient-btn text-white rounded-full px-14 py-3 font-semibold text-lg transition-all hover:scale-105 shadow-lg">
                     Trouver ma solution de formation
                 </button>
@@ -266,6 +260,7 @@
 </section>
 {% endif %}
 
+{% if p.apresFormation and p.apresFormation.length > 0 %}
 <section class="py-16 px-6 bg-gray-50">
     <div class="container mx-auto max-w-5xl">
         <div class="text-center mb-12">
@@ -273,28 +268,29 @@
             <p class="text-gray-600">Découvrez vos perspectives d'évolution professionnelle</p>
         </div>
         <div class="space-y-4">
-    {% for bloc in p.apresFormation %}
-    <details class="bg-white rounded-xl shadow-sm border border-primary">
-        <summary class="text-lg font-semibold text-primary">{{ bloc.titre | upper }}</summary>
-        <div>
-            <ul class="space-y-2 text-gray-700 list-disc list-inside marker:text-primary">
-                {% for item in bloc.elements %}
-                <li class="bg-gray-50 p-3 rounded-lg">{{ item }}</li>
-                {% endfor %}
-            </ul>
+            {% for bloc in p.apresFormation %}
+            <details class="bg-white rounded-xl shadow-sm">
+                <summary class="text-lg font-semibold text-primary">{{ bloc.titre | upper }}</summary>
+                <div>
+                    <ul class="space-y-2 text-gray-700 list-disc list-inside marker:text-primary">
+                        {% for item in bloc.elements %}
+                        <li class="bg-gray-50 p-3 rounded-lg">{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </details>
+            {% endfor %}
         </div>
-    </details>
-    {% endfor %}
-</div>
     </div>
 </section>
+{% endif %}
 
 {% if p.informationsComplementaires %}
 <section class="py-16 px-6 bg-gray-50">
     <div class="container mx-auto max-w-4xl">
         <h2 class="text-3xl font-bold text-center text-primary">Informations complémentaires</h2>        
         {% if p.imageFranceCompetences %}
-        <div class="flex justify-center my-0">
+        <div class="flex justify-center my-4">
             <img src="{{ p.imageFranceCompetences | sanityImageUrl }}" alt="Logo France Compétences" class="h-40" />
         </div>
         {% endif %}
