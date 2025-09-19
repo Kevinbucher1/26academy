@@ -1,0 +1,496 @@
+/* ==========================================================================
+   1. Font Imports & Font Face
+   ========================================================================== */
+
+/* Brockmann Font */
+@font-face {
+    font-family: 'Brockmann';
+    src: url('images/brockmann-medium-webfont.ttf') format('truetype'),
+         url('images/brockmann-medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Google Fonts (Inter, Playfair Display, Roboto Mono) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap');
+
+
+/* ==========================================================================
+   2. Root Variables & Reset
+   ========================================================================== */
+ 
+:root {
+    /* Base Palette (from recrutement page) */
+    --primary: hsl(251, 85%, 64%);
+    --primary-foreground: hsl(0, 0%, 100%);
+    --background: hsl(0, 0%, 100%);
+    --foreground: hsl(222.2, 84%, 4.9%);
+    --muted: hsl(210, 40%, 96.1%);
+    --muted-foreground: hsl(215.4, 16.3%, 46.9%);
+    --card: hsl(0, 0%, 100%);
+    --card-foreground: hsl(222.2, 84%, 4.9%);
+    --border: hsl(214.3, 31.8%, 91.4%);
+    --purple-500: hsl(270, 91%, 65%);
+    --purple-600: hsl(271, 91%, 65%);
+
+    /* Additional Palette & Gradients (from home page) */
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 251 85% 64%;
+    --radius: 0.5rem;
+    --brand-primary: 251 85% 64%;
+    --brand-secondary: 217 100% 64%;
+    --brand-accent: 167 100% 73%;
+    --brand-dark: 226 24% 32%;
+    --text-color: 218 11% 21%;
+    --gradient-primary: linear-gradient(135deg, #553eff, #6f3cff);
+    --gradient-secondary: linear-gradient(135deg, #7affdb, #05d5ff);
+    --gradient-hero: linear-gradient(135deg, #5344ff 0%, #4885ff 50%, #7cffdb 100%);
+    --gradient-card: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--brand-primary) / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--brand-primary) / 0.4);
+}
+
+/* CSS Reset & Base Styles */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: 'Inter', sans-serif; background-color: var(--background); color: var(--foreground); line-height: 1.6; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+/* ==========================================================================
+   3. Base Layout & Typography
+   ========================================================================== */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+.section { padding: 6rem 0; }
+.grid { display: grid; gap: 1.5rem; }
+.grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.stack-2 { display: flex; flex-direction: column; gap: 0.5rem; }
+.stack-4 { display: flex; flex-direction: column; gap: 1rem; }
+.h1, .hero-title { font-size: clamp(3rem, 8vw, 8rem); font-weight: 700; line-height: 1.1; }
+.h2, .advantages-title, .cta-title, .section-title { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 700; line-height: 1.2; }
+.h3 { font-size: 1.5rem; font-weight: 600; line-height: 1.3; }
+.body { font-size: 1rem; line-height: 1.6; }
+.small { font-size: 0.875rem; line-height: 1.5; }
+.section-title { font-size: 48px; font-weight: 800; text-align: center; margin-bottom: 16px; color: #6644FF; }
+.section-subtitle { font-size: 18px; color: #4b5563; text-align: center; max-width: 768px; margin: 0 auto 48px; }
+
+/* ==========================================================================
+   4. Components (Buttons, Cards)
+   ========================================================================== */
+.tag-primary { display: inline-block; background: var(--primary); color: white; font-weight: 600; font-size: 18px; padding: 8px 16px; border-radius: 9999px; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.75rem 1.5rem; border-radius: 9999px; font-weight: 500; text-decoration: none; transition: all 0.3s ease; border: none; cursor: pointer; font-size: 1rem; line-height: 1; gap: 8px; white-space: nowrap; }
+.btn-lg { padding: 1rem 2rem; font-size: 1.125rem; }
+.btn-sm { height: 36px; padding: 0 12px; font-size: 12px; }
+
+.btn-primary { background: linear-gradient(to right, var(--primary), var(--purple-500)); color: var(--primary-foreground); box-shadow: 0 10px 30px -10px hsla(251, 85%, 64%, 0.3); }
+.btn-primary:hover { transform: scale(1.05) translateY(-3px); filter: brightness(1.15); box-shadow: 0 18px 35px -10px hsla(251, 85%, 64%, 0.45); }
+
+.btn-outline { background: rgba(255, 255, 255, 0.1); color: var(--foreground); border: 2px solid hsla(251, 85%, 64%, 0.3); backdrop-filter: blur(10px); }
+.btn-outline:hover { background: var(--primary); color: var(--primary-foreground); transform: scale(1.05) translateY(-2px); }
+
+.btn-default { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); }
+.btn-default:hover { background: hsl(var(--primary) / 0.9); }
+
+.btn-gradient { background: linear-gradient(to right, var(--primary), #FF6B35); color: white; box-shadow: 0 8px 25px rgba(0,0,0,0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.btn-gradient:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0,0,0,0.2); }
+
+.btn-outline-light { background-color: white; color: #7c3aed; border: 1px solid #d1d5db; transition: all 0.3s ease; }
+.btn-outline-light:hover { background-color: var(--primary); border-color: var(--primary); color: white; transform: scale(1.05); }
+
+.btn-gradient-primary { background: linear-gradient(to right, #7c3aed, #2563eb); color: white; border: none; transition: all 0.3s ease; }
+.btn-gradient-primary:hover { transform: scale(1.05); filter: brightness(1.1); box-shadow: 0 10px 20px rgba(96, 95, 128, 0.3); }
+
+.border-primary { border-color: var(--primary); }
+
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 0.5rem; padding: 1.5rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); transition: transform 0.3s, box-shadow 0.3s, all 0.3s ease; }
+.card:hover { transform: translateY(-8px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 30px rgba(0, 0, 0, 0.12); }
+
+.glass-card { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 1rem; }
+
+.cta-container-centered { display: flex; justify-content: center; }
+
+.trustpilot-badge {
+    display: inline-block; /* Pour que le lien se comporte comme un bloc */
+    background-color: var(--primary); /* Fond violet uni */
+    color: white;
+    padding: 0.75rem 1.5rem; /* Espace intérieur */
+    border-radius: 9999px; /* Bords entièrement arrondis */
+    text-decoration: none; /* Retire le soulignement du lien */
+    transition: transform 0.3s ease; /* Ajoute une transition douce */
+}
+
+.trustpilot-badge:hover {
+    transform: scale(1.05); /* Effet de zoom au survol */
+}
+
+.text-left {
+  position: relative; /* Active la superposition pour le conteneur du texte */
+  z-index: 2;         /* Place le texte AU-DESSUS de l'image (qui est à z-index: 1) */
+  text-align: left;
+}
+
+/* ==========================================================================
+   5. Animations & Utilities
+   ========================================================================== */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.8; } }
+@keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.animate-fade-in { animation: fadeIn 0.8s ease forwards; opacity: 0; }
+.animate-fade-in:nth-child(1) { animation-delay: 0s; }
+.animate-fade-in:nth-child(2) { animation-delay: 0.15s; }
+.animate-fade-in:nth-child(3) { animation-delay: 0.3s; }
+.animate-fade-in:nth-child(4) { animation-delay: 0.45s; }
+.animate-pulse { animation: pulse 2s infinite; }
+.text-white { color: white; }
+.text-primary { color: var(--primary); }
+.icon { width: 20px; height: 20px; fill: currentColor; }
+
+/* ==========================================================================
+   6. Header / Navigation
+   ========================================================================== */
+.navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); transition: all 0.3s ease; }
+.navbar-content { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.5rem; max-width: 1200px; margin: 0 auto; }
+.navbar-logo img { height: 2.5rem; filter: invert(1) brightness(0); }
+.navbar-nav { display: none; align-items: center; gap: 2rem; }
+.navbar-nav a { color: var(--foreground); text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
+.navbar-nav a:hover { color: var(--primary); }
+.navbar-actions { display: flex; align-items: center; gap: 1rem; }
+@media (min-width: 768px) { .navbar-nav { display: flex; } }
+
+
+/* ==========================================================================
+   8. Logo Slider (Used on both pages)
+   ========================================================================== */
+.logo-slider { margin-top: 32px; overflow: hidden; }
+.logos {display: flex; width: max-content; animation: scroll 40s linear infinite; }
+.logo-item {flex-shrink: 0; margin: 0 32px;  padding: 16px; transition: transform 0.3s; }
+.logo-item:hover { transform: scale(1.1); }
+.logo-item img { height: 48px; object-fit: contain; filter: grayscale(100%); opacity: 0.6; transition: all 0.3s; }
+.logo-item:hover img { filter: grayscale(0%); opacity: 1; }
+
+/* ==========================================================================
+   9. Footer (Unified Style)
+   ========================================================================== */
+.footer { background: linear-gradient(to right, var(--primary), var(--purple-500)); color: var(--primary-foreground); }
+.footer-content, .footer-container { padding: 3rem 1.5rem; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
+.footer-brand img, .footer-logo { height: 2.5rem; margin-bottom: 1rem; filter: brightness(0) invert(1); }
+.footer-brand p { font-size: 0.875rem; opacity: 0.8; }
+.footer-section h5, .footer-title { font-weight: 600; font-size: 1.125rem; margin-bottom: 1rem; }
+.footer-section ul, .footer-links { list-style: none; padding: 0; margin: 0; }
+.footer-section li, .footer-links li { margin-bottom: 0.5rem; }
+.footer-section a, .footer-links a { color: inherit; text-decoration: none; font-size: 0.875rem; opacity: 0.8; transition: opacity 0.3s ease; }
+.footer-section a:hover, .footer-links a:hover { opacity: 1; }
+.footer-social { display: flex; gap: 1rem; margin-top: 1rem; }
+.footer-social a { opacity: 0.8; transition: opacity 0.3s ease; }
+.footer-social a:hover { opacity: 1; }
+.footer-social svg { width: 1.25rem; height: 1.25rem; }
+.footer-bottom { margin-top: 3rem; border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 2rem; text-align: center; font-size: 0.75rem; opacity: 0.7; }
+.footer-bottom p { margin-bottom: 0.5rem; }
+.footer-bottom a { color: inherit; text-decoration: none; transition: opacity 0.3s ease; }
+.footer-bottom a:hover { opacity: 1; }
+.footer-social i {width: 1.25rem; height: 1.25rem; }
+
+
+/* ==========================================================================
+   10. Header & Navigation (Nouveaux Styles)
+   ========================================================================== */
+
+/* Liens de navigation Desktop */
+.nav-link {
+    padding: 0.5rem 0.75rem;
+    border-radius: 9999px;
+    transition: background-color 0.3s ease;
+}
+.nav-link:hover {
+    background-color: #f3f4f6; /* gray-100 */
+}
+
+/* Dropdown "Formations" */
+.dropdown-container {
+    position: relative;
+}
+.dropdown-menu {
+    display: none; /* Caché par défaut */
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.dropdown-container:hover .dropdown-menu {
+    display: block; /* Visible au survol */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Menu Mobile */
+.mobile-nav {
+    display: none; /* Caché par défaut */
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5rem;
+    gap: 2rem;
+}
+.mobile-nav.is-open {
+    display: flex; /* Visible quand la classe .is-open est ajoutée */
+}
+.mobile-nav-link {
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    width: 100%;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+.mobile-nav-link:hover {
+    background-color: #f3f4f6; /* gray-100 */
+}
+
+/* Fenêtre Modale */
+.modal-overlay {
+    display: none; /* Cachée par défaut */
+}
+.modal-overlay.is-open {
+    display: flex; /* Visible quand .is-open est ajoutée */
+}
+.modal-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary);
+    border-color: var(--primary);
+}
+
+/* ==========================================================================
+   STYLES POUR MOBILE UNIQUEMENT (Regroupés et Corrigés)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .section { padding: 3rem 0; }
+    section.hero h1 {font-size: 3.3rem; }
+
+    /* --- HERO SECTION --- */
+    section.hero .hero-image-container { display: none; }
+    section.hero .text-left { text-align: center; margin-top: 4rem; display: flex; flex-direction: column; align-items: center; }
+    section.hero .flex-col.sm\:flex-row { flex-direction: column; align-items: center; width: 100%; }
+    section.hero .flex-col a { width: 100%; max-width: 400px; padding: 1rem; font-size: 1rem; box-sizing: border-box; }
+    section.hero .flex-col a svg { width: 1.5rem; height: 1.5rem; }
+
+    /* --- CARROUSELS DE LOGOS --- */
+    .logos { animation-duration: 40s !important; }
+
+    /* --- SECTION AVIS (TESTIMONIALS) --- */
+    section.testimonials-section { background: var(--primary) !important; }
+    section.testimonials-section .gradient-overlay { display: none; }
+    section.testimonials-section .grid-3 { grid-template-columns: 1fr; }
+    section.testimonials-section [style*="backdrop-filter"] {display: flex;    justify-content: center; }
+    .text-center > .bg-gradient-to-r {margin-left: auto;  margin-right: auto; }
+    
+    /* --- SECTION 100% Experience --- */
+    section .grid-3 { grid-template-columns: 1fr; }
+
+}
+
+
+
+
+/* ==========================================================================
+   STYLES SPÉCIFIQUES À LA PAGE RECRUTEMENT
+   ========================================================================== */
+
+/* --- Hero Section (Recrutement) --- */
+.hero-gradient { position: absolute; inset: 0; background: linear-gradient(to bottom right, hsl(var(--primary) / 0.2), hsl(var(--background)), hsl(262.1 83.3% 57.8% / 0.2)); }
+.hero-bg { position: absolute; inset: 0; background-image: url('/lovable-uploads/8a3b65ba-9cdd-4b11-a8d9-83de078b25ad.png'); background-size: cover; background-position: center; opacity: 0.15; }
+.hero-overlay { position: absolute; inset: 0;     background: linear-gradient(to top, hsla(0, 0%, 100%, 0.6), transparent); }
+.hero-content { position: relative; z-index: 10; text-align: center; padding-top: 8rem; }
+.hero-title { background: linear-gradient(135deg, var(--primary), var(--purple-500)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero-subtitle { font-size: clamp(1.25rem, 3vw, 2rem); color: var(--muted-foreground); margin-bottom: 5rem;  margin-top: 2rem; max-width: 4xl; margin-left: auto; margin-right: auto; }
+.hero-cta { display: flex; flex-direction: column; gap: 2rem; align-items: center; justify-content: center; margin-bottom: 6rem; }
+.hero-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; max-width: 5xl; margin: 0 auto; }
+.hero-card { padding: 2rem; }
+.hero-card:hover { background: rgba(255, 255, 255, 0.2); }
+.hero-card-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+.hero-card-icon { padding: 0.75rem; border-radius: 50%; background: hsla(251, 85%, 64%, 0.2); }
+.hero-card-icon svg { width: 1.5rem; height: 1.5rem; color: var(--primary); }
+.hero-card-title { font-size: 1.5rem; font-weight: 700; color: var(--foreground); }
+.hero-card-content { color: var(--muted-foreground); font-size: 1.125rem; }
+.role-item { display: flex; gap: 0.75rem; margin-bottom: 0.75rem; text-align: left; }
+.role-item svg { width: 1rem; height: 1rem; color: var(--primary); flex-shrink: 0; }
+.recruitment-hero-title {font-size: 2.25rem; }
+.hero-particles {position: absolute;inset: 0;overflow: hidden;}
+.hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; background: linear-gradient(135deg, hsla(251, 85%, 64%, 0.2), var(--background), hsla(270, 91%, 65%, 0.2)); }
+
+.particle {position: absolute;width: 8px;height: 8px;background: var(--primary); border-radius: 50%; opacity: 0.3; animation: pulse 2s infinite;}
+.particle:nth-child(1) { top: 25%; left: 25%; animation-delay: 0s; }
+.particle:nth-child(2) { top: 75%; right: 33%; animation-delay: 1s; }
+.particle:nth-child(3) { bottom: 25%; left: 33%; animation-delay: 2s; }
+
+.votre-conteneur-parent {display: flex; justify-content: center; align-items: flex-start; gap: 5rem; /* Espace entre vos deux blocs */}
+.carte-avec-ombre {  border-radius: 16px;   box-shadow: 0 0 40px hsla(262, 50%, 60%, 0.15);}
+
+
+/* --- Quote Section --- */
+.quote-section { margin-top: 4rem; max-width: 5xl; margin-left: auto; margin-right: auto;   margin-bottom: 6rem; }
+.quote-card { position: relative; padding: 3rem 4rem; text-align: center; background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.3)); backdrop-filter: blur(10px); border-radius: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.3);  transition: all 0.5s ease; }
+.quote-mark { position: absolute; font-family: serif; font-size: 4rem; color: var(--primary); opacity: 0.2; }
+.quote-mark.open { top: 1.5rem; left: 2rem; }
+.quote-mark.close { bottom: 1.5rem; right: 2rem; }
+.quote-text { font-size: clamp(1.5rem, 4vw, 2.5rem); font-weight: 600; line-height: 1.4; color: var(--primary); font-style: italic; position: relative; z-index: 10; }
+.quote-divider { margin-top: 2rem; display: flex; justify-content: center; }
+.quote-divider-line { width: 6rem; height: 0.25rem; background: linear-gradient(to right, transparent, var(--primary), transparent); border-radius: 9999px; }
+
+/* --- Advantages Section --- */
+.advantages-section { padding: 6rem 0; background: linear-gradient(to bottom, var(--background), hsla(251, 85%, 64%, 0.05)); }
+.advantages-header { text-align: center; margin-bottom: 5rem; }
+.advantages-title { margin-bottom: 2rem; color: var(--foreground); }
+.advantages-subtitle { font-size: 1.25rem; color: var(--muted-foreground); max-width: 3xl; margin: 0 auto; }
+.advantages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; max-width: 7xl; margin: 0 auto; }
+.advantage-card { background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(10px); border: none; border-radius: 1rem; overflow: hidden; transition: all 0.5s ease; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); }
+.advantage-card:hover { background: rgba(255, 255, 255, 0.8); transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); }
+.advantage-image { aspect-ratio: 16/9; overflow: hidden; position: relative; }
+.advantage-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; }
+.advantage-card:hover .advantage-image img { transform: scale(1.1); }
+.advantage-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent); }
+.advantage-content { padding: 2rem 2.5rem; }
+.advantage-header { display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 1.5rem; }
+.advantage-title { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; color: var(--foreground); display: flex; align-items: center; gap: 0.75rem; }
+.advantage-description { color: var(--muted-foreground); font-size: 1.125rem; }
+
+/* --- CTA Section (Recrutement) --- */
+.cta-section { padding: 6rem 0; background: linear-gradient(to right, hsla(251, 85%, 64%, 0.1), hsla(270, 91%, 65%, 0.05), hsla(251, 85%, 64%, 0.1)); }
+.cta-content { text-align: center; max-width: 5xl; margin: 0 auto; }
+.cta-title { background: linear-gradient(135deg, var(--primary), var(--purple-500)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.cta-subtitle { font-size: clamp(1.25rem, 3vw, 1.5rem); color: var(--muted-foreground); margin-bottom: 4rem; max-width: 4xl; margin-left: auto; margin-right: auto; }
+.cta-buttons { display: flex; flex-direction: column; gap: 1.5rem; align-items: center; justify-content: center; }
+.btn-primary svg { margin-left: 0.75rem; width: 1.5rem; height: 1.5rem; }
+
+/* --- Responsive pour Recrutement --- */
+@media (min-width: 640px) {
+    .hero-cta, .cta-buttons {flex-direction: row;}
+}
+@media (min-width: 768px) {
+    .advantages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 1024px) {
+    .hero-content {padding-top: 6rem;}
+    .recruitment-hero-title {font-size: 4rem; }
+}
+
+@media (max-width: 768px){
+   .advantages-grid {display: flex; flex-direction: column; align-items: center; }
+   .advantage-card {width: 90%; max-width: 400px; }
+}
+
+
+/* ==========================================================================
+   STYLES SPÉCIFIQUES À LA PAGE BLOCTEL (À AJOUTER)
+   ========================================================================== */
+
+/* --- Styles pour le contenu éditorial (texte long) --- */
+.prose { color: hsl(var(--foreground));   max-width: 65ch;}
+.prose-lg {    font-size: 1.125rem; /* 18px */    line-height: 1.7;}
+.prose p {    margin-bottom: 1.5rem;}
+.prose a {    color: hsl(var(--primary));    text-decoration: none;}
+.prose a:hover {    text-decoration: underline;}
+.prose ul {    list-style: none;  padding-left: 1.5rem;   margin-bottom: 1.5rem;}
+.prose ul li {    margin-bottom: 0.75rem;}
+
+
+/* --- Composants spécifiques à la page Bloctel --- */
+/* Séparateur de section */
+.section-separator {display: flex;justify-content: center;padding: 1rem 0;}
+.section-separator-line {width: 6rem;height: 0.125rem;background: linear-gradient(to right, transparent, #a855f7, transparent);   opacity: 0.6;}
+
+.text-purple-accent {    color: #6644FF;}
+.bg-primary\/10 {    background-color: hsla(var(--primary), 0.1);}
+.border-l-4 {    border-left-width: 4px;}
+.prose .space-y-3 > * + * {    margin-top: 0.75rem;}
+
+/* --- Responsive pour la nouvelle section Hero --- */
+@media (max-width: 768px) {
+    .order-1 { order: 1; }
+    .order-2 { order: 2; }
+}
+
+
+/* ==========================================================================
+   AJOUTS PROVENANT DE LA PAGE FINANCEMENT (CORRIGÉ)
+   ========================================================================== */
+
+/* --- 1. Classes Utilitaires Manquantes --- */
+.max-w-5xl { max-width: 64rem; margin: 0 auto; }
+.max-w-4xl { max-width: 56rem; margin: 0 auto; }
+.max-w-sm { max-width: 24rem; }
+.py-24 { padding-top: 6rem; padding-bottom: 6rem; }
+.pt-32 { padding-top: 8rem; }
+.mb-16 { margin-bottom: 4rem; }
+.mb-20 { margin-bottom: 5rem; }
+.mb-24 { margin-bottom: 6rem; }
+.leading-tight { line-height: 1.1; } /* J'ai ajusté cette valeur pour un meilleur rendu */
+.rounded-xl { border-radius: 0.75rem; }
+
+/* --- 2. Styles de Composants Spécifiques (Financement) --- */
+.bg-blue-50 { background-color: hsl(217, 91%, 95%); }
+.bg-orange-50 { background-color: hsl(33, 100%, 96%); }
+.bg-green-50 { background-color: hsl(138, 76%, 97%); }
+.text-blue-600 { color: hsl(221, 83%, 53%); }
+.text-blue-700 { color: hsl(221, 83%, 43%); }
+.text-blue-800 { color: hsl(221, 83%, 33%); }
+.text-orange-600 { color: hsl(24, 93%, 53%); }
+.text-orange-700 { color: hsl(24, 93%, 43%); }
+.text-orange-800 { color: hsl(24, 93%, 33%); }
+.text-green-600 { color: hsl(142, 76%, 36%); }
+.text-green-700 { color: hsl(142, 76%, 26%); }
+.text-green-800 { color: hsl(142, 76%, 16%); }
+.info-box-padding { padding: 1.5rem; }
+
+/* --- 3. Styles de Sections Uniques (Financement) --- */
+/* Arrière-plan unique pour la bannière Financement */
+.financement-hero-gradient { position: absolute; inset: 0; background: linear-gradient(135deg, hsl(251 85% 64% / 0.2), hsl(var(--background)), hsl(270 68% 55% / 0.2)); }
+.financement-hero-image { position: absolute; inset: 0; background-image: url('/Header-background.webp'); background-size: cover; background-position: center; opacity: 0.15; }
+.financement-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, hsl(var(--background) / 0.6), transparent); }
+
+/* Section Hero (Financement) */
+.hero-section { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.hero-background { position: absolute; inset: 0; }
+
+/* NOUVEAU : Correction de la taille du titre de la bannière */
+.hero-section .h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem); /* Taille réduite pour correspondre à l'image */
+    font-weight: 700; /* Poids de police normal pour les titres */
+}
+
+/* Section CPF */
+.cpf-section { background: linear-gradient(to right, hsl(217, 91%, 97%), hsl(262, 83%, 98%)); }
+.cpf-logo { max-width: 24rem; width: 100%; border-radius: 1rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); }
+
+/* Section FAQ (Accordéon) */
+details { background: hsl(var(--background)); border-radius: 0.5rem; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); border: 1px solid hsl(var(--border)); margin-bottom: 1rem; }
+summary { padding: 1.5rem; font-size: 1.125rem; font-weight: 600; cursor: pointer; list-style: none; position: relative; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: '+'; position: absolute; right: 1.5rem; top: 50%; transform: translateY(-50%); font-size: 1.25rem; transition: transform 0.2s; }
+details[open] summary::after { content: '−'; }
+details div { padding: 0 1.5rem 1.5rem; color: hsl(var(--foreground)); line-height: 1.6; }
+
+/* --- 4. Styles Responsives Spécifiques (Financement) --- */
+@media (max-width: 768px) {
+  .cpf-content-column { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .hero-section .btn-lg { margin-bottom: 5rem; }
+}
+@media (min-width: 1024px) {
+    #cpf .grid { display: flex; align-items: center; }
+    #cpf .grid > div { flex-basis: 50%; }
+    #cpf .grid > div:last-child { display: flex; justify-content: center; align-items: center; }
+    #autres-financements .grid { grid-template-columns: repeat(3, 1fr); }
+    .hero-section .container,
+  .cpf-section .container {
+    max-width: 60rem; /* 960px, ce qui est plus étroit que les 1200px par défaut */
+  }
+}

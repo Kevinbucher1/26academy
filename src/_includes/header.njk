@@ -1,0 +1,87 @@
+<header class="site-header fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav class="container mx-auto px-6 py-3">
+        <div class="header-container rounded-full px-4 py-2 flex justify-between items-center transition-all duration-300 bg-white/80 backdrop-blur-md">
+            <div>
+                <a href="#">
+                    <img src="https://www.26academy.com/app/themes/course-builder/assets/images/icons/logo_1.svg" alt="Logo 26 Academy" class="h-10" />
+                </a>
+            </div>
+            
+            <div class="hidden lg:flex items-center space-x-2 font-medium text-sm text-gray-800">
+                <div class="nav-item dropdown-container">
+                    <a href="#" class="nav-link flex items-center">
+                        Formations <i data-lucide="chevron-down" class="ml-1 h-4 w-4"></i>
+                    </a>
+                    <div class="dropdown-menu absolute top-full left-0 mt-2 bg-white min-w-80 shadow-lg rounded-xl p-2 border border-gray-200 z-50">
+                        <a href="#" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                            <i data-lucide="layout-grid" class="mr-3 h-5 w-5 text-primary"></i>
+                            <div>
+                                <p class="font-semibold">Toutes les formations</p>
+                                <p class="text-xs text-gray-500">Parcourez notre catalogue complet</p>
+                            </div>
+                        </a>
+                        <a href="#" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                            <i data-lucide="brain-circuit" class="mr-3 h-5 w-5 text-primary"></i>
+                            <div>
+                                <p class="font-semibold">Intelligence Artificielle</p>
+                                <p class="text-xs text-gray-500">Devenez un expert de l'IA</p>
+                            </div>
+                        </a>
+                        <a href="#" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                            <i data-lucide="line-chart" class="mr-3 h-5 w-5 text-primary"></i>
+                            <div>
+                                <p class="font-semibold">Marketing Digital</p>
+                                <p class="text-xs text-gray-500">Maîtrisez les leviers du web</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="#" class="nav-link">Alternance</a>
+                <a href="#" class="nav-link">Financement</a>
+                <a href="#" class="nav-link">Offres</a>
+                <a href="#" class="nav-link">Qui sommes nous</a>
+            </div>
+            
+            <div class="hidden lg:flex items-center space-x-2">
+                <button class="btn btn-sm btn-outline-light rounded-full text-xs text-primary">Plateforme</button>
+                <button class="btn btn-sm btn-outline-light rounded-full text-xs text-primary">Prendre RDV</button>
+                <button class="btn btn-sm btn-primary rounded-full text-xs modal-trigger">Rappel immédiat</button>
+            </div>
+            
+            <div class="lg:hidden">
+                <button id="menu-toggle" class="text-gray-800">
+                    <i data-lucide="menu" class="h-6 w-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div id="mobile-menu" class="mobile-nav fixed inset-0 z-40 bg-white flex-col pt-20 px-6 lg:hidden">
+    <a href="#" class="mobile-nav-link">Home</a>
+    <a href="#" class="mobile-nav-link">Formations</a>
+    <a href="#" class="mobile-nav-link">Alternance</a>
+    <a href="#" class="mobile-nav-link">Financement</a>
+    <a href="#" class="mobile-nav-link">Contact</a>
+</div>
+
+<div id="rappel-modal" class="modal-overlay fixed inset-0 bg-slate-900/50 items-center justify-center z-100">
+    <div class="modal-content bg-white p-8 rounded-2xl max-w-md w-full mx-4 relative">
+        <button class="modal-close-btn absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+            <i data-lucide="x" class="h-6 w-6"></i>
+        </button>
+        <h3 class="text-2xl font-bold mb-4">Être rappelé</h3>
+        <p class="text-gray-600 mb-6">Laissez-nous vos coordonnées et un conseiller vous rappellera dans les plus brefs délais.</p>
+        <form>
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
+                <input type="text" class="modal-input w-full px-3 py-2 border border-gray-300 rounded-md"/>
+            </div>
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 mb-1">Téléphone</label>
+                <input type="tel" class="modal-input w-full px-3 py-2 border border-gray-300 rounded-md"/>
+            </div>
+            <button type="submit" class="btn btn-primary w-full">Envoyer</button>
+        </form>
+    </div>
+</div>

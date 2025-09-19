@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title or "26 Academy" }}</title>
+{% if metaDescription %}
+  <meta name="description" content="{{ metaDescription }}">
+{% endif %}
+
+<meta property="og:title" content="{{ title or '26 Academy' }}">
+{% if metaDescription %}
+  <meta property="og:description" content="{{ metaDescription }}">
+{% endif %}
+{% if openGraphImage %}
+  <meta property="og:image" content="{{ openGraphImage }}">
+{% else %}
+  {# Mettez ici une URL vers une image par défaut (votre logo par exemple) #}
+  <meta property="og:image" content="https://www.votre-site.com/logo-partage.jpg">
+{% endif %}
+<meta property="og:url" content="{{ page.url }}">
+<meta property="og:type" content="website">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#6644FF',
+                        'primary-light': '#8B5CF6',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="/assets/css/style.css">
+    {{ head | safe }}
+
+    <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+
+</head>
+<body class="antialiased">
+
+    {% include "header.njk" %}
+
+    <main>
+        {{ content | safe }}
+    </main>
+
+    {% include "footer.njk" %}
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- GESTION GLOBALE DU SITE (ICÔNES, MENU, MODALE) ---
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+
+        const menuToggle = document.getElementById('menu-toggle');
+        if(menuToggle) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = menuToggle.querySelector('i');
+            menuToggle.addEventListener('click', () => {
+                const isOpen = mobileMenu.classList.toggle('is-open');
+                document.body.style.overflow = isOpen ? 'hidden' : '';
+                menuIcon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
+                lucide.createIcons();
+            });
+        }
+
+        const modalTriggers = document.querySelectorAll('.modal-trigger');
+        const modal = document.getElementById('rappel-modal');
+        if(modal) {
+            const modalCloseBtns = document.querySelectorAll('.modal-close-btn');
+            const openModal = () => modal.classList.add('is-open');
+            const closeModal = () => modal.classList.remove('is-open');
+            modalTriggers.forEach(trigger => trigger.addEventListener('click', openModal));
+            modalCloseBtns.forEach(btn => btn.addEventListener('click', closeModal));
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) closeModal();
+            });
+        }
+        
+        // --- LOGIQUE POUR LE FORMULAIRE DE CONTACT ---
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    // On cible la div parente qui contient le formulaire
+    const formContainer = document.getElementById('form-container');
+    contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const formData = new FormData(contactForm);
+                
+                fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString()
+                })
+                .then(() => {
+                    formContainer.innerHTML = `
+                    <div class="text-center py-12">
+                        <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center bg-green-100">
+                            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2 text-gray-900">Merci !</h3>
+                        <p class="text-gray-600">Votre message a bien été envoyé. Notre équipe reviendra vers vous très prochainement.</p>
+                    </div>
+                    `;
+                })
+                .catch((error) => {
+                    formContainer.innerHTML = `
+                    <div class="text-center py-12">
+                        <h3 class="text-2xl font-bold mb-2 text-red-600">Oups !</h3>
+                        <p class="text-gray-600">Une erreur est survenue. Veuillez réessayer plus tard.</p>
+                    </div>
+                    `;
+                });
+            });
+        }
+    });
+    </script>  
+
+
+</body>
+</html>
