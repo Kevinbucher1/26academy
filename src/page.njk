@@ -10,7 +10,7 @@
   eleventyComputed: {
     title: data => data.pageData.seo?.metaTitle || data.pageData.title,
     metaDescription: data => data.pageData.seo?.metaDescription,
-    openGraphImage: data => data.pageData.seo?.openGraphImage
+    openGraphImage: data => data.pageData.seo?.openGraphImage,
     slug: data => data.pageData.slug.current
   }
 }
