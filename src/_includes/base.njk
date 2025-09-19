@@ -130,7 +130,26 @@ if (contactForm) {
         }
     });
     </script>  
-
+{# --- Script pour la communication avec l'iframe du formulaire --- #}
+{% if page.url == "/form-parcours/" or page.url == "/form-homepage/" %}
+<script>
+window.addEventListener('message', function(event) {
+  // Vérifier que le message vient bien de l'iframe
+  if (event.data && event.data.type === 'GET_URL_PARAMS') {
+    // Récupérer les paramètres de l'URL de la page courante
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    // Renvoyer les paramètres à l'iframe
+    event.source.postMessage({
+      type: 'URL_PARAMS',
+      search: window.location.search
+    }, event.origin);
+    
+    console.log('Paramètres URL envoyés à l\'iframe:', window.location.search);
+  }
+});
+</script>
+{% endif %}
 
 </body>
 </html>
