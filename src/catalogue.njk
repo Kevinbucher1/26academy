@@ -1,0 +1,96 @@
+---
+layout: base.njk
+title: "Catalogue des formations"
+permalink: /catalogue/
+---
+
+<section class="relative py-32 px-4 text-center overflow-hidden">
+    <div class="absolute inset-0" style="background: linear-gradient(135deg, #6644FF 0%, #8B5CF6 30%, #A78BFA 60%, #C4B5FD 80%, #E9D5FF 90%, #F9FAFB 100%)"></div>
+    <div class="relative z-10 max-w-4xl mx-auto pt-8">
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-6">
+            Trouvez la formation faite pour vous
+        </h1>
+    </div>
+</section>
+
+<div class="max-w-7xl mx-auto px-4 py-8">
+    <div class="flex flex-col lg:flex-row gap-8">
+        <aside id="filter-sidebar" class="lg:w-80 space-y-6 mobile-hidden">
+            </aside>
+
+        <main class="flex-1">
+            <div class="mb-6 flex justify-between items-center">
+                <p id="results-count" class="text-muted-foreground">
+                    {{ parcours.length }} formation{% if parcours.length > 1 %}s{% endif %} trouvée{% if parcours.length > 1 %}s{% endif %}
+                </p>
+            </div>
+
+            <div id="formations-grid" class="grid gap-6 grid-cols-1 md:grid-cols-2">
+                {% for p in parcours %}
+                <a href="/parcours/{{ p.slug.current }}/" class="block">
+                    <div class="card group cursor-pointer h-full flex flex-col">
+                        <div class="relative overflow-hidden h-48">
+                            <img
+                                src="{{ p.imageHero | sanityImageUrl }}"
+                                alt="{{ p.titre }}"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            />
+                            <div class="absolute bottom-4 left-4">
+                                <span class="badge badge-secondary">
+                                    {{ p.category.title }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col justify-between flex-grow">
+                            <div>
+                                <h3 class="font-semibold line-clamp-2 group-hover:text-primary transition-colors text-xl mb-4">
+                                    {{ p.titre }}
+                                </h3>
+                                <div class="flex flex-wrap gap-1 mb-4">
+                                    {% if p.eligibleCPF %}
+                                    <span class="badge badge-outline text-xs text-black">
+                                        ÉLIGIBLE CPF
+                                    </span>
+                                    {% endif %}
+                                    <span class="badge badge-outline text-xs text-black">
+                                        {{ p.duree.heures }}H • {{ p.duree.mois }} MOIS
+                                    </span>
+                                    <span class="badge badge-outline text-xs text-black">
+                                        {{ p.certification.title }}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+                </div>
+        </main>
+    </div>
+</div>
+
+<script>
+    // On prépare un tableau JavaScript propre avec les données de tous les parcours
+    const allFormations = [
+    {% for p in parcours %}
+    {
+        "id": "{{ p._id }}",
+        "title": {{ p.titre | dump | safe }},
+        "slug": "{{ p.slug.current }}",
+        "image": "{{ p.imageHero | sanityImageUrl }}",
+        "category": "{{ p.category.title }}",
+        "typeFormation": "{{ p.typeFormation }}",
+        "financementsPossibles": {{ p.financementsPossibles | dump | safe or "[]" }},
+        "certification": "{{ p.certification.title }}",
+        "partenaire": "{{ p.partenaire.title }}",
+        "eligibleCPF": {{ p.eligibleCPF or false }},
+        "duree": {
+            "heures": {{ p.duree.heures or 0 }},
+            "mois": {{ p.duree.mois or 0 }}
+        }
+    },
+    {% endfor %}
+    ];
+</script>
+
+<script src="/assets/js/catalogue-filters.js" defer></script>

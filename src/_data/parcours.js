@@ -15,6 +15,13 @@ const query = `*[_type == "parcours" && defined(slug.current) && !(_id in path("
   category->{
     title
   },
+  certification->{
+    title
+  },
+  partenaire->{
+    title
+  },
+  "financementsPossibles": financements[]->title, // Récupère une liste de titres
   testimonials[]->{
     nom,
     poste,
@@ -22,6 +29,7 @@ const query = `*[_type == "parcours" && defined(slug.current) && !(_id in path("
     photo
   }
 }`;
+
 
 module.exports = async function() {
   const data = await client.fetch(query);
