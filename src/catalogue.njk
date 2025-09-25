@@ -24,14 +24,14 @@ permalink: /catalogue/
             
             <div class="desktop-hidden flex gap-4 mb-4">
                 <div class="relative flex-1" style="flex-basis: 60%;">
-                    <i data-lucide="search" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 h-5 w-5"></i>
-                    <input type="text" id="mobile-search" placeholder="Mot clé : Comptable, développeur" class="input pl-12 py-3 text-sm lg:text-lg w-full border-gray-300 rounded-md"/>
+                    <i data-lucide="search" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5"></i>
+                    <input type="text" id="mobile-search" placeholder="Mot clé : Comptable, développeur" class="input pl-12 py-3 text-sm lg:text-lg"/>
                 </div>
                 <div style="flex-basis: 40%;">
-                    <button id="mobile-filter-toggle" class="btn btn-outline w-full h-full border-gray-300 rounded-md">
+                    <button id="mobile-filter-toggle" class="btn btn-outline w-full h-full">
                         <i data-lucide="filter" class="h-4 w-4 mr-2"></i>
                         Filtres
-                        <span id="mobile-filter-count" class="badge badge-secondary ml-2 bg-gray-200 hidden">0</span>
+                        <span id="mobile-filter-count" class="badge badge-secondary ml-2 hidden">0</span>
                     </button>
                 </div>
             </div>
@@ -45,43 +45,54 @@ permalink: /catalogue/
                 </div>
                 <div class="sticky-top space-y-6">
                     <div class="mobile-hidden relative">
-                        <i data-lucide="search" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 h-5 w-5"></i>
-                        <input type="text" id="desktop-search" placeholder="Mot clé : Comptable, développeur" class="input pl-12 py-3 text-lg w-full border-gray-300 rounded-md"/>
+                        <i data-lucide="search" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5"></i>
+                        <input type="text" id="desktop-search" placeholder="Mot clé : Comptable, développeur" class="input pl-12 py-3 text-lg"/>
                     </div>
-                    <div class="card p-6 border border-gray-200 rounded-lg">
+                    
+                    <div class="card p-6">
                         <div class="flex items-center justify-between mb-6">
                             <div class="flex items-center gap-2">
                                 <i data-lucide="filter" class="h-5 w-5"></i>
                                 <h2 class="text-lg font-semibold">Filtrer</h2>
-                                <span id="filter-count" class="badge badge-secondary ml-2 bg-gray-200 hidden">0</span>
+                                <span id="filter-count" class="badge badge-secondary ml-2 hidden">0</span>
                             </div>
-                            <button id="clear-filters" class="btn btn-ghost text-red-500 hover:text-red-700 hidden text-sm">
-                                Effacer
+                            <button id="clear-filters" class="btn btn-ghost text-destructive hover:text-destructive hidden">
+                                Effacer les filtres
                             </button>
                         </div>
-                        <div id="filter-categories" class="space-y-4">
+                        <div class="space-y-4">
+                            <div id="active-filters" class="pb-4 border-b hidden">
+                                <div id="active-filters-list" class="flex flex-wrap gap-2"></div>
                             </div>
+                            <div id="filter-categories">
+                                </div>
+                        </div>
                     </div>
                 </div>
             </aside>
 
             <main class="flex-1">
                 <div class="mb-6 flex justify-between items-center">
-                    <p id="results-count" class="text-gray-600">
-                        {{ parcours.length }} formation{% if parcours.length > 1 %}s{% endif %}
+                    <p id="results-count" class="text-muted-foreground">
+                        Chargement des formations...
                     </p>
                 </div>
                 <div id="formations-grid" class="grid gap-6 grid-cols-1 md:grid-cols-2">
-                    {# La boucle est vide ici, car le JavaScript va la remplir #}
+                    {# La grille est vide ici, le JavaScript va la remplir #}
+                </div>
+                <div id="load-more-container" class="text-center mt-8 hidden">
+                    <button id="load-more-btn" class="btn btn-outline">
+                        Voir plus de formations (<span id="remaining-count">0</span>&nbsp;restantes)
+                    </button>
                 </div>
                 <div id="no-results" class="text-center py-12 hidden">
                     <div class="max-w-md mx-auto">
                         <div class="text-6xl mb-4">🔍</div>
                         <h3 class="text-xl font-semibold mb-2">Aucune formation trouvée</h3>
-                        <p class="text-gray-500 mb-4">
+                        <p class="text-muted-foreground mb-4">
                             Essayez de modifier vos critères de recherche ou supprimez certains filtres.
                         </p>
-                        <button id="clear-filters-no-results" class="btn btn-outline border-gray-300 rounded-md">
+                        <button id="clear-filters-no-results" class="btn btn-outline">
                             Effacer tous les filtres
                         </button>
                     </div>
