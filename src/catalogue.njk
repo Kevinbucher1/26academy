@@ -4,85 +4,163 @@ title: "Catalogue des formations"
 permalink: /catalogue/
 ---
 
-<section class="relative py-32 px-4 text-center overflow-hidden">
-    <div class="absolute inset-0" style="background: linear-gradient(135deg, #6644FF 0%, #8B5CF6 30%, #A78BFA 60%, #C4B5FD 80%, #E9D5FF 90%, #F9FAFB 100%)"></div>
-    <div class="relative z-10 max-w-4xl mx-auto pt-8">
-        <h1 class="text-3xl md:text-5xl font-bold text-white mb-6">
-            Trouvez la formation faite pour vous
-        </h1>
-    </div>
-</section>
+{# On ajoute les styles spécifiques de la page catalogue directement ici pour plus de simplicité #}
+{% set head %}
+<style>
+    .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .checkbox-custom { appearance: none; width: 1rem; height: 1rem; border: 2px solid #d1d5db; border-radius: 0.25rem; background-color: white; cursor: pointer; position: relative; }
+    .checkbox-custom:checked { background-color: #6644FF; border-color: #6644FF; }
+    .checkbox-custom:checked::after { content: '✓'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 0.75rem; line-height: 1; }
+    .badge { display: inline-flex; align-items: center; padding: 0.25rem 0.5rem; font-size: 0.75rem; font-weight: 500; border-radius: 0.375rem; white-space: nowrap; }
+    .badge-secondary { background-color: rgba(255, 255, 255, 0.9); color: #0f172a; }
+    .badge-outline { background-color: transparent; border: 1px solid #e2e8f0; color: #64748b; }
+    .sticky-top { position: sticky; top: 1rem; }
+    @media (max-width: 1024px) { .mobile-hidden { display: none; } }
+    @media (min-width: 1025px) { .desktop-hidden { display: none; } }
+</style>
+{% endset %}
 
-<div class="max-w-7xl mx-auto px-4 py-8">
-    <div class="flex flex-col lg:flex-row gap-8">
-        <aside id="filter-sidebar" class="lg:w-80 space-y-6 mobile-hidden">
-            </aside>
 
-        <main class="flex-1">
-            <div class="mb-6 flex justify-between items-center">
-                <p id="results-count" class="text-muted-foreground">
-                    {{ parcours.length }} formation{% if parcours.length > 1 %}s{% endif %} trouvée{% if parcours.length > 1 %}s{% endif %}
-                </p>
+<main>
+    <section class="relative py-32 px-4 text-center overflow-hidden">
+        <div class="absolute inset-0" style="background: linear-gradient(135deg, #6644FF 0%, #8B5CF6 30%, #A78BFA 60%, #C4B5FD 80%, #E9D5FF 90%, #F9FAFB 100%)"></div>
+        <div class="relative z-10 max-w-4xl mx-auto pt-8">
+            <h1 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                Trouvez la formation faite pour vous
+            </h1>
+        </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        <div class="flex flex-col lg:flex-row gap-8">
+            
+            <div class="desktop-hidden flex gap-4 mb-4">
+                <div class="relative flex-1" style="flex-basis: 60%;">
+                    <i data-lucide="search" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 h-5 w-5"></i>
+                    <input type="text" id="mobile-search" placeholder="Mot clé : Comptable, développeur" class="input pl-12 py-3 text-sm lg:text-lg w-full border-gray-300 rounded-md"/>
+                </div>
+                <div style="flex-basis: 40%;">
+                    <button id="mobile-filter-toggle" class="btn btn-outline w-full h-full border-gray-300 rounded-md">
+                        <i data-lucide="filter" class="h-4 w-4 mr-2"></i>
+                        Filtres
+                        <span id="mobile-filter-count" class="badge badge-secondary ml-2 bg-gray-200 hidden">0</span>
+                    </button>
+                </div>
             </div>
 
-            <div id="formations-grid" class="grid gap-6 grid-cols-1 md:grid-cols-2">
-                {% for p in parcours %}
-                <a href="/parcours/{{ p.slug.current }}/" class="block">
-                    <div class="card group cursor-pointer h-full flex flex-col">
-                        <div class="relative overflow-hidden h-48">
-                            <img
-                                src="{{ p.imageHero | sanityImageUrl }}"
-                                alt="{{ p.titre }}"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                            />
-                            <div class="absolute bottom-4 left-4">
-                                <span class="badge badge-secondary">
-                                    {{ p.category.title }}
-                                </span>
+            <aside id="filter-sidebar" class="lg:w-80 space-y-6 mobile-hidden">
+                <div class="desktop-hidden flex justify-between items-center mb-4" id="mobile-filter-header" style="display: none;">
+                    <h2 class="text-lg font-semibold">Filtres</h2>
+                    <button id="close-mobile-filters" class="btn btn-ghost p-2">
+                        <i data-lucide="x" class="h-5 w-5"></i>
+                    </button>
+                </div>
+                <div class="sticky-top space-y-6">
+                    <div class="mobile-hidden relative">
+                        <i data-lucide="search" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 h-5 w-5"></i>
+                        <input type="text" id="desktop-search" placeholder="Mot clé : Comptable, développeur" class="input pl-12 py-3 text-lg w-full border-gray-300 rounded-md"/>
+                    </div>
+                    
+                    <div class="card p-6 border border-gray-200 rounded-lg">
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="filter" class="h-5 w-5"></i>
+                                <h2 class="text-lg font-semibold">Filtrer</h2>
+                                <span id="filter-count" class="badge badge-secondary ml-2 bg-gray-200 hidden">0</span>
                             </div>
+                            <button id="clear-filters" class="btn btn-ghost text-red-500 hover:text-red-700 hidden text-sm">
+                                Effacer
+                            </button>
                         </div>
-                        <div class="p-6 flex flex-col justify-between flex-grow">
-                            <div>
-                                <h3 class="font-semibold line-clamp-2 group-hover:text-primary transition-colors text-xl mb-4">
-                                    {{ p.titre }}
-                                </h3>
-                                <div class="flex flex-wrap gap-1 mb-4">
-                                    {% if p.eligibleCPF %}
-                                    <span class="badge badge-outline text-xs text-black">
-                                        ÉLIGIBLE CPF
-                                    </span>
-                                    {% endif %}
-                                    <span class="badge badge-outline text-xs text-black">
-                                        {{ p.duree.heures }}H • {{ p.duree.mois }} MOIS
-                                    </span>
-                                    <span class="badge badge-outline text-xs text-black">
-                                        {{ p.certification.title }}
+                        <div id="filter-categories" class="space-y-4">
+                            </div>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="flex-1">
+                <div class="mb-6 flex justify-between items-center">
+                    <p id="results-count" class="text-gray-600">
+                        {{ parcours.length }} formation{% if parcours.length > 1 %}s{% endif %}
+                    </p>
+                </div>
+
+                <div id="formations-grid" class="grid gap-6 grid-cols-1 md:grid-cols-2">
+                    {% for p in parcours %}
+                    <a href="/parcours/{{ p.slug.current }}/" class="block">
+                        <div class="card group cursor-pointer h-full flex flex-col border border-gray-200 rounded-lg overflow-hidden hover:shadow-xl transition-shadow">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="{{ p.imageHero | sanityImageUrl }}"
+                                    alt="{{ p.titre }}"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="badge badge-secondary bg-white/90 text-gray-800">
+                                        {{ p.category.title | upper }}
                                     </span>
                                 </div>
                             </div>
+                            <div class="p-6 flex flex-col justify-between flex-grow">
+                                <div>
+                                    <h3 class="font-semibold line-clamp-2 group-hover:text-primary transition-colors text-xl mb-4 text-primary">
+                                        {{ p.titre }}
+                                    </h3>
+                                    <div class="flex flex-wrap gap-2 mb-4">
+                                        {% if p.eligibleCPF %}
+                                        <span class="badge badge-outline text-xs text-black border-gray-300">
+                                            <i data-lucide="graduation-cap" class="h-3 w-3 mr-1"></i>
+                                            ÉLIGIBLE CPF
+                                        </span>
+                                        {% endif %}
+                                        <span class="badge badge-outline text-xs text-black border-gray-300">
+                                            <i data-lucide="clock" class="h-3 w-3 mr-1"></i>
+                                            {{ p.duree.heures or 'N/A' }}H • {{ p.duree.mois or 'N/A' }} MOIS
+                                        </span>
+                                        {% if p.certification.title %}
+                                        <span class="badge badge-outline text-xs text-black border-gray-300">
+                                            <i data-lucide="award" class="h-3 w-3 mr-1"></i>
+                                            {{ p.certification.title }}
+                                        </span>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </a>
-                {% endfor %}
+                    </a>
+                    {% endfor %}
                 </div>
-        </main>
+
+                <div id="no-results" class="text-center py-12 hidden">
+                    <div class="max-w-md mx-auto">
+                        <div class="text-6xl mb-4">🔍</div>
+                        <h3 class="text-xl font-semibold mb-2">Aucune formation trouvée</h3>
+                        <p class="text-gray-500 mb-4">
+                            Essayez de modifier vos critères de recherche ou supprimez certains filtres.
+                        </p>
+                        <button id="clear-filters-no-results" class="btn btn-outline border-gray-300 rounded-md">
+                            Effacer tous les filtres
+                        </button>
+                    </div>
+                </div>
+            </main>
+        </div>
     </div>
-</div>
+</main>
 
 <script>
-    // On prépare un tableau JavaScript propre avec les données de tous les parcours
     const allFormations = [
     {% for p in parcours %}
     {
         "id": "{{ p._id }}",
-        "title": {{ p.titre | dump | safe }},
-        "slug": "{{ p.slug.current }}",
-        "image": "{{ p.imageHero | sanityImageUrl }}",
-        "category": "{{ p.category.title }}",
+        "titre": {{ p.titre | dump | safe }},
+        "slug": { "current": "{{ p.slug.current }}" },
+        "imageHero": "{{ p.imageHero | sanityImageUrl }}",
+        "category": { "title": "{{ p.category.title }}" },
         "typeFormation": "{{ p.typeFormation }}",
         "financementsPossibles": {{ p.financementsPossibles | dump | safe or "[]" }},
-        "certification": "{{ p.certification.title }}",
-        "partenaire": "{{ p.partenaire.title }}",
+        "certification": { "title": "{{ p.certification.title }}" },
+        "partenaire": { "title": "{{ p.partenaire.title }}" },
         "eligibleCPF": {{ p.eligibleCPF or false }},
         "duree": {
             "heures": {{ p.duree.heures or 0 }},
@@ -92,5 +170,4 @@ permalink: /catalogue/
     {% endfor %}
     ];
 </script>
-
 <script src="/assets/js/catalogue-filters.js" defer></script>
