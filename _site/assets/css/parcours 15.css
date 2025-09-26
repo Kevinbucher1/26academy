@@ -1,0 +1,108 @@
+ .gradient-bg {
+            background: linear-gradient(135deg, #6644FF 0%, #8B5CF6 30%, #A78BFA 60%, #C4B5FD 80%, #E9D5FF 90%, #F9FAFB 100%);
+        }
+        .gradient-offers {
+            background: linear-gradient(180deg, #6644FF 0%, #ffffff 110%);
+        }
+        .gradient-btn {
+            background: linear-gradient(135deg, #6644FF 0%, #8B5CF6 100%);
+        }
+        .navbar-rounded {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            margin: 16px;
+            padding: 8px 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        /* Hero section specific font weights */
+        .hero-section p {
+            font-weight: 200;
+        }
+
+
+
+/* ---- STYLES CORRIGÉS ET FORCÉS POUR LES ACCORDÉONS ---- */
+
+.py-16 details {
+    border: 1px solid #6644FF; /* Force la bordure violette */
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.py-16 details summary {
+    list-style: none !important; /* Force la suppression du marqueur */
+    cursor: pointer;
+    padding: 16px 20px;
+    background: white;
+    border-radius: 12px;
+    font-weight: 600;
+    color: #6644FF;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.py-16 details summary::-webkit-details-marker {
+    display: none !important; /* Force la suppression du marqueur sur Webkit */
+}
+
+.py-16 details[open] summary {
+    border-radius: 12px 12px 0 0;
+}
+
+.py-16 details summary::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #6644FF;
+    margin-left: auto;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.py-16 details[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.py-16 details div {
+    padding: 20px;
+    background: white;
+    border-radius: 0 0 12px 12px;
+}
+
+
+
+
+
+        .star-rating {
+            color: #ffc107;}
+
+        .hero-section {
+    min-height: auto; /* On annule la hauteur de 100% de l'écran */
+}
+
+
+/* ============================================= */
+/* HERO LAYOUT OVERRIDE - FORÇAGE FINAL         */
+/* ============================================= */
+@media (min-width: 1024px) {
+  
+  #parcours-hero-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Le texte prend 1.5 part, l'image 1 part */
+    gap: 3rem;
+    align-items: center;
+  }
+
+}
+
+/* Style pour le code RNCP dans le sous-titre */
+.rncp-code {
+    font-weight: 200; /* Équivalent de 'font-thin' */
+    font-size: 0.88rem;
+    font-style: italic;
+}

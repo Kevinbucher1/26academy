@@ -66,6 +66,65 @@
     let currentDisplayCount = 20;
     const itemsPerPage = 20;
 
+    // Mapping des catégories pour les liens externes
+    const categoryMapping = {
+        'Gestion de projet et agilité': 'Gestion de projet',
+        'Intelligence artificielle': 'Intelligence artificielle',
+        'Marketing digital': 'Marketing digital',
+        'Comptabilité et paie': 'Comptabilité',
+        'Bureautique': 'Bureautique',
+        'Design': 'Design',
+        'Développement web': 'Développement web',
+        'Développement': 'Développement web',
+        'Sécurité informatique': 'Sécurité informatique',
+        'Data': 'Data',
+        'Product management': 'Product management',
+        'Gestion de projet': 'Gestion de projet'
+    };
+
+    // Fonction pour lire les paramètres URL
+    function getURLParams() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return {
+            category: urlParams.get('category')
+        };
+    }
+
+    // Fonction pour mettre à jour les paramètres URL
+    function updateURLParams() {
+        const url = new URL(window.location);
+        
+        // Effacer les paramètres existants
+        url.searchParams.delete('category');
+        
+        // Ajouter les filtres actifs
+        if (selectedFilters.category.length > 0) {
+            url.searchParams.set('category', selectedFilters.category[0]); // Premier filtre de catégorie
+        }
+        
+        // Mettre à jour l'URL sans recharger la page
+        window.history.replaceState({}, '', url);
+    }
+
+    // Fonction pour initialiser les filtres depuis l'URL
+    function initializeFromURL() {
+        const params = getURLParams();
+        
+        if (params.category) {
+            // Vérifier d'abord le mapping des catégories
+            const mappedCategory = categoryMapping[params.category] || params.category;
+            
+            // Vérifier si la catégorie existe dans les formations
+            const categoryExists = allFormations.some(f => f.category === mappedCategory);
+            
+            if (categoryExists) {
+                selectedFilters.category = [mappedCategory];
+                // Reset pagination when loading from URL
+                currentDisplayCount = itemsPerPage;
+            }
+        }
+    }
+
     // Fonction pour détecter le mobile
     function checkMobile() {
         isMobile = window.innerWidth <= 768;
@@ -86,6 +145,7 @@
         currentDisplayCount = itemsPerPage;
         updateFormationsDisplay();
         updateFilterUI();
+        updateURLParams();
     }
 
     // Exposer la fonction globalement
@@ -122,8 +182,9 @@
             }
 
             // Filtre par financement
-            if (selectedFilters.financement.length > 0 && 
-                !selectedFilters.financement.some(f => formation.financementsPossibles.includes(f))) {
+           if (selectedFilters.financement.length > 0 && 
+    !selectedFilters.financement.some(f => formation.financementsPossibles && formation.financementsPossibles.some(fin => fin.title === f))) {
+
                 return false;
             }
 
@@ -159,6 +220,7 @@
         currentDisplayCount = itemsPerPage;
         updateFormationsDisplay();
         updateFilterUI();
+        updateURLParams();
     }
 
     // Exposer la fonction globalement
@@ -270,7 +332,7 @@
             if (loadMoreBtn) {
                 if (displayedCount < totalCount) {
                     const remaining = totalCount - displayedCount;
-                    loadMoreBtn.querySelector('span').textContent = `Afficher plus (${remaining} restante${remaining > 1 ? 's' : ''})`;
+                    loadMoreBtn.querySelector('span').textContent = `Afficher plus (${remaining} restant${remaining > 1 ? 's' : ''})`;
                     loadMoreBtn.classList.remove('hidden');
                 } else {
                     loadMoreBtn.classList.add('hidden');
@@ -284,7 +346,7 @@
         const options = {
             category: [...new Set(allFormations.map(f => f.category).filter(Boolean))],
             typeFormation: [...new Set(allFormations.map(f => f.typeFormation).filter(Boolean))],
-            financement: [...new Set(allFormations.flatMap(f => f.financementsPossibles || []))],
+            financement: [...new Set(allFormations.flatMap(f => (f.financementsPossibles || []).map(fin => fin.title)).filter(Boolean))],
             certification: [...new Set(allFormations.map(f => f.certification).filter(Boolean))],
             partenaire: [...new Set(allFormations.map(f => f.partenaire).filter(Boolean))]
         };
@@ -387,6 +449,16 @@
 
     // Event listeners
     document.addEventListener('DOMContentLoaded', function() {
+        // Debug: Log formations data to see what we're getting
+        console.log('All formations loaded:', allFormations);
+        console.log('Sample formation financements:', allFormations[0]?.financementsPossibles);
+        console.log('First few formations financements:', allFormations.slice(0, 5).map(f => ({ title: f.titre, financements: f.financementsPossibles })));
+console.log('Filter options generated:', getFilterOptions());
+console.log('Financement options specifically:', getFilterOptions().financement);
+console.log('Sample formations with financements:', allFormations.filter(f => f.financementsPossibles && f.financementsPossibles.length > 0).slice(0, 3));
+console.log('Structure d\'un financement:', allFormations.find(f => f.titre === 'Italien')?.financementsPossibles[0]);
+console.log('Structure complète formation Italien:', JSON.stringify(allFormations.find(f => f.titre === 'Italien'), null, 2));
+
         // Search functionality
         const desktopSearch = document.getElementById('desktop-search');
         const mobileSearch = document.getElementById('mobile-search');
@@ -430,6 +502,7 @@
         }
 
         // Initial setup
+        initializeFromURL(); // Charger les filtres depuis l'URL d'abord
         checkMobile();
         updateFilterUI();
         updateFormationsDisplay();

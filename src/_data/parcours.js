@@ -21,7 +21,10 @@ const query = `*[_type == "parcours" && defined(slug.current) && !(_id in path("
   partenaire->{
     title
   },
-  "financementsPossibles": financements[]->title, // Récupère une liste de titres
+  "financementsFiltres": financementsFiltres[]->{
+  title,
+  _id,
+  },
   testimonials[]->{
     nom,
     poste,

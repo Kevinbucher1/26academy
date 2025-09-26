@@ -258,7 +258,7 @@ permalink: /catalogue/
         "imageHero": "{{ p.imageHero | sanityImageUrl }}",
         "category": "{{ p.category.title if p.category else '' }}",
         "typeFormation": "{{ p.typeFormation }}",
-        "financementsPossibles": {{ p.financementsPossibles | dump | safe or "[]" }},
+        "financementsPossibles": {% if p.financementsFiltres and p.financementsFiltres.length > 0 %}[{% for f in p.financementsFiltres %}{title: "{{ f.title }}", _id: "{{ f._id }}"}{% if not loop.last %},{% endif %}{% endfor %}]{% else %}[]{% endif %},
         "certification": "{{ p.certification.title if p.certification else '' }}",
         "partenaire": "{{ p.partenaire.title if p.partenaire else '' }}",
         "eligibleCPF": {{ p.eligibleCPF or false }},

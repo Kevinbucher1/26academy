@@ -39,6 +39,15 @@ eleventyConfig.addFilter("log", (value) => {
     return builder.image(ref).auto('format').url();
   });
 
+    // ▼▼▼ 3. AJOUT DU FILTRE "MAP" MANQUANT ▼▼▼
+  eleventyConfig.addNunjucksFilter("map", function(collection, key) {
+    if (!Array.isArray(collection)) {
+      return [];
+    }
+    return collection.map((item) => item[key]);
+  });
+  // ▲▲▲ FIN DE L'AJOUT ▲▲▲
+
   // 4. Configuration des dossiers et formats (votre code)
   return {
     templateFormats: ["md", "njk", "html"],
