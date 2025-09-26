@@ -4,14 +4,9 @@ title: "Catalogue des formations - 26 Academy"
 permalink: /catalogue/
 ---
 
-{# On ajoute le CSS spécifique à cette page dans le <head> #}
-{% set head %}
-  <link rel="stylesheet" href="/assets/css/catalogue.css">
-{% endset %}
-
 <main>
-    <section class="relative py-32 px-4 text-center overflow-hidden">
-        <div class="absolute inset-0" style="background: linear-gradient(135deg, #6644FF 0%, #8B5CF6 30%, #A78BFA 60%, #C4B5FD 80%, #E9D5FF 90%, #F9FAFB 100%)"></div>
+    <!-- Hero Section avec gradient exact -->
+    <section class="relative py-32 px-4 text-center overflow-hidden" style="background: linear-gradient(135deg, #6644FF 0%, #8B5CF6 30%, #A78BFA 60%, #C4B5FD 80%, #E9D5FF 90%, #F9FAFB 100%)">
         <div class="relative z-10 max-w-4xl mx-auto pt-8">
             <h1 class="text-3xl md:text-5xl font-bold text-white mb-6">
                 Trouvez la formation faite pour vous
@@ -22,44 +17,236 @@ permalink: /catalogue/
     <div class="max-w-7xl mx-auto px-4 py-8">
         <div class="flex flex-col lg:flex-row gap-8">
             
-            <aside id="filter-sidebar" class="lg:w-1/3 space-y-6 mobile-hidden">
-                <div class="sticky-top space-y-6">
+            <!-- Layout mobile : recherche + bouton filtres sur la même ligne -->
+            <div class="lg:hidden flex gap-4 mb-4">
+                <div class="relative flex-1" style="flex-basis: 60%;">
+                    <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                    <input
+                        type="text"
+                        id="mobile-search"
+                        placeholder="Mot clé : Comptable, ..."
+                        class="w-full pl-12 py-3 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
+                    />
+                </div>
+                <div style="flex-basis: 40%;">
+                    <button 
+                        id="mobile-filter-toggle"
+                        class="w-full h-full px-4 py-3 border border-gray-300 rounded-md flex items-center justify-center bg-white hover:bg-gray-50 transition-colors"
+                    >
+                        <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 4.5h18l-6 7.5v9h-6V12L3 4.5z"/>
+                        </svg>
+                        Filtres
+                        <span id="mobile-filter-count" class="ml-2 px-2 py-1 bg-gray-100 text-xs rounded-full hidden">0</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Sidebar avec filtres -->
+            <aside id="filter-sidebar" class="lg:w-80 space-y-6 hidden lg:block mobile-overlay">
+                <div class="sticky top-4 space-y-6">
+                    <!-- Barre de recherche desktop -->
                     <div class="relative">
-                        <i data-lucide="search" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 h-5 w-5"></i>
-                        <input type="text" id="desktop-search" placeholder="Mot clé : Comptable, développeur" class="input pl-12 py-3 text-lg w-full border-gray-300 rounded-md"/>
+                        <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                        <input
+                            type="text"
+                            id="desktop-search"
+                            placeholder="Mot clé : Comptable, ..."
+                            class="w-full pl-12 py-3 text-lg border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
+                        />
                     </div>
                     
-                    <div class="card p-6 border border-gray-200 rounded-lg">
-                        <div class="flex items-center justify-between mb-6">
+                    <div class="bg-white rounded-lg border border-gray-200 p-6">
+                        <!-- Header desktop -->
+                        <div id="desktop-filter-header" class="flex items-center justify-between mb-6">
                             <div class="flex items-center gap-2">
-                                <i data-lucide="filter" class="h-5 w-5"></i>
+                                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 4.5h18l-6 7.5v9h-6V12L3 4.5z"/>
+                                </svg>
                                 <h2 class="text-lg font-semibold">Filtrer</h2>
+                                <span id="filter-count" class="px-2 py-1 bg-gray-100 text-xs rounded-full hidden">0</span>
                             </div>
-                            <button id="clear-filters" class="btn btn-ghost text-red-500 hover:text-red-700 hidden text-sm">
-                                Effacer
+                            <button 
+                                id="clear-filters"
+                                class="text-red-500 hover:text-red-600 text-sm font-medium hidden"
+                            >
+                                Effacer les filtres
                             </button>
                         </div>
-                        <div id="filter-categories" class="space-y-4">
+                        
+                        <!-- Header mobile -->
+                        <div id="mobile-filter-header" class="flex items-center justify-between mb-6 hidden">
+                            <div class="flex items-center gap-2">
+                                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 4.5h18l-6 7.5v9h-6V12L3 4.5z"/>
+                                </svg>
+                                <h2 class="text-lg font-semibold">Filtrer</h2>
+                                <span id="mobile-filter-count" class="px-2 py-1 bg-gray-100 text-xs rounded-full hidden">0</span>
                             </div>
+                            <button 
+                                onclick="toggleMobileFilters()"
+                                class="p-2 hover:bg-gray-100 rounded-lg"
+                                id="mobile-close-filters"
+                                aria-label="Fermer les filtres"
+                            >
+                                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div id="filter-categories" class="space-y-4">
+                            <!-- Les catégories de filtres seront générées par JavaScript -->
+                        </div>
                     </div>
                 </div>
             </aside>
 
-            <main class="lg:w-2/3">
+            <!-- Grille des formations -->
+            <main class="flex-1">
                 <div class="mb-6 flex justify-between items-center">
                     <p id="results-count" class="text-gray-600">
                         {{ parcours.length }} formation{% if parcours.length > 1 %}s{% endif %}
                     </p>
                 </div>
+
                 <div id="formations-grid" class="grid gap-6 grid-cols-1 md:grid-cols-2">
-                    {# La grille est vide ici, le JavaScript va la remplir #}
+                    {% for p in parcours %}
+                    <a href="/parcours/{{ p.slug.current }}/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="{{ p.imageHero | sanityImageUrl }}"
+                                    alt="{{ p.titre }}"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        {{ p.category.title | upper if p.category else 'N/A' }}
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    {{ p.titre }}
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    {% if p.eligibleCPF %}
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                                        </svg>
+                                        ÉLIGIBLE CPF
+                                    </span>
+                                    {% endif %}
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        {% if p.duree.heures and p.duree.mois %}
+                                            {{ p.duree.heures }}H • {{ p.duree.mois }} MOIS
+                                        {% elif p.duree.heures %}
+                                            {{ p.duree.heures }}H
+                                        {% elif p.duree.mois %}
+                                            {{ p.duree.mois }} MOIS
+                                        {% else %}
+                                            N/A
+                                        {% endif %}
+                                    </span>
+                                    {% if p.certification.title %}
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        {{ p.certification.title }}
+                                    </span>
+                                    {% else %}
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    {% endfor %}
                 </div>
+
+                <!-- Bouton Afficher plus -->
+                <div class="text-center mt-8">
+                    <button 
+                        id="load-more-btn" 
+                        onclick="loadMoreFormations()" 
+                        class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white transition-colors duration-200 hidden"
+                        style="background-color: #6644FF; hover:background-color: #5533CC;"
+                    >
+                        <span>Afficher plus</span>
+                    </button>
+                </div>
+
+                <!-- Message aucune formation trouvée -->
                 <div id="no-results" class="text-center py-12 hidden">
+                    <div class="max-w-md mx-auto">
+                        <div class="text-6xl mb-4">🔍</div>
+                        <h3 class="text-xl font-semibold mb-2">Aucune formation trouvée</h3>
+                        <p class="text-gray-500 mb-4">
+                            Essayez de modifier vos critères de recherche ou supprimez certains filtres.
+                        </p>
+                        <button id="clear-filters-no-results" class="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors">
+                            Effacer tous les filtres
+                        </button>
                     </div>
+                </div>
             </main>
         </div>
     </div>
 </main>
+
+<style>
+/* Mobile overlay styles for full-screen filters */
+.mobile-overlay.mobile-active {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background-color: white !important;
+    z-index: 50 !important;
+    overflow: auto !important;
+    padding: 1rem !important;
+    display: block !important;
+}
+
+/* Ensure proper header alignment in mobile mode */
+.mobile-overlay.mobile-active #mobile-filter-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+
+.mobile-overlay.mobile-active #desktop-filter-header {
+    display: none !important;
+}
+
+/* Normal desktop mode */
+.mobile-overlay:not(.mobile-active) #mobile-filter-header {
+    display: none !important;
+}
+
+.mobile-overlay:not(.mobile-active) #desktop-filter-header {
+    display: flex !important;
+}
+</style>
 
 <script>
     const allFormations = [
@@ -69,11 +256,11 @@ permalink: /catalogue/
         "titre": {{ p.titre | dump | safe }},
         "slug": { "current": "{{ p.slug.current }}" },
         "imageHero": "{{ p.imageHero | sanityImageUrl }}",
-        "category": "{{ p.category.title }}",
+        "category": "{{ p.category.title if p.category else '' }}",
         "typeFormation": "{{ p.typeFormation }}",
         "financementsPossibles": {{ p.financementsPossibles | dump | safe or "[]" }},
-        "certification": "{{ p.certification.title }}",
-        "partenaire": "{{ p.partenaire.title }}",
+        "certification": "{{ p.certification.title if p.certification else '' }}",
+        "partenaire": "{{ p.partenaire.title if p.partenaire else '' }}",
         "eligibleCPF": {{ p.eligibleCPF or false }},
         "duree": {
             "heures": {{ p.duree.heures or 0 }},

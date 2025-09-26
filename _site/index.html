@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - 26 Academy</title>
+
+
+<meta property="og:title" content="Accueil - 26 Academy">
+
+
+  
+  <meta property="og:image" content="https://www.votre-site.com/logo-partage.jpg">
+
+<meta property="og:url" content="/">
+<meta property="og:type" content="website">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#6644FF',
+                        'primary-light': '#8B5CF6',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="/assets/css/style.css">
+    
+
+    <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+
+</head>
+<body class="antialiased page-">
+
+    <header class="site-header fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav class="container mx-auto px-6 py-3">
+        <div class="header-container rounded-full px-4 py-2 flex justify-between items-center transition-all duration-300 bg-white/80 backdrop-blur-md">
+            <div>
+                <a href="#">
+                    <img src="https://www.26academy.com/app/themes/course-builder/assets/images/icons/logo_1.svg" alt="Logo 26 Academy" class="h-10" />
+                </a>
+            </div>
+            
+            <div class="hidden lg:flex items-center space-x-2 font-medium text-sm text-gray-800">
+                <div class="nav-item dropdown-container">
+                    <a href="#" class="nav-link flex items-center">
+                        Formations <i data-lucide="chevron-down" class="ml-1 h-4 w-4"></i>
+                    </a>
+                    <div class="dropdown-menu absolute top-full left-0 mt-2 bg-white min-w-80 shadow-lg rounded-xl p-2 border border-gray-200 z-50">
+                        <a href="#" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                            <i data-lucide="layout-grid" class="mr-3 h-5 w-5 text-primary"></i>
+                            <div>
+                                <p class="font-semibold">Toutes les formations</p>
+                                <p class="text-xs text-gray-500">Parcourez notre catalogue complet</p>
+                            </div>
+                        </a>
+                        <a href="#" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                            <i data-lucide="brain-circuit" class="mr-3 h-5 w-5 text-primary"></i>
+                            <div>
+                                <p class="font-semibold">Intelligence Artificielle</p>
+                                <p class="text-xs text-gray-500">Devenez un expert de l'IA</p>
+                            </div>
+                        </a>
+                        <a href="#" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                            <i data-lucide="line-chart" class="mr-3 h-5 w-5 text-primary"></i>
+                            <div>
+                                <p class="font-semibold">Marketing Digital</p>
+                                <p class="text-xs text-gray-500">Maîtrisez les leviers du web</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="#" class="nav-link">Alternance</a>
+                <a href="#" class="nav-link">Financement</a>
+                <a href="#" class="nav-link">Offres</a>
+                <a href="#" class="nav-link">Qui sommes nous</a>
+            </div>
+            
+            <div class="hidden lg:flex items-center space-x-2">
+                <button class="btn btn-sm btn-outline-light rounded-full text-xs text-primary">Plateforme</button>
+                <button class="btn btn-sm btn-outline-light rounded-full text-xs text-primary">Prendre RDV</button>
+                <button class="btn btn-sm btn-primary rounded-full text-xs modal-trigger">Rappel immédiat</button>
+            </div>
+            
+            <div class="lg:hidden">
+                <button id="menu-toggle" class="text-gray-800">
+                    <i data-lucide="menu" class="h-6 w-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div id="mobile-menu" class="mobile-nav fixed inset-0 z-40 bg-white flex-col pt-20 px-6 lg:hidden">
+    <a href="#" class="mobile-nav-link">Home</a>
+    <a href="#" class="mobile-nav-link">Formations</a>
+    <a href="#" class="mobile-nav-link">Alternance</a>
+    <a href="#" class="mobile-nav-link">Financement</a>
+    <a href="#" class="mobile-nav-link">Contact</a>
+</div>
+
+<div id="rappel-modal" class="modal-overlay fixed inset-0 bg-slate-900/50 items-center justify-center z-100">
+    <div class="modal-content bg-white p-8 rounded-2xl max-w-md w-full mx-4 relative">
+        <button class="modal-close-btn absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+            <i data-lucide="x" class="h-6 w-6"></i>
+        </button>
+        <h3 class="text-2xl font-bold mb-4">Être rappelé</h3>
+        <p class="text-gray-600 mb-6">Laissez-nous vos coordonnées et un conseiller vous rappellera dans les plus brefs délais.</p>
+        <form>
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
+                <input type="text" class="modal-input w-full px-3 py-2 border border-gray-300 rounded-md"/>
+            </div>
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 mb-1">Téléphone</label>
+                <input type="tel" class="modal-input w-full px-3 py-2 border border-gray-300 rounded-md"/>
+            </div>
+            <button type="submit" class="btn btn-primary w-full">Envoyer</button>
+        </form>
+    </div>
+</div>
+
+    <main>
+        <main>
+<section class="hero relative overflow-hidden pt-24 pb-12 sm:pt-32 sm:pb-16">
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0" style="background: linear-gradient(135deg, #8B5CF6 0%, #A855F7 40%, rgba(168, 85, 247, 0.3) 70%, transparent 100%);"></div>
+        <div class="absolute bottom-0 left-0 right-0 h-48" style="background: linear-gradient(to top, white 0%, rgba(255,255,255,0.9) 50%, transparent 100%);"></div>
+    </div>
+
+    <div class="relative z-10 w-full px-6 sm:px-8 lg:px-12">
+        <div class="grid lg:grid-cols-2 gap-8 items-center max-w-7xl mx-auto">
+            
+            <div class="flex flex-col items-start text-left">
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-9 leading-tight">
+                    Votre avenir<br>commence ici
+                </h1>
+                <p class="text-base text-white mb-8 leading-tight max-w-lg" style="font-size: 1.1rem; line-height: 1.4;">
+                    Progressez dans votre carrière grâce à nos formations 100 % en ligne, conçues par et pour les entrepreneurs, et adaptées à votre rythme et à vos ambitions.<br> <b>26 Academy, bien plus qu'une formation.</b>
+                </p>
+    
+                <div class="flex flex-col items-center gap-6">
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700 transition-all duration-300 hover:scale-105 group rounded-full font-semibold px-8 py-3">
+                            <i data-lucide="book-open" class="mr-2 h-5 w-5"></i>
+                            Découvrir nos formations
+                        </a>
+                        <a href="#" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm border bg-white h-11 border-primary text-primary hover:bg-purple-100 transition-all duration-300 hover:scale-105 rounded-full px-8">
+                            <i data-lucide="bar-chart-big" class="mr-2 h-5 w-5"></i>
+                            Prendre rendez-vous avec un expert
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+                <div class="hidden lg:flex justify-end items-center">
+    <div class="h-[475px] w-auto">
+        <img src="https://cdn.sanity.io/images/29lzrddu/production/2c690f4874c7f9dba1def8af7d6dfa8c65b84146-1408x768.png" 
+             alt="Étudiante souriante" 
+             class="w-full h-full object-cover" 
+             style="filter: drop-shadow(0 0 20px rgba(255,255,255,0.3)); mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 95%, rgba(0,0,0,0) 100%);">
+    </div>
+</div>
+            </div>
+        </div> 
+    </div>
+</section>
+
+<section class="section bg-white" style="padding-top: 0rem;">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 48px;">
+                    <h2 style="font-size: 3rem; font-weight: 700; color: #374151; margin-bottom: 28px; line-height: 1.1;">
+                        Une <span style="color: #6644FF;">expérience de formation 100%...</span>
+                    </h2>
+                </div>
+                
+                <div class="grid grid-3" style="margin-bottom: 48px;">
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="margin-bottom: 24px;">
+                            <div class="tag-primary">
+                                Certifiante
+                            </div>
+                            <p style="color: #374151; line-height: 1.6; margin-bottom: 24px; text-align: left;">Nos formations aboutissent toutes au passage d'une certification reconnue par l'état, les employeurs et déposé auprès des différents registres ou répertoires de France Compétences.</p>
+                            <a href="#formations" style="color: #7c3aed; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center;">
+                                Découvrir nos formations →
+                            </a>
+                        </div>
+                        <div style="margin-top: auto;">
+                            <img src="https://cdn.sanity.io/images/29lzrddu/production/58561fd9c7e3f52a0c3ee4e58ff1375926fb7898-375x200.png" alt="Certifiante" style="width: 100%; height: 256px; object-fit: cover; border-radius: 8px; box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="margin-bottom: 24px;">
+                           <div class="tag-primary">
+                                Accompagnée
+                            </div>
+                            <p style="color: #374151; line-height: 1.6; margin-bottom: 24px; text-align: left;">Tous nos parcours sont accompagnés par des tuteurs expérimentés, opérationnels et garant de votre réussite. Ainsi, chaque formation devient une expérience totalement sur mesure.</p>
+                            <a href="#formations" style="color: #7c3aed; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center;">
+                                Découvrir nos formations →
+                            </a>
+                        </div>
+                        <div style="margin-top: auto;">
+                            <img src="https://cdn.sanity.io/images/29lzrddu/production/640cf9d59114e5a3b71e52bf85ca0b9a8a6c8908-375x200.png" alt="Accompagnée" style="width: 100%; height: 256px; object-fit: cover; border-radius: 8px; box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="margin-bottom: 24px;">
+                          <div class="tag-primary">
+                                Digitalisée
+                            </div>
+                            <p style="color: #374151; line-height: 1.6; margin-bottom: 24px; text-align: left;">L'intégralité de l'expérience de formation se fait en ligne, à travers notre plateforme e-learning conçue pour favoriser votre autonomie et la flexibilité de votre emploi du temps. Votre devenez maître du temps investis dans votre formation.</p>
+                            <a href="#formations" style="color: #7c3aed; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center;">
+                                Découvrir nos formations →
+                            </a>
+                        </div>
+                        <div style="margin-top: auto;">
+                            <img src="https://cdn.sanity.io/images/29lzrddu/production/40d28e9ec0da1f80f8254b12a54ce2fd8895303a-375x200.png" alt="Digitalisée" style="width: 100%; height: 256px; object-fit: cover; border-radius: 8px; box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
+                        </div>
+                    </div>
+                </div>
+                
+               <div class="cta-container-centered" style="margin-bottom: 64px;">
+                    <button class="btn btn-lg btn-gradient-primary">
+                        Prendre rendez-vous avec un expert
+                    </button>
+                </div>
+                
+                <div style="display: flex; justify-content: center; padding: 16px 0; mt-20;">
+                    <div style="width: 96px; height: 2px; background: linear-gradient(to right, transparent, #a855f7, transparent); opacity: 0.6;"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-gradient-to-b from-purple-50 to-white">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Nos formations</h2>
+      <p class="text-lg text-gray-700 mb-12 leading-relaxed max-w-3xl mx-auto">
+        Boostez votre carrière avec nos formations certifiantes dans les secteurs les plus porteurs.
+        Des parcours conçus pour vous propulser vers de nouvelles compétences, rapidement et efficacement.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+
+      <div class="group cursor-pointer opacity-100">
+        <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-chart-column" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+              <path d="M18 17V9"></path>
+              <path d="M13 17V5"></path>
+              <path d="M8 17v-3"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Gestion de projet et agilité</h3>
+          <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+        </div>
+      </div>
+
+      <div class="group cursor-pointer opacity-100">
+        <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-brain-circuit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"></path>
+              <path d="M9 13a4.5 4.5 0 0 0 3-4"></path>
+              <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"></path>
+              <path d="M3.477 10.896a4 4 0 0 1 .585-.396"></path>
+              <path d="M6 18a4 4 0 0 1-1.967-.516"></path>
+              <path d="M12 13h4"></path>
+              <path d="M12 18h6a2 2 0 0 1 2 2v1"></path>
+              <path d="M12 8h8"></path>
+              <path d="M16 8V5a2 2 0 0 1 2-2"></path>
+              <circle cx="16" cy="13" r=".5"></circle>
+              <circle cx="18" cy="3" r=".5"></circle>
+              <circle cx="20" cy="21" r=".5"></circle>
+              <circle cx="20" cy="8" r=".5"></circle>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Intelligence artificielle</h3>
+          <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+        </div>
+      </div>
+
+      <div class="group cursor-pointer opacity-100">
+        <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Management</h3>
+          <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+        </div>
+      </div>
+
+      <div class="group cursor-pointer opacity-100">
+        <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Ressources humaines</h3>
+          <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+        </div>
+      </div>
+
+      <div class="group cursor-pointer opacity-100">
+        <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-calculator" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="16" height="20" x="4" y="2" rx="2"></rect>
+              <line x1="8" x2="16" y1="6" y2="6"></line>
+              <line x1="16" x2="16" y1="14" y2="18"></line>
+              <path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path>
+              <path d="M12 14h.01"></path><path d="M8 14h.01"></path>
+              <path d="M12 18h.01"></path><path d="M8 18h.01"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Comptabilité et paie</h3>
+          <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+        </div>
+      </div>
+
+      <div class="group cursor-pointer opacity-100">
+        <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-trending-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+              <polyline points="16 7 22 7 22 13"></polyline>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Marketing digital</h3>
+          <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+        </div>
+      </div>
+
+      <div class="group cursor-pointer opacity-100">
+        <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              <rect width="20" height="14" x="2" y="6" rx="2"></rect>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Commercial</h3>
+          <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+        </div>
+      </div>
+
+      <div class="group cursor-pointer opacity-100">
+        <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-graduation-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path>
+              <path d="M22 10v6"></path>
+              <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Activité de formation</h3>
+          <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+        </div>
+      </div>
+
+      <div class="group cursor-pointer opacity-100">
+        <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+              <path d="M2 12h20"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Langues</h3>
+          <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+        </div>
+      </div>
+
+      <div class="group cursor-pointer opacity-100">
+        <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="14" x="2" y="3" rx="2"></rect>
+              <line x1="8" x2="16" y1="21" y2="21"></line>
+              <line x1="12" x2="12" y1="17" y2="21"></line>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Bureautique</h3>
+          <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+        </div>
+      </div>
+
+      <div class="group cursor-pointer opacity-100">
+        <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-palette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
+              <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
+              <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
+              <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
+              <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Design</h3>
+          <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+        </div>
+      </div>
+
+      <div class="group cursor-pointer opacity-100">
+        <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Développement web</h3>
+          <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="flex justify-center">
+        <div class="bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl p-8 inline-block mb-8">
+        <h3 class="text-2xl font-bold text-white mb-4 text-center">Besoin d'aide pour nous trouver ?</h3>
+        <p class="text-purple-100 mb-6 max-w-md mx-auto text-center">Nos experts pédagogiques vous accompagnent dans la mise en place de votre projet de formation.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm h-11 bg-white text-primary hover:bg-purple-50 transition-all duration-300 hover:scale-105 rounded-full font-semibold px-8">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-5 w-5 lucide lucide-book-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 7v14"></path>
+              <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path>
+            </svg>
+            Découvrir nos formations
+          </button>
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm h-11 bg-white text-primary hover:bg-purple-50 transition-all duration-300 hover:scale-105 rounded-full font-semibold px-8">
+    Prendre rendez-vous avec un expert
+</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+        <section class="section bg-white" style="position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 0; left: 25%; width: 256px; height: 256px; background: rgba(168, 85, 247, 0.1); border-radius: 50%; filter: blur(75px); opacity: 0.3;"></div>
+    <div style="position: absolute; bottom: 0; right: 25%; width: 192px; height: 192px; background: rgba(59, 130, 246, 0.1); border-radius: 50%; filter: blur(75px); opacity: 0.2;"></div>
+    
+    <div class="container" style="position: relative; z-index: 10;">
+        <div style="text-align: center; margin-bottom: 64px;">
+            <h2 class="section-title" style="color:#111827;">La presse <span style="color: #6644FF;">parle de nous</span></h2>
+            <p class="section-subtitle">Ils parlent de nous : notre expertise en formation professionnelle est régulièrement mise en lumière par les plus grands médias français, témoignant de la qualité et de l'impact de nos programmes.</p>
+        </div>
+        
+        <div class="logo-slider" style="margin-bottom: 48px; overflow: hidden;">
+            <div class="logos" style="display: flex; align-items: center; animation: scroll 40s linear infinite;">
+                
+                <div class="logo-item">
+                    <img src="https://cdn.sanity.io/images/29lzrddu/production/453995bc11a28fcce6928f0fbdef276676e6dc66-1000x253.png" alt="Logo Challenges">
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.sanity.io/images/29lzrddu/production/9008eddf9b7438dde4157cbc61eddfda2a033315-1280x324.png" alt="Logo CNews">
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.sanity.io/images/29lzrddu/production/697756f0186f5e0d2d87bc621d447139ed02cab0-500x309.png" alt="Logo M6 Groupe">
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.sanity.io/images/29lzrddu/production/cd2b047216420c2f8aa4b1bb5127af151b1f4697-2048x2048.png" alt="Logo BFM TV">
+                </div>
+
+                <div class="logo-item">
+                    <img src="https://cdn.sanity.io/images/29lzrddu/production/453995bc11a28fcce6928f0fbdef276676e6dc66-1000x253.png" alt="Logo Challenges">
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.sanity.io/images/29lzrddu/production/9008eddf9b7438dde4157cbc61eddfda2a033315-1280x324.png" alt="Logo CNews">
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.sanity.io/images/29lzrddu/production/697756f0186f5e0d2d87bc621d447139ed02cab0-500x309.png" alt="Logo M6 Groupe">
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.sanity.io/images/29lzrddu/production/cd2b047216420c2f8aa4b1bb5127af151b1f4697-2048x2048.png" alt="Logo BFM TV">
+                </div>
+
+            </div>
+        </div>
+        
+        <div style="display: flex; justify-content: center;">
+            <div style="width: 96px; height: 4px; background: linear-gradient(to right, #7c3aed, #2563eb); border-radius: 9999px;"></div>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials-section" style="position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 80px 0;">
+    <div class="gradient-overlay" style="position: absolute; inset: 0; z-index: 0;">
+        <div style="position: absolute; inset: 0; background: linear-gradient(135deg, #8B5CF6 0%, #A855F7 40%, rgba(168, 85, 247, 0.3) 70%, transparent 100%);"></div>
+        <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 33%; background: linear-gradient(to top, white 0%, rgba(255,255,255,0.9) 50%, transparent 100%);"></div>
+    </div>
+    
+    <div class="container" style="position: relative; z-index: 10;">
+        <div style="text-align: center; margin-bottom: 64px;">
+            <h2 style="font-size: 3rem; font-weight: 700; color: white; margin-bottom: 24px; line-height: 1.1;">Nos anciens, notre fierté</h2>
+            <p style="font-size: 18px; color: white; margin-bottom: 32px; line-height: 1.6; max-width: 768px; margin-left: auto; margin-right: auto;">Parce qu'un avis vaut mieux que tous les arguments, découvrez les témoignages d'apprenants qui ont donné un nouvel élan à leur carrière grâce à nos formations certifiantes.</p>
+            
+            <div class="inline-flex flex-col lg:flex-row items-center gap-6 lg:gap-8 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-4 lg:p-6">
+                
+                <div class="flex items-center">
+                    <a href="https://fr.trustpilot.com/review/www.26academy.com">
+                    <img src="https://cdn.sanity.io/images/29lzrddu/production/39e24dc3aca37692b278b4d017cdffbbded6b05c-140x34.svg" alt="26 Academy Trustpilot" class="h-8 object-contain">
+                    </a>
+                </div>
+                
+                <div class="w-px h-8 bg-white/20 hidden lg:block"></div>
+                
+                <div class="flex flex-col lg:flex-row items-center gap-4">
+                    <div class="flex">
+                        <svg class="w-6 h-6 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-6 h-6 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-6 h-6 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-6 h-6 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-6 h-6 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <div class="text-white text-center lg:text-left">
+                        <div class="text-2xl font-bold">4.6/5</div>
+                        <div class="text-sm text-white/80">4,000+ avis (septembre 2025)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" style="margin-bottom: 64px;">
+            
+            <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 h-full flex flex-col text-center md:text-left">
+                <div class="flex flex-col md:flex-row items-center mb-4">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center text-white font-bold text-sm flex-shrink-0 mb-4 md:mb-0">
+                        CT
+                    </div>
+                    <div class="md:ml-4">
+                        <div class="font-semibold text-white">Chaima T.</div>
+                        <div class="text-sm text-white/80">Gestion de projet</div>
+                    </div>
+                </div>
+
+                <p class="text-white/90 leading-relaxed italic mb-auto">
+                    "La formation que j'ai suivie était très bénéfique. J'ai apprécié la disponibilité de l'équipe ; chaque fois que j'ai téléphoné, j'ai eu une réponse. Je tiens particulièrement à souligner la gentillesse de mon conseiller."
+                </p>
+            </div>
+            
+            <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 h-full flex flex-col text-center md:text-left">
+                <div class="flex flex-col md:flex-row items-center mb-4">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center text-white font-bold text-sm flex-shrink-0 mb-4 md:mb-0">
+                        M
+                    </div>
+                    <div class="md:ml-4">
+                        <div class="font-semibold text-white">Mimi</div>
+                        <div class="text-sm text-white/80">Comptabilité</div>
+                    </div>
+                </div>
+                <p class="text-white/90 leading-relaxed italic mb-auto">
+                    "La formation que j'ai suivie était très bénéfique. J'ai apprécié la disponibilité de l'équipe ; chaque fois que j'ai téléphoné, j'ai eu une réponse. Je tiens particulièrement à souligner la gentillesse de mon conseiller."
+                </p>
+            </div>
+            
+            <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 h-full flex flex-col text-center md:text-left">
+                <div class="flex flex-col md:flex-row items-center mb-4">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center text-white font-bold text-sm flex-shrink-0 mb-4 md:mb-0">
+                        RS
+                    </div>
+                    <div class="md:ml-4">
+                        <div class="font-semibold text-white">Roberto S.</div>
+                        <div class="text-sm text-white/80">Intelligence artificielle</div>
+                    </div>
+                </div>
+                <p class="text-white/90 leading-relaxed italic mb-auto">
+                    "J y ai appris beaucoup de choses, de plus n étant pas adeptes de formation en ligne , je les ai trouver très pédagogiques et nous sommes très bien accompagnés tout au long de cette formation"
+                </p>
+            </div>
+
+        </div>
+        
+        <div style="text-align: center;">
+           <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm h-11 bg-white text-primary transition-all duration-300 hover:scale-105 rounded-full font-semibold px-8 border border-primary">
+                Voir tous les avis
+            </button>
+        </div>
+    </div>
+</section>
+
+       <section id="chiffres-cles" class="py-20 bg-gradient-to-b from-purple-50 to-white">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl md:text-5xl font-bold text-primary mb-4">Nos chiffres clés</h2>
+      <p class="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+        Des résultats concrets qui, année après année, confirment notre engagement et notre expertise.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+      <article class="bg-white border border-gray-200 rounded-2xl p-9 text-center shadow-[0_12px_30px_rgba(17,24,39,0.06)] transition-all hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(17,24,39,0.10)] hover:border-gray-300">
+        <div class="font-extrabold text-[28px] md:text-[32px] text-[#6c3bff] tracking-wide mb-1">50000</div>
+        <div class="text-gray-600 text-[15px]">formés</div>
+      </article>
+      <article class="bg-white border border-gray-200 rounded-2xl p-9 text-center shadow-[0_12px_30px_rgba(17,24,39,0.06)] transition-all hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(17,24,39,0.10)] hover:border-gray-300">
+        <div class="font-extrabold text-[28px] md:text-[32px] text-[#6c3bff] tracking-wide mb-1">10</div>
+        <div class="text-gray-600 text-[15px]">ans</div>
+      </article>
+      <article class="bg-white border border-gray-200 rounded-2xl p-9 text-center shadow-[0_12px_30px_rgba(17,24,39,0.06)] transition-all hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(17,24,39,0.10)] hover:border-gray-300">
+        <div class="font-extrabold text-[28px] md:text-[32px] text-[#6c3bff] tracking-wide mb-1">+15</div>
+        <div class="text-gray-600 text-[15px]">partenaires</div>
+      </article>
+      <article class="bg-white border border-gray-200 rounded-2xl p-9 text-center shadow-[0_12px_30px_rgba(17,24,39,0.06)] transition-all hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(17,24,39,0.10)] hover:border-gray-300">
+        <div class="font-extrabold text-[28px] md:text-[32px] text-[#6c3bff] tracking-wide mb-1">+40</div>
+        <div class="text-gray-600 text-[15px]">parcours</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+        <section class="section bg-white" style="position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 25%; right: 0; width: 384px; height: 384px; background: rgba(124, 58, 237, 0.05); border-radius: 50%; filter: blur(75px);"></div>
+    <div style="position: absolute; bottom: 0; left: 25%; width: 256px; height: 256px; background: rgba(255, 107, 53, 0.05); border-radius: 50%; filter: blur(75px);"></div>
+    
+    <div class="container" style="position: relative; z-index: 10;">
+        <div style="text-align: center; margin-bottom: 64px;">
+            <h2 class="section-title" style="color:#111827;">Partenaires <span style="color:#6644FF;">pédagogiques</span></h2>
+            <p class="section-subtitle">Nous collaborons avec les meilleurs organismes de formation et institutions pour vous garantir une expérience d'apprentissage d'excellence.</p>
+        </div>
+        
+        <div class="logo-slider" style="overflow: hidden;">
+            <div class="logos" style="display: flex; align-items: center; animation: scroll 120s linear infinite;">
+                
+                <div class="logo-item">
+                    <img src="https://cdn.sanity.io/images/29lzrddu/production/3b9e00ed659f7c001d49376f8d2cac90c1850b46-200x200.jpg" alt="Logo Web Marketing & Co'm">
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.sanity.io/images/29lzrddu/production/463ff456555d1aff007371805c44801c8428cacd-225x225.jpg" alt="Logo MMC Formations">
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.sanity.io/images/29lzrddu/production/13297457e20281c1eb313241555085afb3a11d9e-422x119.png" alt="Logo Skolae">
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.sanity.io/images/29lzrddu/production/28ee96f66ee6989a4712cf02dd0aea3dd649cff4-225x225.png" alt="Logo ENI">
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.sanity.io/images/29lzrddu/production/4e3ffe4ddf2a793f25493123f5584e4a10c77dc8-914x955.png" alt="Logo CLOE">
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.sanity.io/images/29lzrddu/production/d1cea9eb5d334ce2e4e7109ad7eeb49b45a05bfa-1920x823.jpg" alt="Logo Collège de Paris">
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.sanity.io/images/29lzrddu/production/f5afc641262dbb90dc4472c4f8f945496ba3ed45-384x131.png" alt="Logo Simplon">
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.sanity.io/images/29lzrddu/production/e570cb25940d3a7ca7f50b47d28a8c87f1c64b09-225x225.png" alt="Logo Ifocop">
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.sanity.io/images/29lzrddu/production/b1a81c1fd423b06da71a42dc16aafa033e060e9b-3371x1314.png" alt="Logo Scyfco">
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.sanity.io/images/29lzrddu/production/2f3693d6d94d34742b64c7f34e930cb3fd21c7c4-266x190.png" alt="Logo Online Sales Success">
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.sanity.io/images/29lzrddu/production/e4ddcd5407a0be92acb11388650074737e391ff3-842x424.png" alt="Logo InKréa Certifications">
+                </div>
+
+                <div class="logo-item">
+                    <img src="https://cdn.sanity.io/images/29lzrddu/production/3b9e00ed659f7c001d49376f8d2cac90c1850b46-200x200.jpg" alt="Logo Web Marketing & Co'm">
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.sanity.io/images/29lzrddu/production/463ff456555d1aff007371805c44801c8428cacd-225x225.jpg" alt="Logo MMC Formations">
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.sanity.io/images/29lzrddu/production/13297457e20281c1eb313241555085afb3a11d9e-422x119.png" alt="Logo Skolae">
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.sanity.io/images/29lzrddu/production/28ee96f66ee6989a4712cf02dd0aea3dd649cff4-225x225.png" alt="Logo ENI">
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.sanity.io/images/29lzrddu/production/4e3ffe4ddf2a793f25493123f5584e4a10c77dc8-914x955.png" alt="Logo CLOE">
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.sanity.io/images/29lzrddu/production/d1cea9eb5d334ce2e4e7109ad7eeb49b45a05bfa-1920x823.jpg" alt="Logo Collège de Paris">
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.sanity.io/images/29lzrddu/production/f5afc641262dbb90dc4472c4f8f945496ba3ed45-384x131.png" alt="Logo Simplon">
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.sanity.io/images/29lzrddu/production/e570cb25940d3a7ca7f50b47d28a8c87f1c64b09-225x225.png" alt="Logo Ifocop">
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.sanity.io/images/29lzrddu/production/b1a81c1fd423b06da71a42dc16aafa033e060e9b-3371x1314.png" alt="Logo Scyfco">
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.sanity.io/images/29lzrddu/production/2f3693d6d94d34742b64c7f34e930cb3fd21c7c4-266x190.png" alt="Logo Online Sales Success">
+                </div>
+                <div class="logo-item">
+                    <img src="https://cdn.sanity.io/images/29lzrddu/production/e4ddcd5407a0be92acb11388650074737e391ff3-842x424.png" alt="Logo InKréa Certifications">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+        <section class="section section-bg-gray" style="position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 25%; right: 0; width: 384px; height: 384px; background: rgba(124, 58, 237, 0.05); border-radius: 50%; filter: blur(75px);"></div>
+            <div style="position: absolute; bottom: 0; left: 25%; width: 256px; height: 256px; background: rgba(255, 107, 53, 0.05); border-radius: 50%; filter: blur(75px);"></div>
+            
+            <div class="container" style="position: relative; z-index: 10;">
+                <div class="grid grid-2" style="gap: 64px; align-items: center;">
+                    <div style="position: relative;">
+                        <div style="position: absolute; inset: 0; background: linear-gradient(to right, hsl(var(--primary)), #FF6B35); border-radius: 24px; filter: blur(40px); opacity: 0.2; transition: opacity 0.3s;"></div>
+                        
+                        <div style="position: relative;">
+                            <a href="https://www.youtube.com/watch?v=Ubeo4lFRO5A" target="_blank" rel="noopener noreferrer" style="display: block; position: relative; overflow: hidden; border-radius: 24px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); transition: transform 0.3s; text-decoration: none;">
+                                <img src="https://img.youtube.com/vi/Ubeo4lFRO5A/hqdefault.jpg" alt="Vidéo de présentation 26 Academy" style="width: 100%; height: auto;">
+                                
+                                <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.5), transparent, transparent);"></div>
+                                
+                                <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;">
+                                    <div style="width: 80px; height: 80px; background: rgba(255,255,255,0.2); backdrop-filter: blur(12px); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.3); transition: all 0.3s;">
+                                        <svg style="width: 32px; height: 32px; color: white; fill: currentColor; margin-left: 4px;" viewBox="0 0 24 24">
+                                            <path d="M8 5v14l11-7z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <div style="position: absolute; bottom: 16px; right: 16px; background: rgba(0,0,0,0.7); color: white; padding: 4px 12px; border-radius: 9999px; font-size: 14px; font-weight: 500;">
+                                    3:42
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h2 style="font-size: 3rem; font-weight: 800; color: hsl(var(--brand-dark)); margin-bottom: 24px; line-height: 1.1;">
+                            26 Academy, 
+                            <span style="background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: block;">vu à la télé...</span>
+                        </h2>
+                        
+                        <p style="font-size: 20px; color: rgb(75 85 99 / var(--tw-text-opacity, 1)); margin-bottom: 24px; line-height: 1.6;">
+                            26 Academy révolutionne l'apprentissage professionnel. Nos parcours certifiants 
+                            allient contenus interactifs, tutorat personnalisé et technologie innovante.
+                        </p>
+                        
+                        <p style="font-size: 18px; color: rgb(75 85 99 / var(--tw-text-opacity, 1)); margin-bottom: 32px;">
+                            Une expérience d'apprentissage flexible adaptée aux exigences du marché moderne. 
+                            Rejoignez notre communauté et transformez vos ambitions en succès concrets.
+                        </p>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 16px;">
+                           <button class="btn btn-lg btn-gradient">
+    <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+        <polyline points="15,3 21,3 21,9"/>
+        <line x1="10" y1="14" x2="21" y2="3"/>
+    </svg>
+                                Voir le reportage complet
+                            </button>
+                            
+                           <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm h-11 bg-white text-purple-600 transition-all duration-300 hover:scale-105 rounded-full font-semibold px-8 border border-primary">
+                                Prendre rendez-vous avec un expert
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+               <div class="flex justify-center py-8 mt-14">
+    <div class="w-24 h-0.5 bg-gradient-to-r from-transparent via-purple-400 to-transparent opacity-60"></div>
+</div>
+                   
+                
+            </div>
+        </section>
+
+        <section class="section bg-white" style="position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 0; left: 50%; width: 384px; height: 384px; background: rgba(124, 58, 237, 0.1); border-radius: 50%; filter: blur(75px); transform: translateX(-50%) translateY(-50%);"></div>
+            
+            <div class="container" style="position: relative; z-index: 10;">
+                <div style="text-align: center;">
+                    <h2 style="font-size: 3rem; font-weight: 700; margin-bottom: 24px; color: #6644FF; line-height: 1.1;">Nos stagiaires</h2>
+                    <p style="color: rgb(75 85 99 / var(--tw-text-opacity, 1)); font-size: 18px; max-width: 768px; margin: 0 auto; line-height: 1.6; margin-bottom: 48px;">Des milliers d'apprenants ont intégré les plus grandes entreprises grâce à nos formations.</p>
+                    
+                    <div class="logo-slider" style="margin-top: 32px;">
+                        <div class="logos" style="display: flex; animation: scroll 40s linear infinite;">
+                            <div class="logo-item">
+                                <img src="https://leadstudio.fr/wp-content/uploads/2025/07/Valeo_Logo.svg.webp" alt="Logo Valeo" style="height: 48px; object-fit: contain; filter: grayscale(100%); opacity: 0.6; transition: all 0.3s;">
+                            </div>
+                            <div class="logo-item">
+                                <img src="https://leadstudio.fr/wp-content/uploads/2025/07/Societe-Generale-Logo-scaled.png" alt="Logo Societe Generale" style="height: 48px; object-fit: contain; filter: grayscale(100%); opacity: 0.6; transition: all 0.3s;">
+                            </div>
+                            <div class="logo-item">
+                                <img src="https://leadstudio.fr/wp-content/uploads/2025/07/Capgemini_201x_logo.svg.png" alt="Logo Capgemini" style="height: 48px; object-fit: contain; filter: grayscale(100%); opacity: 0.6; transition: all 0.3s;">
+                            </div>
+                            <div class="logo-item">
+                                <img src="https://leadstudio.fr/wp-content/uploads/2025/07/TotalEnergies_logo.svg.png" alt="Logo TotalEnergies" style="height: 48px; object-fit: contain; filter: grayscale(100%); opacity: 0.6; transition: all 0.3s;">
+                            </div>
+                            <div class="logo-item">
+                                <img src="https://leadstudio.fr/wp-content/uploads/2025/07/Valeo_Logo.svg.webp" alt="Logo Valeo" style="height: 48px; object-fit: contain; filter: grayscale(100%); opacity: 0.6; transition: all 0.3s;">
+                            </div>
+                            <div class="logo-item">
+                                <img src="https://leadstudio.fr/wp-content/uploads/2025/07/Societe-Generale-Logo-scaled.png" alt="Logo Societe Generale" style="height: 48px; object-fit: contain; filter: grayscale(100%); opacity: 0.6; transition: all 0.3s;">
+                            </div>
+                            <div class="logo-item">
+                                <img src="https://leadstudio.fr/wp-content/uploads/2025/07/Capgemini_201x_logo.svg.png" alt="Logo Capgemini" style="height: 48px; object-fit: contain; filter: grayscale(100%); opacity: 0.6; transition: all 0.3s;">
+                            </div>
+                            <div class="logo-item">
+                                <img src="https://leadstudio.fr/wp-content/uploads/2025/07/TotalEnergies_logo.svg.png" alt="Logo TotalEnergies" style="height: 48px; object-fit: contain; filter: grayscale(100%); opacity: 0.6; transition: all 0.3s;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <section class="section bg-gray-50">
+    <div class="container mx-auto">
+        <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+            
+            <div class="w-full lg:w-1/3 flex-shrink-0">
+               <img src="https://cdn.sanity.io/images/29lzrddu/production/8f80b27d8bf66600eaccdde60484aece8a594bfd-919x530.jpg" style="width: 100%; max-width: 384px;">
+<img src="https://cdn.sanity.io/images/29lzrddu/production/a55cee7f2ee8fa25476f5ca5ca06d38c41969e9e-600x180.png" style="width: 100%; max-width: 384px;">
+            </div>
+
+            <div class="w-full lg:w-2/3 text-gray-700 text-sm">
+                <p class="mb-4">
+                    26 Academy est certifiée selon le référentiel national qualité, initialement obtenue le 25/11/2020 et renouvelée jusqu'au 
+                    24/11/2027 des organismes prestataires d'actions concourant au développement des compétences, visés à l'article L. 
+                    6351-1 du Code du travail. La certification qualité a été délivrée au titre de la ou des catégories d'actions suivantes :
+                </p>
+                <ul class="list-disc list-inside mb-4 pl-2">
+                    <li>Actions de formation, Bilan de compétences, Actions de formation par apprentissage.</li>
+                </ul>
+                <p class="mb-2">
+                    26 Academy a été auditée par l'organisme certificateur ISQ reconnu pour la qualité de ses audits.
+                </p>
+                <p class="mb-2">
+                    26 Academy est certifié « Qualiopi » au titre des catégories d'actions suivantes :
+                </p>
+                <ul class="list-disc list-inside pl-2">
+                    <li>Actions de formation,</li>
+                    <li>Bilans de compétences,</li>
+                    <li>Actions de formation par apprentissage.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+    </main>
+
+    <script>
+        // Mobile menu toggle
+        let isMobileMenuOpen = false;
+        
+        function toggleMobileMenu() {
+            isMobileMenuOpen = !isMobileMenuOpen;
+            const menuIcon = document.getElementById('menu-icon');
+            const closeIcon = document.getElementById('close-icon');
+            
+            if (isMobileMenuOpen) {
+                menuIcon.style.display = 'none';
+                closeIcon.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            } else {
+                menuIcon.style.display = 'block';
+                closeIcon.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Scroll to top
+        function scrollToTop(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            
+            if (isMobileMenuOpen) {
+                toggleMobileMenu();
+            }
+        }
+
+        // Modal functions
+        function openModal() {
+            alert('Fonctionnalité de rappel à implémenter');
+        }
+
+        // Scroll animations
+        function initScrollAnimations() {
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("animate-fade-in");
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                { threshold: 0.1 }
+            );
+
+            document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+                observer.observe(el);
+            }); 
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            initScrollAnimations();
+        });
+    </script>
+    </main>
+
+    
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="https://www.26academy.com/app/themes/course-builder/assets/images/icons/logo_1.svg" alt="Logo 26 Academy" class="footer-logo">
+                <p>Bien plus qu'une formation.</p>
+            </div>
+            
+            <div>
+                <h5 class="footer-title">Nos services</h5>
+                <ul class="footer-links">
+                    <li><a href="#">Formations</a></li>
+                    <li><a href="#">Financement</a></li>
+                    <li><a href="https://cdn.sanity.io/files/29lzrddu/production/ccaf9ad7b48c060ab34a63245139582e45cfda52.pdf">Certification</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="footer-title">À propos</h5>
+                <ul class="footer-links">
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Nous contacter</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="footer-title">Suivez-nous</h5>
+                <div class="footer-social">
+                    <a href="#"><i data-lucide="linkedin"></i></a>
+                    <a href="#"><i data-lucide="twitter"></i></a>
+                    <a href="#"><i data-lucide="youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 26 Academy. Tous droits réservés.</p>
+            <p>
+                <a href="#">Mentions légales</a> | 
+                <a href="#">CGV</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- GESTION GLOBALE DU SITE (ICÔNES, MENU, MODALE) ---
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+
+        const menuToggle = document.getElementById('menu-toggle');
+        if(menuToggle) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = menuToggle.querySelector('i');
+            menuToggle.addEventListener('click', () => {
+                const isOpen = mobileMenu.classList.toggle('is-open');
+                document.body.style.overflow = isOpen ? 'hidden' : '';
+                menuIcon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
+                lucide.createIcons();
+            });
+        }
+
+        const modalTriggers = document.querySelectorAll('.modal-trigger');
+        const modal = document.getElementById('rappel-modal');
+        if(modal) {
+            const modalCloseBtns = document.querySelectorAll('.modal-close-btn');
+            const openModal = () => modal.classList.add('is-open');
+            const closeModal = () => modal.classList.remove('is-open');
+            modalTriggers.forEach(trigger => trigger.addEventListener('click', openModal));
+            modalCloseBtns.forEach(btn => btn.addEventListener('click', closeModal));
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) closeModal();
+            });
+        }
+        
+        // --- LOGIQUE POUR LE FORMULAIRE DE CONTACT ---
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    // On cible la div parente qui contient le formulaire
+    const formContainer = document.getElementById('form-container');
+    contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const formData = new FormData(contactForm);
+                
+                fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString()
+                })
+                .then(() => {
+                    formContainer.innerHTML = `
+                    <div class="text-center py-12">
+                        <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center bg-green-100">
+                            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2 text-gray-900">Merci !</h3>
+                        <p class="text-gray-600">Votre message a bien été envoyé. Notre équipe reviendra vers vous très prochainement.</p>
+                    </div>
+                    `;
+                })
+                .catch((error) => {
+                    formContainer.innerHTML = `
+                    <div class="text-center py-12">
+                        <h3 class="text-2xl font-bold mb-2 text-red-600">Oups !</h3>
+                        <p class="text-gray-600">Une erreur est survenue. Veuillez réessayer plus tard.</p>
+                    </div>
+                    `;
+                });
+            });
+        }
+    });
+    </script>  
+
+
+
+</body>
+</html>

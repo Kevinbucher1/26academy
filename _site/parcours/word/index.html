@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation Word en ligne | 26 Academy</title>
+
+  <meta name="description" content="Formez-vous en ligne avec 26 Academy ✓ 100% E-learning ✓ Éligible CPF ✓ Organisme certifié Qualiopi ✓ Accompagnement pédagogique">
+
+
+<meta property="og:title" content="Formation Word en ligne | 26 Academy">
+
+  <meta property="og:description" content="Formez-vous en ligne avec 26 Academy ✓ 100% E-learning ✓ Éligible CPF ✓ Organisme certifié Qualiopi ✓ Accompagnement pédagogique">
+
+
+  
+  <meta property="og:image" content="https://www.votre-site.com/logo-partage.jpg">
+
+<meta property="og:url" content="/parcours/word/">
+<meta property="og:type" content="website">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#6644FF',
+                        'primary-light': '#8B5CF6',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/parcours.css">
+
+    <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+
+</head>
+<body class="antialiased page-word">
+
+    <header class="site-header fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav class="container mx-auto px-6 py-3">
+        <div class="header-container rounded-full px-4 py-2 flex justify-between items-center transition-all duration-300 bg-white/80 backdrop-blur-md">
+            <div>
+                <a href="#">
+                    <img src="https://www.26academy.com/app/themes/course-builder/assets/images/icons/logo_1.svg" alt="Logo 26 Academy" class="h-10" />
+                </a>
+            </div>
+            
+            <div class="hidden lg:flex items-center space-x-2 font-medium text-sm text-gray-800">
+                <div class="nav-item dropdown-container">
+                    <a href="#" class="nav-link flex items-center">
+                        Formations <i data-lucide="chevron-down" class="ml-1 h-4 w-4"></i>
+                    </a>
+                    <div class="dropdown-menu absolute top-full left-0 mt-2 bg-white min-w-80 shadow-lg rounded-xl p-2 border border-gray-200 z-50">
+                        <a href="#" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                            <i data-lucide="layout-grid" class="mr-3 h-5 w-5 text-primary"></i>
+                            <div>
+                                <p class="font-semibold">Toutes les formations</p>
+                                <p class="text-xs text-gray-500">Parcourez notre catalogue complet</p>
+                            </div>
+                        </a>
+                        <a href="#" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                            <i data-lucide="brain-circuit" class="mr-3 h-5 w-5 text-primary"></i>
+                            <div>
+                                <p class="font-semibold">Intelligence Artificielle</p>
+                                <p class="text-xs text-gray-500">Devenez un expert de l'IA</p>
+                            </div>
+                        </a>
+                        <a href="#" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                            <i data-lucide="line-chart" class="mr-3 h-5 w-5 text-primary"></i>
+                            <div>
+                                <p class="font-semibold">Marketing Digital</p>
+                                <p class="text-xs text-gray-500">Maîtrisez les leviers du web</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="#" class="nav-link">Alternance</a>
+                <a href="#" class="nav-link">Financement</a>
+                <a href="#" class="nav-link">Offres</a>
+                <a href="#" class="nav-link">Qui sommes nous</a>
+            </div>
+            
+            <div class="hidden lg:flex items-center space-x-2">
+                <button class="btn btn-sm btn-outline-light rounded-full text-xs text-primary">Plateforme</button>
+                <button class="btn btn-sm btn-outline-light rounded-full text-xs text-primary">Prendre RDV</button>
+                <button class="btn btn-sm btn-primary rounded-full text-xs modal-trigger">Rappel immédiat</button>
+            </div>
+            
+            <div class="lg:hidden">
+                <button id="menu-toggle" class="text-gray-800">
+                    <i data-lucide="menu" class="h-6 w-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div id="mobile-menu" class="mobile-nav fixed inset-0 z-40 bg-white flex-col pt-20 px-6 lg:hidden">
+    <a href="#" class="mobile-nav-link">Home</a>
+    <a href="#" class="mobile-nav-link">Formations</a>
+    <a href="#" class="mobile-nav-link">Alternance</a>
+    <a href="#" class="mobile-nav-link">Financement</a>
+    <a href="#" class="mobile-nav-link">Contact</a>
+</div>
+
+<div id="rappel-modal" class="modal-overlay fixed inset-0 bg-slate-900/50 items-center justify-center z-100">
+    <div class="modal-content bg-white p-8 rounded-2xl max-w-md w-full mx-4 relative">
+        <button class="modal-close-btn absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+            <i data-lucide="x" class="h-6 w-6"></i>
+        </button>
+        <h3 class="text-2xl font-bold mb-4">Être rappelé</h3>
+        <p class="text-gray-600 mb-6">Laissez-nous vos coordonnées et un conseiller vous rappellera dans les plus brefs délais.</p>
+        <form>
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
+                <input type="text" class="modal-input w-full px-3 py-2 border border-gray-300 rounded-md"/>
+            </div>
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 mb-1">Téléphone</label>
+                <input type="tel" class="modal-input w-full px-3 py-2 border border-gray-300 rounded-md"/>
+            </div>
+            <button type="submit" class="btn btn-primary w-full">Envoyer</button>
+        </form>
+    </div>
+</div>
+
+    <main>
+        
+
+
+
+<section class="gradient-bg relative overflow-hidden hero-section">
+    <div class="max-w-6xl mx-auto px-6 pt-40 sm:pt-40 pb-12 relative z-10">
+        <div id="parcours-hero-grid">
+            
+            <div id="parcours-hero-text" class="text-white">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
+                    Word
+                </h1>
+                
+               
+                <p class="mb-6 text-white/90 font-semibold leading-tight" style="font-size: 1.2rem;">
+                    <b>« Rédiger et mettre en forme des documents professionnels avec Word », </b>
+                    
+                        <em class="rncp-code">RS6964</em>
+                    
+                </p>
+                
+                
+                
+                <p class="text-base mb-12 text-white/80 leading-relaxed">
+                    Maîtrisez Microsoft Word pour créer des documents clairs, structurés et professionnels. Grâce à cette formation complète, vous apprendrez à gérer l’environnement Word, mettre en page vos fichiers, utiliser les styles, modèles et outils d’édition.
+                </p>
+                
+                
+                <div class="flex flex-wrap gap-4 justify-center sm:justify-start mb-8 sm:mb-0">
+                    <a href="/form-parcours?formation=word">
+                        <button class="border-white bg-white text-[#6644FF] hover:bg-gray-50 hover:text-[#6644FF] rounded-full px-12 py-3 font-bold text-base transition-all hover:scale-105 shadow-lg">
+                            Commencer la formation
+                        </button>
+                    </a>
+                </div>
+            </div>
+            
+            
+            <div id="parcours-hero-image">
+                <div class="w-80 h-96 relative mx-auto lg:mx-0 lg:ml-auto">
+                    <img src="https://cdn.sanity.io/images/29lzrddu/production/35ed667eeeb4d087b7bbf04ef6a25d5327abb902-500x500.svg?auto=format" 
+                         alt="Word" 
+                         class="w-full h-full object-cover rounded-lg shadow-2xl" />
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</section>
+
+
+<section class="py-16 px-6 bg-white">
+    <div class="container mx-auto max-w-6xl">
+        <h2 class="text-3xl font-bold text-center mb-12 text-primary">Informations pratiques</h2>
+        <div class="grid md:grid-cols-5 gap-4 px-5 sm:px-0">
+            
+            <div class="bg-white border-2 border-primary rounded-xl shadow-sm p-4 sm:p-6 text-center flex flex-col" style="background-color: rgba(102, 68, 255, 0.05);">
+                <div class="mb-3">
+                    <span class="inline-block px-2 py-1 text-xs font-medium text-white rounded-full bg-primary">
+                        - Modalités -
+                    </span>
+                </div>
+                <div class="flex-grow flex items-center justify-center">
+                    
+                        <p class="text-sm text-gray-600 leading-tight sm:leading-relaxed">• 100% en ligne<br />
+• Accès 24h/24, 7j/7</p>
+                    
+                </div>
+            </div>
+            
+            <div class="bg-white border-2 border-primary rounded-xl shadow-sm p-4 sm:p-6 text-center flex flex-col" style="background-color: rgba(102, 68, 255, 0.05);">
+                <div class="mb-3">
+                    <span class="inline-block px-2 py-1 text-xs font-medium text-white rounded-full bg-primary">
+                        - Durée estimée -
+                    </span>
+                </div>
+                <div class="flex-grow flex items-center justify-center">
+                    
+                        <p class="text-sm text-gray-600 leading-tight sm:leading-relaxed">• 30h<br />
+• 2 mois</p>
+                    
+                </div>
+            </div>
+            
+            <div class="bg-white border-2 border-primary rounded-xl shadow-sm p-4 sm:p-6 text-center flex flex-col" style="background-color: rgba(102, 68, 255, 0.05);">
+                <div class="mb-3">
+                    <span class="inline-block px-2 py-1 text-xs font-medium text-white rounded-full bg-primary">
+                        - Démarrage -
+                    </span>
+                </div>
+                <div class="flex-grow flex items-center justify-center">
+                    
+                        <p class="text-sm text-gray-600 leading-tight sm:leading-relaxed">À tout moment de l'année</p>
+                    
+                </div>
+            </div>
+            
+            <div class="bg-white border-2 border-primary rounded-xl shadow-sm p-4 sm:p-6 text-center flex flex-col" style="background-color: rgba(102, 68, 255, 0.05);">
+                <div class="mb-3">
+                    <span class="inline-block px-2 py-1 text-xs font-medium text-white rounded-full bg-primary">
+                        - Certification -
+                    </span>
+                </div>
+                <div class="flex-grow flex items-center justify-center">
+                    
+                        <p class="text-sm text-gray-600 leading-tight sm:leading-relaxed">• RS6964<br />
+• Titre inscrit au RS</p>
+                    
+                </div>
+            </div>
+            
+            <div class="bg-white border-2 border-primary rounded-xl shadow-sm p-4 sm:p-6 text-center flex flex-col" style="background-color: rgba(102, 68, 255, 0.05);">
+                <div class="mb-3">
+                    <span class="inline-block px-2 py-1 text-xs font-medium text-white rounded-full bg-primary">
+                        - Certificateur -
+                    </span>
+                </div>
+                <div class="flex-grow flex items-center justify-center">
+                    
+                        <img src="https://cdn.sanity.io/images/29lzrddu/production/cae3c6e4e8e287e8f8a55a28ec529373729f4e78-2121x529.png?auto=format" alt="- Certificateur -" class="w-16 h-auto mt-2" />
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+<section class="py-16 px-6 gradient-bg">
+    <div class="container mx-auto max-w-6xl">
+        <div class="grid lg:grid-cols-3 gap-8 items-start mb-12">
+            
+            <div class="flex flex-col h-full mb-4 sm:mb-0">
+                <h2 class="text-3xl font-bold mb-4 sm:mb-8 text-white text-center underline">Objectifs</h2>
+                <div class="space-y-4">
+                    
+                    <div class="flex items-start gap-3">
+                        <svg class="h-5 w-5 flex-shrink-0 text-white mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                        <span class="text-white/95">Gestion de l’environnement Word et Méthodes</span>
+                    </div>
+                    
+                    <div class="flex items-start gap-3">
+                        <svg class="h-5 w-5 flex-shrink-0 text-white mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                        <span class="text-white/95">Mise en page et mise en forme de document Word</span>
+                    </div>
+                    
+                    <div class="flex items-start gap-3">
+                        <svg class="h-5 w-5 flex-shrink-0 text-white mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                        <span class="text-white/95">Utilisation des outils d’édition pour la création de document Word</span>
+                    </div>
+                    
+                    <div class="flex items-start gap-3">
+                        <svg class="h-5 w-5 flex-shrink-0 text-white mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                        <span class="text-white/95">Création de thèmes et modèles</span>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+            <div class="flex flex-col h-full mb-4 sm:mb-0">
+                <h3 class="text-3xl font-bold mb-4 sm:mb-8 text-white text-center underline">Public visé</h3>
+                <div class="space-y-4">
+                    
+                    <div class="flex items-start gap-3">
+                        <svg class="h-5 w-5 flex-shrink-0 text-white mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                        <span class="text-white/95">Toute personne souhaitant apprendre à créer et mettre en forme des documents simples</span>
+                    </div>
+                    
+                    <div class="flex items-start gap-3">
+                        <svg class="h-5 w-5 flex-shrink-0 text-white mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                        <span class="text-white/95">Professionnels ayant besoin de rédiger et structurer des documents administratifs ou commerciaux de manière claire et professionnelle.</span>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            
+            <div class="flex flex-col h-full mb-4 sm:mb-0">
+                <h3 class="text-3xl font-bold mb-4 sm:mb-8 text-white text-center underline">Prérequis</h3>
+                <div class="space-y-4">
+                    
+                    <div class="flex items-start gap-3">
+                        <svg class="h-5 w-5 flex-shrink-0 text-white mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                        <span class="text-white/95">Savoir utiliser un ordinateur et maîtriser les bases de la navigation</span>
+                    </div>
+                    
+                    <div class="flex items-start gap-3">
+                        <svg class="h-5 w-5 flex-shrink-0 text-white mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                        <span class="text-white/95">Aucun prérequis particulier est demandé pour ce cours</span>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+        <div class="text-center mt-12">
+             <a href="/form-parcours?formation=word">
+                <button class="bg-white text-primary hover:bg-gray-50 rounded-full px-12 py-3 font-semibold text-lg transition-all hover:scale-105 shadow-lg">
+                    Commencer la formation
+                </button>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-16 px-6 bg-gray-50">
+    <div class="container mx-auto max-w-5xl">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4 text-primary">Programme détaillé</h2>
+            <p class="text-gray-600">Modules et projets pour accompagner votre formation</p>
+        </div>
+        <div class="space-y-4">
+            
+            <details class="bg-white rounded-xl shadow-sm">
+                <summary class="text-base font-semibold text-primary italic">Compétence 1 - GESTION DE L&#39;ENVIRONNEMENT WORD ET MÉTHODES</summary>
+                <div>
+                    <ul class="space-y-2 text-gray-700 list-disc list-inside marker:text-primary">
+                        
+                        <li class="bg-gray-50 p-3 rounded-lg">Module 1 - L&#39;essentiel de Word (Office 365)</li>
+                        
+                        <li class="bg-gray-50 p-3 rounded-lg">Module 2 - Word : Astuces et techniques</li>
+                        
+                    </ul>
+                </div>
+            </details>
+            
+            <details class="bg-white rounded-xl shadow-sm">
+                <summary class="text-base font-semibold text-primary italic">Compétence 2 - MISE EN PAGE ET MISE EN FORME DE DOCUMENT WORD</summary>
+                <div>
+                    <ul class="space-y-2 text-gray-700 list-disc list-inside marker:text-primary">
+                        
+                        <li class="bg-gray-50 p-3 rounded-lg">Module 3 - Word : Les styles</li>
+                        
+                        <li class="bg-gray-50 p-3 rounded-lg">Module 4 - Word : La création de documents longs</li>
+                        
+                    </ul>
+                </div>
+            </details>
+            
+            <details class="bg-white rounded-xl shadow-sm">
+                <summary class="text-base font-semibold text-primary italic">Compétence 3 - UTILISATION DES OUTILS D&#39;ÉDITION POUR LA CRÉATION DE DOCUMENT WORD</summary>
+                <div>
+                    <ul class="space-y-2 text-gray-700 list-disc list-inside marker:text-primary">
+                        
+                        <li class="bg-gray-50 p-3 rounded-lg">Module 5 - Word : Le publipostage</li>
+                        
+                        <li class="bg-gray-50 p-3 rounded-lg">Module 6 - Word : Les macros</li>
+                        
+                    </ul>
+                </div>
+            </details>
+            
+            <details class="bg-white rounded-xl shadow-sm">
+                <summary class="text-base font-semibold text-primary italic">Compétence 4 - CRÉATION DE THÈMES ET MODÈLES</summary>
+                <div>
+                    <ul class="space-y-2 text-gray-700 list-disc list-inside marker:text-primary">
+                        
+                        <li class="bg-gray-50 p-3 rounded-lg">Module 7 - Word : Les modèles</li>
+                        
+                    </ul>
+                </div>
+            </details>
+            
+        </div>
+    </div>
+</section>
+
+
+
+<section class="bg-white py-16 lg:py-24">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center">
+            <div class="lg:col-span-1">
+                
+                <img src="https://cdn.sanity.io/images/29lzrddu/production/fb63c07ff3063643f4efda6d1787c505fb25ff10-1600x1066.jpg?auto=format" 
+                     alt="Notre mission, votre réussite !" 
+                     class="rounded-xl shadow-lg w-full">
+                
+            </div>
+            <div class="lg:col-span-2">
+                
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">
+                    Notre mission, votre réussite !
+                </h2>
+                
+                
+                
+                <p class="text-gray-700 leading-relaxed">
+                    Chez 26 Academy, notre mission est de vous donner toutes les clés pour atteindre vos objectifs professionnels.<br />
+Chaque formation est pensée pour être personnalisée et adaptée à votre parcours.<br />
+En plus des contenus pédagogiques, vous bénéficiez d’un coach dédié qui vous accompagne pas à pas et veille à votre réussite.
+                </p>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="py-20 px-6 gradient-offers">
+    <div class="container mx-auto max-w-7xl">
+        <h2 class="text-4xl font-bold text-center mb-16 text-white underline">Nos offres</h2>
+        <div class="flex flex-wrap justify-center items-stretch gap-8">
+            
+            <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-primary w-full max-w-xs">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold text-black mb-4 italic text-primary">- Essentielle -</h3>
+                    <div class="text-4xl font-bold text-primary mb-1">1 499 €</div>
+                </div>
+                <div class="space-y-4">
+                    
+                    <div class="flex items-center gap-3">
+                        <svg class="h-5 w-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                        <span class="text-gray-700 font-thin">60 jours d&#39;accès à la plateforme</span>
+                    </div>
+                    
+                    <div class="flex items-center gap-3">
+                        <svg class="h-5 w-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                        <span class="text-gray-700 font-thin">Tutorat pédagogique</span>
+                    </div>
+                    
+                    <div class="flex items-center gap-3">
+                        <svg class="h-5 w-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                        <span class="text-gray-700 font-thin">Certification incluse</span>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+        <div class="text-center mt-20">
+            <a href="/form-parcours?formation=word">
+                <button class="gradient-btn text-white rounded-full px-14 py-3 font-semibold text-lg transition-all hover:scale-105 shadow-lg">
+                    Commencer la formation
+                </button>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="py-16 px-6 bg-white">
+    <div class="container mx-auto max-w-6xl">
+        <h2 class="text-3xl font-bold text-center mb-12 text-primary">Solutions de financement possibles</h2>
+        <div class="grid md:grid-cols-4 gap-4 px-5 sm:px-0">
+            
+            <div class="bg-white border-2 border-primary rounded-xl shadow-sm p-4 sm:p-6 text-center" style="background-color: rgba(102, 68, 255, 0.05);">
+                <div class="mb-3">
+                    <span class="inline-block px-2 py-1 text-xs font-medium text-white rounded-full bg-primary">CPF</span>
+                </div>
+                <p class="text-sm text-gray-600 leading-tight sm:leading-relaxed">Éligible Compte Personnel de Formation. Vous pouvez mobiliser vos droits acquis pour financer tout ou partie de votre inscription, directement via la plateforme MonCompteFormation.</p>
+            </div>
+            
+            <div class="bg-white border-2 border-primary rounded-xl shadow-sm p-4 sm:p-6 text-center" style="background-color: rgba(102, 68, 255, 0.05);">
+                <div class="mb-3">
+                    <span class="inline-block px-2 py-1 text-xs font-medium text-white rounded-full bg-primary">FRANCE TRAVAIL</span>
+                </div>
+                <p class="text-sm text-gray-600 leading-tight sm:leading-relaxed">Ce parcours est éligible à un financement France Travail pour les demandeurs d’emploi. Votre conseiller peut valider la prise en charge (via l'AIF), totale ou partielle, afin de faciliter votre retour à l’emploi.</p>
+            </div>
+            
+            <div class="bg-white border-2 border-primary rounded-xl shadow-sm p-4 sm:p-6 text-center" style="background-color: rgba(102, 68, 255, 0.05);">
+                <div class="mb-3">
+                    <span class="inline-block px-2 py-1 text-xs font-medium text-white rounded-full bg-primary">ENTREPRISE</span>
+                </div>
+                <p class="text-sm text-gray-600 leading-tight sm:leading-relaxed">Ce parcours peut être financé par votre entreprise dans le cadre du plan de développement des compétences ou bien en prise en charge directe. L’employeur peut s’appuyer sur son OPCO pour obtenir une prise en charge partielle ou totale.</p>
+            </div>
+            
+            <div class="bg-white border-2 border-primary rounded-xl shadow-sm p-4 sm:p-6 text-center" style="background-color: rgba(102, 68, 255, 0.05);">
+                <div class="mb-3">
+                    <span class="inline-block px-2 py-1 text-xs font-medium text-white rounded-full bg-primary">FINANCEMENT PERSO</span>
+                </div>
+                <p class="text-sm text-gray-600 leading-tight sm:leading-relaxed">Financez votre formation facilement en plusieurs fois sans frais. Vous pouvez régler en jusqu’à 10 mensualités sans frais, afin d’étaler le coût de la formation.</p>
+            </div>
+            
+        </div>
+        <div class="text-center mt-16">
+           <a href="/form-parcours?formation=word">
+               <button class="gradient-btn text-white rounded-full px-14 py-3 font-semibold text-lg transition-all hover:scale-105 shadow-lg">
+                    Trouver ma solution de formation
+                </button>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="py-16 px-6 bg-gray-50">
+    <div class="container mx-auto max-w-5xl">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4 text-primary">Que faire après la formation ?</h2>
+            <p class="text-gray-600">Découvrez vos perspectives d'évolution professionnelle</p>
+        </div>
+        <div class="space-y-4">
+            
+            <details class="bg-white rounded-xl shadow-sm">
+                <summary class="text-lg font-semibold text-primary">CONDITIONS D&#39;ADMISSION</summary>
+                <div>
+                    <ul class="space-y-2 text-gray-700 list-disc list-inside marker:text-primary">
+                        
+                        <li class="bg-gray-50 p-3 rounded-lg">Admission sur entretien</li>
+                        
+                    </ul>
+                </div>
+            </details>
+            
+            <details class="bg-white rounded-xl shadow-sm">
+                <summary class="text-lg font-semibold text-primary">CERTIFICATION</summary>
+                <div>
+                    <ul class="space-y-2 text-gray-700 list-disc list-inside marker:text-primary">
+                        
+                        <li class="bg-gray-50 p-3 rounded-lg">Certification « Rédiger et mettre en forme des documents professionnels avec Word » enregistrée à France Compétences sous le numéro RS6964 par l’organisme certificateur ISOGRAD. La date de décision d&#39;enregistrement est le 18-12-2024, avec une date d&#39;échéance fixée au 18-12-2027.</li>
+                        
+                    </ul>
+                </div>
+            </details>
+            
+        </div>
+    </div>
+</section>
+
+
+
+<section class="py-16 px-6 bg-gray-50">
+    <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl font-bold text-center text-primary">Informations complémentaires</h2>        
+        
+        <div class="flex justify-center my-4">
+            <img src="https://cdn.sanity.io/images/29lzrddu/production/cae3c6e4e8e287e8f8a55a28ec529373729f4e78-2121x529.png?auto=format" alt="Logo France Compétences" class="h-40" />
+        </div>
+        
+        
+        <div class="bg-white rounded-2xl shadow-sm p-8 prose max-w-none">
+            <p><strong>Certification préparée</strong><br/>Cette formation prépare à la certification <strong>« Rédiger et mettre en forme des documents professionnels avec Word »</strong> enregistrée à France Compétences sous le numéro <a href="https://www.francecompetences.fr/recherche/rs/6964/"><strong>RS6964</strong></a> par l’organisme certificateur <a href="https://www.tosa.org/FR/"><strong>ISOGRAD</strong></a>. La date de décision d&#x27;enregistrement est le 18-12-2024, avec une date d&#x27;échéance fixée au 18-12-2027.</p><p><strong>Attestation de fin de formation :</strong><br/><strong>« Rédiger et mettre en forme des documents professionnels avec Word »</strong></p><p>Cette formation professionnelle, de par son caractère certifiant, peut être prise en charge par le CPF. Toute action ne relevant pas de l&#x27;article L6313-1 du Code du travail ne rentre pas dans ce dispositif de prise en charge.</p><p><strong>Modalités d&#x27;examen<br/>L&#x27;examen final, à distance, est obligatoire.</strong> À l&#x27;issue de la formation, le stagiaire s&#x27;engage à passer l&#x27;examen préparant à la certification.<br/><br/><strong>Modalités d&#x27;évaluation :</strong><br/>- Examen en ligne : 35 questions en français pour 60 minutes<br/></p><p><strong>Taux de réussite à l’examen de certification pour le RS6964 :</strong> en attente de statistiques. <br/><br/>En cliquant sur ce <a href="https://www.francecompetences.fr/recherche/rs/6964/">lien</a>, vous pourrez télécharger le référentiel d&#x27;activité, de compétences et d&#x27;évaluation en bas de page.<br/><br/><strong>Handicap<br/>Adaptation des conditions d&#x27;examen pour les personnes en situation de handicap :</strong> le référent handicap prendra en compte dès l&#x27;inscription du candidat sa situation de handicap, si celle-ci est mentionnée. Il sera alors proposé au candidat un entretien afin d&#x27;envisager avec lui les aménagements qui pourront être apportés.</p><p></p><p>-</p><p><em></em></p><p><em>Dernière mise à jour : 05/09/2025</em></p>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="py-20 px-6 bg-gray-50">
+    <div class="container mx-auto max-w-6xl">
+        <div class="text-center mb-11">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">Nos apprenants témoignent</h2>
+            <p class="text-gray-600 text-lg" style="font-weight: 400;">Retour sur expérience de nos apprenants</p>
+        </div>
+        
+        <div class="text-center mb-12">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Excellent</h3>
+            <div class="flex justify-center mb-4">
+                <span class="text-green-500 text-3xl">★★★★★</span>
+            </div>
+            <p class="text-gray-600" style="font-weight: 400;">
+                Une note de <strong>4.6 sur 5</strong> sur la base de <strong>4 074 avis</strong> sur 
+                <a href="https://fr.trustpilot.com/review/www.26academy.com" target="_blank" class="text-blue-600 hover:underline">Trustpilot</a>
+            </p>
+        </div>
+        
+        <div class="grid lg:grid-cols-3 gap-8">
+            
+            <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
+                <div class="flex mb-4">
+                    <span class="text-green-500 text-xl">★★★★★</span>
+                </div>
+                <h4 class="font-bold text-gray-900 mb-2">Louis, 13 août</h4>
+                <h5 class="font-semibold text-gray-800 mb-3">Super tuteur</h5>
+                <p class="text-gray-700 mb-4">Bien que les cours manquent à mon avis d&#39;exemples et d&#39;exercices d&#39;entraînement ciblés sur les modules, Jean Pierre mon tuteur est à l&#39;écoute et a les réponses à mes...</p>
+                <a href="https://fr.trustpilot.com/review/www.26academy.com" target="_blank" class="text-blue-600 hover:underline text-sm">En savoir plus</a>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
+                <div class="flex mb-4">
+                    <span class="text-green-500 text-xl">★★★★★</span>
+                </div>
+                <h4 class="font-bold text-gray-900 mb-2">Mathilde, 25 août</h4>
+                <h5 class="font-semibold text-gray-800 mb-3">Très bonne formation</h5>
+                <p class="text-gray-700 mb-4">Bien que les cours manquent à mon avis d&#39;exemples et d&#39;exercices d&#39;entraînement ciblés sur les modules, Jean Pierre mon tuteur est à l&#39;écoute et a les réponses à mes...</p>
+                <a href="https://fr.trustpilot.com/review/www.26academy.com" target="_blank" class="text-blue-600 hover:underline text-sm">En savoir plus</a>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
+                <div class="flex mb-4">
+                    <span class="text-green-500 text-xl">★★★★★</span>
+                </div>
+                <h4 class="font-bold text-gray-900 mb-2">Antoine, 19 septembre</h4>
+                <h5 class="font-semibold text-gray-800 mb-3">J&#39;adore ! </h5>
+                <p class="text-gray-700 mb-4">Formation enrichissante, merci à Abdel pour son professionnalisme. 5 étoiles méritées</p>
+                <a href="https://fr.trustpilot.com/review/www.26academy.com" target="_blank" class="text-blue-600 hover:underline text-sm">En savoir plus</a>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+<section class="py-16 px-6 bg-gradient-to-r from-gray-50 to-gray-100">
+    <div class="container mx-auto max-w-6xl">
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+            <div class="lg:w-1/2">
+                <img src="https://cdn.sanity.io/images/29lzrddu/production/8f80b27d8bf66600eaccdde60484aece8a594bfd-919x530.jpg" 
+                     alt="Certification Qualiopi" 
+                     class="w-full max-w-lg mx-auto lg:mx-0 rounded-lg shadow-lg" />
+            </div>
+            <div class="lg:w-1/2">
+                <p class="text-gray-700 leading-[1.4] text-base font-extralight">
+                    <span style="font-weight: 700;">26 ACADEMY</span> a obtenu le 25/11/2020 la certification "Qualiopi", 
+                    certification des organismes prestataires d'actions contribuant au 
+                    développement des compétences, mentionnée à l'article L. 6351-1 
+                    du Code du travail.
+                </p>
+                <br>
+                <p class="text-gray-700 leading-[1.4] text-base font-extralight">
+                    La certification qualité a été délivrée pour les catégories d'actions 
+                    suivantes : Actions de formation, Bilans de compétences.
+                </p>
+                <br>
+                <p class="text-gray-700 leading-[1.4] text-base font-extralight">
+                    Organisme validé au Datadock et conforme aux critères qualité OPCO.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+    </main>
+
+    
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="https://www.26academy.com/app/themes/course-builder/assets/images/icons/logo_1.svg" alt="Logo 26 Academy" class="footer-logo">
+                <p>Bien plus qu'une formation.</p>
+            </div>
+            
+            <div>
+                <h5 class="footer-title">Nos services</h5>
+                <ul class="footer-links">
+                    <li><a href="#">Formations</a></li>
+                    <li><a href="#">Financement</a></li>
+                    <li><a href="https://cdn.sanity.io/files/29lzrddu/production/ccaf9ad7b48c060ab34a63245139582e45cfda52.pdf">Certification</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="footer-title">À propos</h5>
+                <ul class="footer-links">
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Nous contacter</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="footer-title">Suivez-nous</h5>
+                <div class="footer-social">
+                    <a href="#"><i data-lucide="linkedin"></i></a>
+                    <a href="#"><i data-lucide="twitter"></i></a>
+                    <a href="#"><i data-lucide="youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 26 Academy. Tous droits réservés.</p>
+            <p>
+                <a href="#">Mentions légales</a> | 
+                <a href="#">CGV</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- GESTION GLOBALE DU SITE (ICÔNES, MENU, MODALE) ---
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+
+        const menuToggle = document.getElementById('menu-toggle');
+        if(menuToggle) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = menuToggle.querySelector('i');
+            menuToggle.addEventListener('click', () => {
+                const isOpen = mobileMenu.classList.toggle('is-open');
+                document.body.style.overflow = isOpen ? 'hidden' : '';
+                menuIcon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
+                lucide.createIcons();
+            });
+        }
+
+        const modalTriggers = document.querySelectorAll('.modal-trigger');
+        const modal = document.getElementById('rappel-modal');
+        if(modal) {
+            const modalCloseBtns = document.querySelectorAll('.modal-close-btn');
+            const openModal = () => modal.classList.add('is-open');
+            const closeModal = () => modal.classList.remove('is-open');
+            modalTriggers.forEach(trigger => trigger.addEventListener('click', openModal));
+            modalCloseBtns.forEach(btn => btn.addEventListener('click', closeModal));
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) closeModal();
+            });
+        }
+        
+        // --- LOGIQUE POUR LE FORMULAIRE DE CONTACT ---
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    // On cible la div parente qui contient le formulaire
+    const formContainer = document.getElementById('form-container');
+    contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const formData = new FormData(contactForm);
+                
+                fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString()
+                })
+                .then(() => {
+                    formContainer.innerHTML = `
+                    <div class="text-center py-12">
+                        <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center bg-green-100">
+                            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2 text-gray-900">Merci !</h3>
+                        <p class="text-gray-600">Votre message a bien été envoyé. Notre équipe reviendra vers vous très prochainement.</p>
+                    </div>
+                    `;
+                })
+                .catch((error) => {
+                    formContainer.innerHTML = `
+                    <div class="text-center py-12">
+                        <h3 class="text-2xl font-bold mb-2 text-red-600">Oups !</h3>
+                        <p class="text-gray-600">Une erreur est survenue. Veuillez réessayer plus tard.</p>
+                    </div>
+                    `;
+                });
+            });
+        }
+    });
+    </script>  
+
+
+
+</body>
+</html>

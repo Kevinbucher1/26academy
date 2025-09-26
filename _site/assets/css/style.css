@@ -494,3 +494,11 @@ details div { padding: 0 1.5rem 1.5rem; color: hsl(var(--foreground)); line-heig
     max-width: 60rem; /* 960px, ce qui est plus étroit que les 1200px par défaut */
   }
 }
+
+/* ============================================= */
+/* Correction pour bloquer la nav sur les pages formulaire */
+/* ============================================= */
+.page-form-parcours .site-header,
+.page-form-homepage .site-header {
+    position: static;
+}

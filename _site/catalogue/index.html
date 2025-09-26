@@ -1,0 +1,2857 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue des formations - 26 Academy</title>
+
+
+<meta property="og:title" content="Catalogue des formations - 26 Academy">
+
+
+  
+  <meta property="og:image" content="https://www.votre-site.com/logo-partage.jpg">
+
+<meta property="og:url" content="/catalogue/">
+<meta property="og:type" content="website">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#6644FF',
+                        'primary-light': '#8B5CF6',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="/assets/css/style.css">
+    
+
+    <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+
+</head>
+<body class="antialiased page-catalogue">
+
+    <header class="site-header fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav class="container mx-auto px-6 py-3">
+        <div class="header-container rounded-full px-4 py-2 flex justify-between items-center transition-all duration-300 bg-white/80 backdrop-blur-md">
+            <div>
+                <a href="#">
+                    <img src="https://www.26academy.com/app/themes/course-builder/assets/images/icons/logo_1.svg" alt="Logo 26 Academy" class="h-10" />
+                </a>
+            </div>
+            
+            <div class="hidden lg:flex items-center space-x-2 font-medium text-sm text-gray-800">
+                <div class="nav-item dropdown-container">
+                    <a href="#" class="nav-link flex items-center">
+                        Formations <i data-lucide="chevron-down" class="ml-1 h-4 w-4"></i>
+                    </a>
+                    <div class="dropdown-menu absolute top-full left-0 mt-2 bg-white min-w-80 shadow-lg rounded-xl p-2 border border-gray-200 z-50">
+                        <a href="#" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                            <i data-lucide="layout-grid" class="mr-3 h-5 w-5 text-primary"></i>
+                            <div>
+                                <p class="font-semibold">Toutes les formations</p>
+                                <p class="text-xs text-gray-500">Parcourez notre catalogue complet</p>
+                            </div>
+                        </a>
+                        <a href="#" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                            <i data-lucide="brain-circuit" class="mr-3 h-5 w-5 text-primary"></i>
+                            <div>
+                                <p class="font-semibold">Intelligence Artificielle</p>
+                                <p class="text-xs text-gray-500">Devenez un expert de l'IA</p>
+                            </div>
+                        </a>
+                        <a href="#" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                            <i data-lucide="line-chart" class="mr-3 h-5 w-5 text-primary"></i>
+                            <div>
+                                <p class="font-semibold">Marketing Digital</p>
+                                <p class="text-xs text-gray-500">Maîtrisez les leviers du web</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="#" class="nav-link">Alternance</a>
+                <a href="#" class="nav-link">Financement</a>
+                <a href="#" class="nav-link">Offres</a>
+                <a href="#" class="nav-link">Qui sommes nous</a>
+            </div>
+            
+            <div class="hidden lg:flex items-center space-x-2">
+                <button class="btn btn-sm btn-outline-light rounded-full text-xs text-primary">Plateforme</button>
+                <button class="btn btn-sm btn-outline-light rounded-full text-xs text-primary">Prendre RDV</button>
+                <button class="btn btn-sm btn-primary rounded-full text-xs modal-trigger">Rappel immédiat</button>
+            </div>
+            
+            <div class="lg:hidden">
+                <button id="menu-toggle" class="text-gray-800">
+                    <i data-lucide="menu" class="h-6 w-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div id="mobile-menu" class="mobile-nav fixed inset-0 z-40 bg-white flex-col pt-20 px-6 lg:hidden">
+    <a href="#" class="mobile-nav-link">Home</a>
+    <a href="#" class="mobile-nav-link">Formations</a>
+    <a href="#" class="mobile-nav-link">Alternance</a>
+    <a href="#" class="mobile-nav-link">Financement</a>
+    <a href="#" class="mobile-nav-link">Contact</a>
+</div>
+
+<div id="rappel-modal" class="modal-overlay fixed inset-0 bg-slate-900/50 items-center justify-center z-100">
+    <div class="modal-content bg-white p-8 rounded-2xl max-w-md w-full mx-4 relative">
+        <button class="modal-close-btn absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+            <i data-lucide="x" class="h-6 w-6"></i>
+        </button>
+        <h3 class="text-2xl font-bold mb-4">Être rappelé</h3>
+        <p class="text-gray-600 mb-6">Laissez-nous vos coordonnées et un conseiller vous rappellera dans les plus brefs délais.</p>
+        <form>
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
+                <input type="text" class="modal-input w-full px-3 py-2 border border-gray-300 rounded-md"/>
+            </div>
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 mb-1">Téléphone</label>
+                <input type="tel" class="modal-input w-full px-3 py-2 border border-gray-300 rounded-md"/>
+            </div>
+            <button type="submit" class="btn btn-primary w-full">Envoyer</button>
+        </form>
+    </div>
+</div>
+
+    <main>
+        
+<main>
+    <!-- Hero Section avec gradient exact -->
+    <section class="relative py-32 px-4 text-center overflow-hidden" style="background: linear-gradient(135deg, #6644FF 0%, #8B5CF6 30%, #A78BFA 60%, #C4B5FD 80%, #E9D5FF 90%, #F9FAFB 100%)">
+        <div class="relative z-10 max-w-4xl mx-auto pt-8">
+            <h1 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                Trouvez la formation faite pour vous
+            </h1>
+        </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        <div class="flex flex-col lg:flex-row gap-8">
+            
+            <!-- Layout mobile : recherche + bouton filtres sur la même ligne -->
+            <div class="lg:hidden flex gap-4 mb-4">
+                <div class="relative flex-1" style="flex-basis: 60%;">
+                    <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                    <input
+                        type="text"
+                        id="mobile-search"
+                        placeholder="Mot clé : Comptable, ..."
+                        class="w-full pl-12 py-3 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
+                    />
+                </div>
+                <div style="flex-basis: 40%;">
+                    <button 
+                        id="mobile-filter-toggle"
+                        class="w-full h-full px-4 py-3 border border-gray-300 rounded-md flex items-center justify-center bg-white hover:bg-gray-50 transition-colors"
+                    >
+                        <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 4.5h18l-6 7.5v9h-6V12L3 4.5z"/>
+                        </svg>
+                        Filtres
+                        <span id="mobile-filter-count" class="ml-2 px-2 py-1 bg-gray-100 text-xs rounded-full hidden">0</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Sidebar avec filtres -->
+            <aside id="filter-sidebar" class="lg:w-80 space-y-6 hidden lg:block mobile-overlay">
+                <div class="sticky top-4 space-y-6">
+                    <!-- Barre de recherche desktop -->
+                    <div class="relative">
+                        <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                        <input
+                            type="text"
+                            id="desktop-search"
+                            placeholder="Mot clé : Comptable, ..."
+                            class="w-full pl-12 py-3 text-lg border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
+                        />
+                    </div>
+                    
+                    <div class="bg-white rounded-lg border border-gray-200 p-6">
+                        <!-- Header desktop -->
+                        <div id="desktop-filter-header" class="flex items-center justify-between mb-6">
+                            <div class="flex items-center gap-2">
+                                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 4.5h18l-6 7.5v9h-6V12L3 4.5z"/>
+                                </svg>
+                                <h2 class="text-lg font-semibold">Filtrer</h2>
+                                <span id="filter-count" class="px-2 py-1 bg-gray-100 text-xs rounded-full hidden">0</span>
+                            </div>
+                            <button 
+                                id="clear-filters"
+                                class="text-red-500 hover:text-red-600 text-sm font-medium hidden"
+                            >
+                                Effacer les filtres
+                            </button>
+                        </div>
+                        
+                        <!-- Header mobile -->
+                        <div id="mobile-filter-header" class="flex items-center justify-between mb-6 hidden">
+                            <div class="flex items-center gap-2">
+                                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 4.5h18l-6 7.5v9h-6V12L3 4.5z"/>
+                                </svg>
+                                <h2 class="text-lg font-semibold">Filtrer</h2>
+                                <span id="mobile-filter-count" class="px-2 py-1 bg-gray-100 text-xs rounded-full hidden">0</span>
+                            </div>
+                            <button 
+                                onclick="toggleMobileFilters()"
+                                class="p-2 hover:bg-gray-100 rounded-lg"
+                                id="mobile-close-filters"
+                                aria-label="Fermer les filtres"
+                            >
+                                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div id="filter-categories" class="space-y-4">
+                            <!-- Les catégories de filtres seront générées par JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Grille des formations -->
+            <main class="flex-1">
+                <div class="mb-6 flex justify-between items-center">
+                    <p id="results-count" class="text-gray-600">
+                        40 formations
+                    </p>
+                </div>
+
+                <div id="formations-grid" class="grid gap-6 grid-cols-1 md:grid-cols-2">
+                    
+                    <a href="/parcours/ressources-humaines/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/2917dc90a85de9fd7241948bd0f2e9c5cc80ed7c-500x500.svg?auto=format"
+                                    alt="Gestion des ressources humaines"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        RH / PAIE
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Gestion des ressources humaines
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/bootcamp-gestion-de-projet-agiles/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/e9a3e3d91ba7ff4da7ba539f217aaaa7654fa46b-500x500.svg?auto=format"
+                                    alt="BOOTCAMP : Gestion de projet agiles"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        AGILITÉ
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    BOOTCAMP : Gestion de projet agiles
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/italien/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/fcf678250d9e67e219cae23376f9a89eca0121e5-500x500.svg?auto=format"
+                                    alt="Italien"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        LANGUES
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Italien
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                                        </svg>
+                                        ÉLIGIBLE CPF
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            100H • 4 MOIS
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        Titre RS
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/management/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/47e5b6b6cb64b58969ae5fe84e5a57e532f633ca-500x500.svg?auto=format"
+                                    alt="Management"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        MANAGEMENT
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Management
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/intelligence-artificielle/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/f0e353085e5ae8dc1b7631cf9547879351e8c476-500x500.svg?auto=format"
+                                    alt="Intelligence Artificielle"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        INTELLIGENCE ARTIFICIELLE
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Intelligence Artificielle
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/formation-professionnelle/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/01871a21a9b253087a4272668d723592c6f0b7e8-500x500.svg?auto=format"
+                                    alt="Formation professionnelle"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        FORMATION
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Formation professionnelle
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/bootcamp-ressources-humaines-et-assistant-de-direction/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/2697d6ad8c910cfe5c34ba15a094c1f91986dc82-500x500.svg?auto=format"
+                                    alt="Gestionnaire des Ressources Humaines spécialisation Assistant(e) de direction"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        RH / PAIE
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Gestionnaire des Ressources Humaines spécialisation Assistant(e) de direction
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/bootcamp-intelligence-artificielle/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/f0e353085e5ae8dc1b7631cf9547879351e8c476-500x500.svg?auto=format"
+                                    alt="BOOTCAMP : Intelligence Artificielle"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        INTELLIGENCE ARTIFICIELLE
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    BOOTCAMP : Intelligence Artificielle
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/indesign/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/d6813a60fd64cf3ffc352cf86d0ef1fbe1ab7652-500x500.svg?auto=format"
+                                    alt="InDesign"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        DESIGN
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    InDesign
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/excel/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/c96b50f772d36e8501f1b4c6df41144e691d4e5b-500x500.svg?auto=format"
+                                    alt="Excel"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        BUREAUTIQUES
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Excel
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/secretaire-assistant/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/84ac20dc4b61b3e9da3120d0bdf56ab1e7689ad0-500x500.svg?auto=format"
+                                    alt="Secrétaire Assistant(e)"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        RH / PAIE
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Secrétaire Assistant(e)
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/bootcamp-management/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/47e5b6b6cb64b58969ae5fe84e5a57e532f633ca-500x500.svg?auto=format"
+                                    alt="BOOTCAMP : Management"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        MANAGEMENT
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    BOOTCAMP : Management
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/graduate-assistant-ressources-humaines/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src=""
+                                    alt="Graduate Assistant(e) Ressources Humaines"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        RH / PAIE
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Graduate Assistant(e) Ressources Humaines
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/bootcamp-paie-et-ressources-humaines/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/2697d6ad8c910cfe5c34ba15a094c1f91986dc82-500x500.svg?auto=format"
+                                    alt="Gestionnaire de Paie spécialisation Gestion des Ressources Humaines"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        RH / PAIE
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Gestionnaire de Paie spécialisation Gestion des Ressources Humaines
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/paie/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/3c9f4fae3e6cc60be77e25fa9276851cf011fb38-500x500.svg?auto=format"
+                                    alt="Gestionnaire de Paie"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        RH / PAIE
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Gestionnaire de Paie
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/commercial-et-ia/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/682495d302e1c7fa341a8889ca5187d2848dbcbf-500x500.svg?auto=format"
+                                    alt="Commercial &amp; Intelligence articifielle"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        COMMERCIAL
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Commercial &amp; Intelligence articifielle
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/comptabilite-generale/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/9e3447cd52b97f7c6e5f46b1efb2377e89b32956-500x500.svg?auto=format"
+                                    alt="Comptabilité Générale"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        COMPTABILITÉ
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Comptabilité Générale
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/bootcamp-ressources-humaines-et-paie/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/1c9f4d182fd5e5c0b8b0e46f614821536ae9f299-500x500.svg?auto=format"
+                                    alt="Gestionnaire des Ressources Humaines spécialisation Gestion de Paie"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        RH / PAIE
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Gestionnaire des Ressources Humaines spécialisation Gestion de Paie
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/anglais/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/511671b633cbb00b6daf6f56529b4c605877bfb3-500x500.svg?auto=format"
+                                    alt="Anglais"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        LANGUES
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Anglais
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/python/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/54fa0cbac1c98469a79de366bdbefda8b9046b56-500x500.svg?auto=format"
+                                    alt="Python"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        DÉVELOPPEMENT WEB
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Python
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/espagnol/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/0418aa9b006475f0eb613ccbcde0cf7e54aca997-500x500.svg?auto=format"
+                                    alt="Espagnol"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        LANGUES
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Espagnol
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/webmarketing-et-seo/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/04d7895033e1784b501c9d554007c6e6e88eeed2-500x500.svg?auto=format"
+                                    alt="Webmarketing &amp; SEO"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        MARKETING DIGITAL
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Webmarketing &amp; SEO
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/bilan-de-competences/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/335aae87ada4557282b480776dbeaed116006a08-500x500.svg?auto=format"
+                                    alt="Bilan de compétences"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        BILAN DE COMPÉTENCES
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Bilan de compétences
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/bootcamp-management-des-ressources-humaines/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/62b53b23b4daee8aee679abc6644466bb16000f0-500x500.svg?auto=format"
+                                    alt="Management des Ressources Humaines"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        RH / PAIE
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Management des Ressources Humaines
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/webmarketing-et-community-management/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/92d2a5608d6ab34e2515d9b7a14b9d81b57ba71c-500x500.svg?auto=format"
+                                    alt="Webmarketing &amp; Community Management"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        MARKETING DIGITAL
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Webmarketing &amp; Community Management
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/bootcamp-secretaire-comptable/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/edf2767ac3e60a427b3979bae689cc6abe5da74f-500x500.svg?auto=format"
+                                    alt="Secrétariat comptable"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        COMPTABILITÉ
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Secrétariat comptable
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/bootcamp-gestion-de-projet-intelligence-artificielle/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/f0e353085e5ae8dc1b7631cf9547879351e8c476-500x500.svg?auto=format"
+                                    alt="BOOTCAMP : Gestion de projet d&#39;Intelligence Artificielle"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        INTELLIGENCE ARTIFICIELLE
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    BOOTCAMP : Gestion de projet d&#39;Intelligence Artificielle
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/autocad/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/64f185b89b5eb2f07880a7fe0169d3c21bd5335f-500x500.svg?auto=format"
+                                    alt="AutoCAD"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        DESIGN
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    AutoCAD
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/graduate-paie/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src=""
+                                    alt="Graduate Paie"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        RH / PAIE
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Graduate Paie
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/allemand/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/da93b49a26252c8309a617b6d77bae262c5945aa-500x500.svg?auto=format"
+                                    alt="Allemand"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        LANGUES
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Allemand
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/bootcamp-comptabilite-et-paie/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/7be535d1e1446f687cd4f0e810c7422050ae3a90-500x500.svg?auto=format"
+                                    alt="Comptabilité Générale &amp; Gestion de Paie"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        COMPTABILITÉ
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Comptabilité Générale &amp; Gestion de Paie
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/illustrator/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/d8bea13a0385720816dfc3bdebc73e5f8b1b5720-500x500.svg?auto=format"
+                                    alt="Illustrator"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        DESIGN
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Illustrator
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/gestion-de-projet-agiles/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/e9a3e3d91ba7ff4da7ba539f217aaaa7654fa46b-500x500.svg?auto=format"
+                                    alt="Gestion de projet agiles"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        AGILITÉ
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Gestion de projet agiles
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/powerpoint/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/41f7e8422acb560deb8a2963e45b055565832bd5-500x500.svg?auto=format"
+                                    alt="PowerPoint"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        BUREAUTIQUES
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    PowerPoint
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/pre-graduate-comptabilite/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src=""
+                                    alt="Pré-Graduate Comptabilité"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        COMPTABILITÉ
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Pré-Graduate Comptabilité
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/photoshop/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/497416ada4e9e324021eeb30694927657e45ad5f-500x500.svg?auto=format"
+                                    alt="Photoshop"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        DESIGN
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Photoshop
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/pre-graduate-secretaire-assistant/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src=""
+                                    alt="Pré-Graduate Secrétaire Assistant(e)"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        RH / PAIE
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Pré-Graduate Secrétaire Assistant(e)
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/word/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/35ed667eeeb4d087b7bbf04ef6a25d5327abb902-500x500.svg?auto=format"
+                                    alt="Word"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        BUREAUTIQUES
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Word
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/bootcamp-formation-occasionnelle/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/fb63c07ff3063643f4efda6d1787c505fb25ff10-1600x1066.jpg?auto=format"
+                                    alt="Formation occasionnelle"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        FORMATION
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Formation occasionnelle
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/parcours/webmarketing/" class="block">
+                        <div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                            <div class="relative overflow-hidden h-48">
+                                <img
+                                    src="https://cdn.sanity.io/images/29lzrddu/production/ad47de9fc62e334befce847812868bab3053e218-500x500.svg?auto=format"
+                                    alt="Webmarketing"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+                                <div class="absolute bottom-4 left-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                                        MARKETING DIGITAL
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-4 line-clamp-2 group-hover:text-primary transition-colors" style="color: #6644FF;">
+                                    Webmarketing
+                                </h3>
+                                
+                                <div class="flex flex-wrap gap-1">
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        
+                                            N/A
+                                        
+                                    </span>
+                                    
+                                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-medium border border-gray-200 bg-transparent text-gray-700">
+                                        <svg class="h-2.5 w-2.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                        N/A
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                </div>
+
+                <!-- Bouton Afficher plus -->
+                <div class="text-center mt-8">
+                    <button 
+                        id="load-more-btn" 
+                        onclick="loadMoreFormations()" 
+                        class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white transition-colors duration-200 hidden"
+                        style="background-color: #6644FF; hover:background-color: #5533CC;"
+                    >
+                        <span>Afficher plus</span>
+                    </button>
+                </div>
+
+                <!-- Message aucune formation trouvée -->
+                <div id="no-results" class="text-center py-12 hidden">
+                    <div class="max-w-md mx-auto">
+                        <div class="text-6xl mb-4">🔍</div>
+                        <h3 class="text-xl font-semibold mb-2">Aucune formation trouvée</h3>
+                        <p class="text-gray-500 mb-4">
+                            Essayez de modifier vos critères de recherche ou supprimez certains filtres.
+                        </p>
+                        <button id="clear-filters-no-results" class="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors">
+                            Effacer tous les filtres
+                        </button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</main>
+
+<style>
+/* Mobile overlay styles for full-screen filters */
+.mobile-overlay.mobile-active {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background-color: white !important;
+    z-index: 50 !important;
+    overflow: auto !important;
+    padding: 1rem !important;
+    display: block !important;
+}
+
+/* Ensure proper header alignment in mobile mode */
+.mobile-overlay.mobile-active #mobile-filter-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+
+.mobile-overlay.mobile-active #desktop-filter-header {
+    display: none !important;
+}
+
+/* Normal desktop mode */
+.mobile-overlay:not(.mobile-active) #mobile-filter-header {
+    display: none !important;
+}
+
+.mobile-overlay:not(.mobile-active) #desktop-filter-header {
+    display: flex !important;
+}
+</style>
+
+<script>
+    const allFormations = [
+    
+    {
+        "id": "10e40ec0-4bd7-4e4c-a646-2f554d220449",
+        "titre": "Gestion des ressources humaines",
+        "slug": { "current": "ressources-humaines" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/2917dc90a85de9fd7241948bd0f2e9c5cc80ed7c-500x500.svg?auto=format",
+        "category": "RH / Paie",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "14d0b7af-4f08-4769-b95c-a176c77f4616",
+        "titre": "BOOTCAMP : Gestion de projet agiles",
+        "slug": { "current": "bootcamp-gestion-de-projet-agiles" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/e9a3e3d91ba7ff4da7ba539f217aaaa7654fa46b-500x500.svg?auto=format",
+        "category": "Agilité",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "172c159b-ea65-4b73-bb44-b2cafe99403a",
+        "titre": "Italien",
+        "slug": { "current": "italien" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/fcf678250d9e67e219cae23376f9a89eca0121e5-500x500.svg?auto=format",
+        "category": "Langues",
+        "typeFormation": "Longue",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "Titre RS",
+        "partenaire": "IFOCOP",
+        "eligibleCPF": true,
+        "duree": {
+            "heures": 100,
+            "mois": 4
+        }
+    },
+    
+    {
+        "id": "18a9c90b-e03e-4a59-8881-0222e841c824",
+        "titre": "Management",
+        "slug": { "current": "management" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/47e5b6b6cb64b58969ae5fe84e5a57e532f633ca-500x500.svg?auto=format",
+        "category": "Management",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "2e3e1cef-ca02-4827-a034-6bc9742e084f",
+        "titre": "Intelligence Artificielle",
+        "slug": { "current": "intelligence-artificielle" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/f0e353085e5ae8dc1b7631cf9547879351e8c476-500x500.svg?auto=format",
+        "category": "Intelligence Artificielle",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "393026e8-f68f-4b1c-bbb1-1c7eb540dbf2",
+        "titre": "Formation professionnelle",
+        "slug": { "current": "formation-professionnelle" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/01871a21a9b253087a4272668d723592c6f0b7e8-500x500.svg?auto=format",
+        "category": "Formation",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "39dfa4f9-a04c-4745-b766-37bde9860fa7",
+        "titre": "Gestionnaire des Ressources Humaines spécialisation Assistant(e) de direction",
+        "slug": { "current": "bootcamp-ressources-humaines-et-assistant-de-direction" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/2697d6ad8c910cfe5c34ba15a094c1f91986dc82-500x500.svg?auto=format",
+        "category": "RH / Paie",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "3a1c2494-07c2-4ad9-ae2b-33ea7917af1c",
+        "titre": "BOOTCAMP : Intelligence Artificielle",
+        "slug": { "current": "bootcamp-intelligence-artificielle" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/f0e353085e5ae8dc1b7631cf9547879351e8c476-500x500.svg?auto=format",
+        "category": "Intelligence Artificielle",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "3cb147e9-ce56-4161-aa8a-9a066c390fea",
+        "titre": "InDesign",
+        "slug": { "current": "indesign" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/d6813a60fd64cf3ffc352cf86d0ef1fbe1ab7652-500x500.svg?auto=format",
+        "category": "Design",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "44770af8-49e4-4de7-87e0-4d9da99608c2",
+        "titre": "Excel",
+        "slug": { "current": "excel" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/c96b50f772d36e8501f1b4c6df41144e691d4e5b-500x500.svg?auto=format",
+        "category": "Bureautiques",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "4a2fb412-ef18-4541-83c4-2f289ed7f8f2",
+        "titre": "Secrétaire Assistant(e)",
+        "slug": { "current": "secretaire-assistant" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/84ac20dc4b61b3e9da3120d0bdf56ab1e7689ad0-500x500.svg?auto=format",
+        "category": "RH / Paie",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "54317841-61f0-4988-80dc-c1e436a5114a",
+        "titre": "BOOTCAMP : Management",
+        "slug": { "current": "bootcamp-management" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/47e5b6b6cb64b58969ae5fe84e5a57e532f633ca-500x500.svg?auto=format",
+        "category": "Management",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "559c6cf0-e1ef-4a79-a854-05e8832243bc",
+        "titre": "Graduate Assistant(e) Ressources Humaines",
+        "slug": { "current": "graduate-assistant-ressources-humaines" },
+        "imageHero": "",
+        "category": "RH / Paie",
+        "typeFormation": "",
+        "financementsPossibles": null,
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "57b35af3-4f4d-4c85-ab01-fd4c4b7a3788",
+        "titre": "Gestionnaire de Paie spécialisation Gestion des Ressources Humaines",
+        "slug": { "current": "bootcamp-paie-et-ressources-humaines" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/2697d6ad8c910cfe5c34ba15a094c1f91986dc82-500x500.svg?auto=format",
+        "category": "RH / Paie",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "5a85703a-fa54-4663-a1ef-723769c5ed91",
+        "titre": "Gestionnaire de Paie",
+        "slug": { "current": "paie" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/3c9f4fae3e6cc60be77e25fa9276851cf011fb38-500x500.svg?auto=format",
+        "category": "RH / Paie",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "5deb24a5-a4f9-4c15-83d5-ca7c082a36cd",
+        "titre": "Commercial & Intelligence articifielle",
+        "slug": { "current": "commercial-et-ia" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/682495d302e1c7fa341a8889ca5187d2848dbcbf-500x500.svg?auto=format",
+        "category": "Commercial",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "5e6cde16-8eb7-4c8b-9a44-efb5056333eb",
+        "titre": "Comptabilité Générale",
+        "slug": { "current": "comptabilite-generale" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/9e3447cd52b97f7c6e5f46b1efb2377e89b32956-500x500.svg?auto=format",
+        "category": "Comptabilité",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "71897149-5aee-44d0-9b7c-a59302d619cc",
+        "titre": "Gestionnaire des Ressources Humaines spécialisation Gestion de Paie",
+        "slug": { "current": "bootcamp-ressources-humaines-et-paie" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/1c9f4d182fd5e5c0b8b0e46f614821536ae9f299-500x500.svg?auto=format",
+        "category": "RH / Paie",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "72e7b8b7-6748-43c4-89ac-80b34bd87380",
+        "titre": "Anglais",
+        "slug": { "current": "anglais" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/511671b633cbb00b6daf6f56529b4c605877bfb3-500x500.svg?auto=format",
+        "category": "Langues",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "7d8cad38-f42b-497f-a516-558659ac4502",
+        "titre": "Python",
+        "slug": { "current": "python" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/54fa0cbac1c98469a79de366bdbefda8b9046b56-500x500.svg?auto=format",
+        "category": "Développement Web",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "858ed7e8-5863-4d17-b4b1-22db8250dedd",
+        "titre": "Espagnol",
+        "slug": { "current": "espagnol" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/0418aa9b006475f0eb613ccbcde0cf7e54aca997-500x500.svg?auto=format",
+        "category": "Langues",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "86b54487-097f-4c05-910d-49cdab798859",
+        "titre": "Webmarketing & SEO",
+        "slug": { "current": "webmarketing-et-seo" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/04d7895033e1784b501c9d554007c6e6e88eeed2-500x500.svg?auto=format",
+        "category": "Marketing Digital",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "89b86a58-17b0-4daa-b1a5-5affe7d6e1f2",
+        "titre": "Bilan de compétences",
+        "slug": { "current": "bilan-de-competences" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/335aae87ada4557282b480776dbeaed116006a08-500x500.svg?auto=format",
+        "category": "Bilan de Compétences",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "8b078054-fdfc-49e6-98bd-0915c3804e8c",
+        "titre": "Management des Ressources Humaines",
+        "slug": { "current": "bootcamp-management-des-ressources-humaines" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/62b53b23b4daee8aee679abc6644466bb16000f0-500x500.svg?auto=format",
+        "category": "RH / Paie",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "8cdccdc6-df80-4805-bef5-781d612f3974",
+        "titre": "Webmarketing & Community Management",
+        "slug": { "current": "webmarketing-et-community-management" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/92d2a5608d6ab34e2515d9b7a14b9d81b57ba71c-500x500.svg?auto=format",
+        "category": "Marketing Digital",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "8d558c2f-7b09-4d1b-bf78-7542f1dd89a0",
+        "titre": "Secrétariat comptable",
+        "slug": { "current": "bootcamp-secretaire-comptable" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/edf2767ac3e60a427b3979bae689cc6abe5da74f-500x500.svg?auto=format",
+        "category": "Comptabilité",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "96b4c384-2da9-4dfe-b85a-3d4f256799db",
+        "titre": "BOOTCAMP : Gestion de projet d'Intelligence Artificielle",
+        "slug": { "current": "bootcamp-gestion-de-projet-intelligence-artificielle" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/f0e353085e5ae8dc1b7631cf9547879351e8c476-500x500.svg?auto=format",
+        "category": "Intelligence Artificielle",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "96e351a6-db6d-47bf-988d-d4b79f1f0f8d",
+        "titre": "AutoCAD",
+        "slug": { "current": "autocad" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/64f185b89b5eb2f07880a7fe0169d3c21bd5335f-500x500.svg?auto=format",
+        "category": "Design",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "97bd7f05-1058-402f-a882-5666c641d458",
+        "titre": "Graduate Paie",
+        "slug": { "current": "graduate-paie" },
+        "imageHero": "",
+        "category": "RH / Paie",
+        "typeFormation": "",
+        "financementsPossibles": null,
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "a4757bd9-7845-40db-9069-5113c9814043",
+        "titre": "Allemand",
+        "slug": { "current": "allemand" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/da93b49a26252c8309a617b6d77bae262c5945aa-500x500.svg?auto=format",
+        "category": "Langues",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "a7b9dd33-51ba-433a-b91e-4c8f55b127d0",
+        "titre": "Comptabilité Générale & Gestion de Paie",
+        "slug": { "current": "bootcamp-comptabilite-et-paie" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/7be535d1e1446f687cd4f0e810c7422050ae3a90-500x500.svg?auto=format",
+        "category": "Comptabilité",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "ab532888-c2cb-4a6e-b898-4dcc721ef555",
+        "titre": "Illustrator",
+        "slug": { "current": "illustrator" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/d8bea13a0385720816dfc3bdebc73e5f8b1b5720-500x500.svg?auto=format",
+        "category": "Design",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "ac506429-8061-4cec-948f-d27bd725387c",
+        "titre": "Gestion de projet agiles",
+        "slug": { "current": "gestion-de-projet-agiles" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/e9a3e3d91ba7ff4da7ba539f217aaaa7654fa46b-500x500.svg?auto=format",
+        "category": "Agilité",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "ad876911-5d52-4fe2-b6d1-32d2651c2b06",
+        "titre": "PowerPoint",
+        "slug": { "current": "powerpoint" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/41f7e8422acb560deb8a2963e45b055565832bd5-500x500.svg?auto=format",
+        "category": "Bureautiques",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "c11992b3-d236-4288-b92b-0970b9c8bd6c",
+        "titre": "Pré-Graduate Comptabilité",
+        "slug": { "current": "pre-graduate-comptabilite" },
+        "imageHero": "",
+        "category": "Comptabilité",
+        "typeFormation": "",
+        "financementsPossibles": null,
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "c9442d87-092f-40dd-a277-d16d3c994474",
+        "titre": "Photoshop",
+        "slug": { "current": "photoshop" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/497416ada4e9e324021eeb30694927657e45ad5f-500x500.svg?auto=format",
+        "category": "Design",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "d038198f-ee29-4189-934a-10e05dfc4144",
+        "titre": "Pré-Graduate Secrétaire Assistant(e)",
+        "slug": { "current": "pre-graduate-secretaire-assistant" },
+        "imageHero": "",
+        "category": "RH / Paie",
+        "typeFormation": "",
+        "financementsPossibles": null,
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "db1df3bc-bcd8-4daa-8ab2-a3885d897a68",
+        "titre": "Word",
+        "slug": { "current": "word" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/35ed667eeeb4d087b7bbf04ef6a25d5327abb902-500x500.svg?auto=format",
+        "category": "Bureautiques",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "f3dde8a5-4142-4f89-83f5-f62fbbce19b9",
+        "titre": "Formation occasionnelle",
+        "slug": { "current": "bootcamp-formation-occasionnelle" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/fb63c07ff3063643f4efda6d1787c505fb25ff10-1600x1066.jpg?auto=format",
+        "category": "Formation",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    {
+        "id": "f55e136f-b6e6-42a6-8bdc-9fb3992d55bd",
+        "titre": "Webmarketing",
+        "slug": { "current": "webmarketing" },
+        "imageHero": "https://cdn.sanity.io/images/29lzrddu/production/ad47de9fc62e334befce847812868bab3053e218-500x500.svg?auto=format",
+        "category": "Marketing Digital",
+        "typeFormation": "",
+        "financementsPossibles": [null,null,null,null],
+        "certification": "",
+        "partenaire": "",
+        "eligibleCPF": false,
+        "duree": {
+            "heures": 0,
+            "mois": 0
+        }
+    },
+    
+    ];
+</script>
+<script src="/assets/js/catalogue-filters.js" defer></script>
+    </main>
+
+    
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="https://www.26academy.com/app/themes/course-builder/assets/images/icons/logo_1.svg" alt="Logo 26 Academy" class="footer-logo">
+                <p>Bien plus qu'une formation.</p>
+            </div>
+            
+            <div>
+                <h5 class="footer-title">Nos services</h5>
+                <ul class="footer-links">
+                    <li><a href="#">Formations</a></li>
+                    <li><a href="#">Financement</a></li>
+                    <li><a href="https://cdn.sanity.io/files/29lzrddu/production/ccaf9ad7b48c060ab34a63245139582e45cfda52.pdf">Certification</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="footer-title">À propos</h5>
+                <ul class="footer-links">
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Nous contacter</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="footer-title">Suivez-nous</h5>
+                <div class="footer-social">
+                    <a href="#"><i data-lucide="linkedin"></i></a>
+                    <a href="#"><i data-lucide="twitter"></i></a>
+                    <a href="#"><i data-lucide="youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 26 Academy. Tous droits réservés.</p>
+            <p>
+                <a href="#">Mentions légales</a> | 
+                <a href="#">CGV</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- GESTION GLOBALE DU SITE (ICÔNES, MENU, MODALE) ---
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+
+        const menuToggle = document.getElementById('menu-toggle');
+        if(menuToggle) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = menuToggle.querySelector('i');
+            menuToggle.addEventListener('click', () => {
+                const isOpen = mobileMenu.classList.toggle('is-open');
+                document.body.style.overflow = isOpen ? 'hidden' : '';
+                menuIcon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
+                lucide.createIcons();
+            });
+        }
+
+        const modalTriggers = document.querySelectorAll('.modal-trigger');
+        const modal = document.getElementById('rappel-modal');
+        if(modal) {
+            const modalCloseBtns = document.querySelectorAll('.modal-close-btn');
+            const openModal = () => modal.classList.add('is-open');
+            const closeModal = () => modal.classList.remove('is-open');
+            modalTriggers.forEach(trigger => trigger.addEventListener('click', openModal));
+            modalCloseBtns.forEach(btn => btn.addEventListener('click', closeModal));
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) closeModal();
+            });
+        }
+        
+        // --- LOGIQUE POUR LE FORMULAIRE DE CONTACT ---
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    // On cible la div parente qui contient le formulaire
+    const formContainer = document.getElementById('form-container');
+    contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const formData = new FormData(contactForm);
+                
+                fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString()
+                })
+                .then(() => {
+                    formContainer.innerHTML = `
+                    <div class="text-center py-12">
+                        <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center bg-green-100">
+                            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2 text-gray-900">Merci !</h3>
+                        <p class="text-gray-600">Votre message a bien été envoyé. Notre équipe reviendra vers vous très prochainement.</p>
+                    </div>
+                    `;
+                })
+                .catch((error) => {
+                    formContainer.innerHTML = `
+                    <div class="text-center py-12">
+                        <h3 class="text-2xl font-bold mb-2 text-red-600">Oups !</h3>
+                        <p class="text-gray-600">Une erreur est survenue. Veuillez réessayer plus tard.</p>
+                    </div>
+                    `;
+                });
+            });
+        }
+    });
+    </script>  
+
+
+
+</body>
+</html>

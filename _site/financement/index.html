@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page financement</title>
+
+
+<meta property="og:title" content="Page financement">
+
+
+  
+  <meta property="og:image" content="https://www.votre-site.com/logo-partage.jpg">
+
+<meta property="og:url" content="/financement/">
+<meta property="og:type" content="website">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#6644FF',
+                        'primary-light': '#8B5CF6',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="/assets/css/style.css">
+    
+
+    <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+
+</head>
+<body class="antialiased page-financement">
+
+    <header class="site-header fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav class="container mx-auto px-6 py-3">
+        <div class="header-container rounded-full px-4 py-2 flex justify-between items-center transition-all duration-300 bg-white/80 backdrop-blur-md">
+            <div>
+                <a href="#">
+                    <img src="https://www.26academy.com/app/themes/course-builder/assets/images/icons/logo_1.svg" alt="Logo 26 Academy" class="h-10" />
+                </a>
+            </div>
+            
+            <div class="hidden lg:flex items-center space-x-2 font-medium text-sm text-gray-800">
+                <div class="nav-item dropdown-container">
+                    <a href="#" class="nav-link flex items-center">
+                        Formations <i data-lucide="chevron-down" class="ml-1 h-4 w-4"></i>
+                    </a>
+                    <div class="dropdown-menu absolute top-full left-0 mt-2 bg-white min-w-80 shadow-lg rounded-xl p-2 border border-gray-200 z-50">
+                        <a href="#" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                            <i data-lucide="layout-grid" class="mr-3 h-5 w-5 text-primary"></i>
+                            <div>
+                                <p class="font-semibold">Toutes les formations</p>
+                                <p class="text-xs text-gray-500">Parcourez notre catalogue complet</p>
+                            </div>
+                        </a>
+                        <a href="#" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                            <i data-lucide="brain-circuit" class="mr-3 h-5 w-5 text-primary"></i>
+                            <div>
+                                <p class="font-semibold">Intelligence Artificielle</p>
+                                <p class="text-xs text-gray-500">Devenez un expert de l'IA</p>
+                            </div>
+                        </a>
+                        <a href="#" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                            <i data-lucide="line-chart" class="mr-3 h-5 w-5 text-primary"></i>
+                            <div>
+                                <p class="font-semibold">Marketing Digital</p>
+                                <p class="text-xs text-gray-500">Maîtrisez les leviers du web</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="#" class="nav-link">Alternance</a>
+                <a href="#" class="nav-link">Financement</a>
+                <a href="#" class="nav-link">Offres</a>
+                <a href="#" class="nav-link">Qui sommes nous</a>
+            </div>
+            
+            <div class="hidden lg:flex items-center space-x-2">
+                <button class="btn btn-sm btn-outline-light rounded-full text-xs text-primary">Plateforme</button>
+                <button class="btn btn-sm btn-outline-light rounded-full text-xs text-primary">Prendre RDV</button>
+                <button class="btn btn-sm btn-primary rounded-full text-xs modal-trigger">Rappel immédiat</button>
+            </div>
+            
+            <div class="lg:hidden">
+                <button id="menu-toggle" class="text-gray-800">
+                    <i data-lucide="menu" class="h-6 w-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div id="mobile-menu" class="mobile-nav fixed inset-0 z-40 bg-white flex-col pt-20 px-6 lg:hidden">
+    <a href="#" class="mobile-nav-link">Home</a>
+    <a href="#" class="mobile-nav-link">Formations</a>
+    <a href="#" class="mobile-nav-link">Alternance</a>
+    <a href="#" class="mobile-nav-link">Financement</a>
+    <a href="#" class="mobile-nav-link">Contact</a>
+</div>
+
+<div id="rappel-modal" class="modal-overlay fixed inset-0 bg-slate-900/50 items-center justify-center z-100">
+    <div class="modal-content bg-white p-8 rounded-2xl max-w-md w-full mx-4 relative">
+        <button class="modal-close-btn absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+            <i data-lucide="x" class="h-6 w-6"></i>
+        </button>
+        <h3 class="text-2xl font-bold mb-4">Être rappelé</h3>
+        <p class="text-gray-600 mb-6">Laissez-nous vos coordonnées et un conseiller vous rappellera dans les plus brefs délais.</p>
+        <form>
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
+                <input type="text" class="modal-input w-full px-3 py-2 border border-gray-300 rounded-md"/>
+            </div>
+            <div class="mb-4">
+                <label class="block text-sm font-medium text-gray-700 mb-1">Téléphone</label>
+                <input type="tel" class="modal-input w-full px-3 py-2 border border-gray-300 rounded-md"/>
+            </div>
+            <button type="submit" class="btn btn-primary w-full">Envoyer</button>
+        </form>
+    </div>
+</div>
+
+    <main>
+        
+<main>
+            <main>
+        <!-- Hero Section -->
+        <section class="hero-section" role="banner">
+            <div class="hero-background">
+                 <div style="position: absolute; inset: 0; background-image: url('/Header-background.webp'); background-size: cover; background-position: center; opacity: 0.15;"></div>
+    <div style="position: absolute; inset: 0; background: linear-gradient(135deg, hsl(251 85% 64% / 0.2), hsl(0, 0%, 100%), hsl(270 68% 55% / 0.2));"></div>
+    <div style="position: absolute; inset: 0; background: linear-gradient(to top, hsl(0, 0%, 100%), transparent);"></div>
+</div>
+                
+            </div>
+            
+            <div class="container relative z-10 text-center pt-32">
+                <h1 class="h1 mb-12">Financer votre formation : quelles <span style="color: #6644FF;">solutions</span> ?</h1>
+                <p class="text-xl md:text-2xl lg:text-3xl mb-20 max-w-4xl mx-auto leading-relaxed" style="color: #6b7280;">
+                    Nos formations sont éligibles à plusieurs leviers de financement : découvrez lequel est le plus adéquat selon votre situation et projet
+                </p>
+                <a href="#" class="btn btn-primary btn-lg" style="background-color: #6644FF; color: white;">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 mr-2">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </svg>
+                    Parler à un conseiller
+                </a>
+            </div>
+        </section>
+
+        <!-- CPF Section -->
+        <section class="cpf-section py-24" id="cpf">
+            <div class="container">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="cpf-content-column">
+                        <h2 class="h2 mb-6 " style="color: #6644FF;">Le Compte Personnel de Formation (CPF)</h2>
+                        <p class="text-lg leading-relaxed mb-8 text-gray-700">
+                            Le CPF est un compte en ligne sur lequel vous cumulez des droits à la formation tout au long de votre carrière professionnelle. C'est votre passeport pour l'évolution professionnelle.
+                        </p>
+                        
+                        <div class="grid grid-cols-2 gap-6 mb-8">
+    <div class="text-center">
+        <div class="text-3xl font-bold leading-tight" style="color: #6644FF;">
+            5 000€
+            <br>
+            <span class="text-sm text-gray-600 font-normal">Plafond maximum</span>
+        </div>
+    </div>
+    <div class="text-center leading-tight">
+        <div class="text-3xl font-bold" style="color: #6644FF;">
+            500€
+            <br>
+            <span class="text-sm text-gray-600 font-normal">Par an (temps plein)</span>
+        </div>
+    </div>
+</div>
+                        
+                       <a href="#" class="btn btn-primary mt-8">
+                            En savoir plus
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 ml-2">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <div class="flex justify-center items-center">
+                        <img src="https://cdn.sanity.io/images/29lzrddu/production/8544327e374a3001ec1d54aab9da491c8d2c55db-1920x1130.png" 
+                             alt="Logo Mon Compte Formation CPF" 
+                             class="cpf-logo"
+                             loading="lazy"
+                             width="auto"
+                             height="auto">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-24 bg-white" id="faq">
+            <div class="container">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h2 class="h2 mb-4" style="font-size: 250%;">Questions fréquentes concernant le CPF</h2>
+                        <p class="text-gray-600">Tout ce que vous devez savoir sur le Compte Personnel de Formation</p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <details>
+                            <summary style="color: #6644FF;">Qu'est-ce que le CPF ?</summary>
+                            <div>
+                                <p>Le compte personnel de formation (CPF) permet à toute personne active, dès son entrée sur le marché du travail et jusqu'à la date à laquelle elle fait valoir l'ensemble de ses droits à la retraite, d'acquérir des droits à la formation mobilisables tout au long de sa vie professionnelle. L'ambition du CPF est de contribuer, à l'initiative de chacun·e, au maintien de l'employabilité et à la sécurisation du parcours professionnel.</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary style="color: #6644FF;">Qui peut bénéficier du CPF ?</summary>
+                            <div>
+                                <p>Le CPF est ouvert à tous les salariés, demandeurs d'emploi, et jeunes sortis du système scolaire, à partir de 16 ans (15 ans pour les apprentis).</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary style="color: #6644FF;">Comment vérifier mon solde CPF ?</summary>
+                            <div>
+                                <p>Connectez-vous à votre espace personnel sur le site officiel du CPF (moncompteformation.gouv.fr), ou utilisez l'appli mobile « Mon Compte Formation ».</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary style="color: #6644FF;">Quelles formations puis-je financer avec le CPF ?</summary>
+                            <div>
+                                <p>Le CPF couvre une grande variété de formations : certifiantes, diplômantes ou éligibles au CPF de Transition. <b>26 Academy</b> propose des parcours professionnalisants : entrepreneuriat, bureautique, marketing digital, langues...</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary style="color: #6644FF;">L'employeur doit-il approuver mon CPF ?</summary>
+                            <div>
+                                <p>Non, sauf si la formation a lieu pendant vos heures de travail. Dans ce cas, l'accord de votre employeur est requis.</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary style="color: #6644FF;">Le crédit CPF expire-t-il ?</summary>
+                            <div>
+                                <p>Non. Il est utilisable jusqu'à la retraite, voire prorogeable via certaines activités bénévoles ou volontaires. Le crédit, sauf exception, est plafonné à 5 000 €.</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary style="color: #6644FF;">Comment utiliser mon CPF ?</summary>
+                            <div>
+                                <p>Sur le site ou l'appli « Mon Compte Formation », choisissez votre formation, suivez la procédure. Un reste à charge de 102,23 € peut s'appliquer.</p>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary style="color: #6644FF;">Puis-je cumuler plusieurs financements ?</summary>
+                            <div>
+                                <p>Oui : vous pouvez combiner le CPF avec des fonds propres, selon les conditions de chaque dispositif. Nos conseillers <b>26 Academy</b> sont là pour vous accompagner.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Other Financing Solutions -->
+        <section class="py-24 bg-gray-50" id="autres-financements">
+            <div class="container">
+                <h2 class="h2 text-center mb-16">Autres <span style="color: #6644FF;">solutions</span> de financement</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- France Travail Card -->
+                    <div class="card p-8 flex flex-col h-full flex-1">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-semibold mb-2" style="color: #6644FF;">France Travail</h3>
+                            <p class="text-gray-600">(ex-Pôle Emploi)</p>
+                        </div>
+                        
+                        <p class="text-gray-700 leading-relaxed mb-6">
+                            Si vous êtes demandeur d'emploi, vous pouvez bénéficier de l'Aide Individuelle à la Formation (AIF) via votre conseiller France Travail. Toutes nos formations sont éligibles à ce dispositif.
+                        </p>
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg mt-auto info-box-padding">
+                            <div class="flex items-center gap-2 mb-2">
+                                <svg class="h-5 w-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="font-semibold text-blue-800">Prise en charge jusqu'à 100%</span>
+                            </div>
+                            <p class="text-sm text-blue-700">Pour les demandeurs d'emploi éligibles</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Auto-financement -->
+                    <div class="card p-8 flex flex-col h-full flex-1">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-semibold mb-2" style="color: #6644FF;">Auto-Financement</h3>
+                            <p class="text-gray-600">Solutions personnalisées</p>
+                        </div>
+                        
+                        <p class="text-gray-700 leading-relaxed mb-6">
+                            Si vous n'êtes pas éligible aux dispositifs publics (CPF, AIF), <strong>26 Academy</strong> propose des solutions de financement personnel, notamment <strong>des plans de paiement échelonné</strong>.
+                        </p>
+                        
+                        <div class="bg-orange-50 p-4 rounded-lg mt-auto info-box-padding">
+                            <div class="flex items-center gap-2 mb-2">
+                                <svg class="h-5 w-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="font-semibold text-orange-800">Paiement en plusieurs fois sans frais</span>
+                            </div>
+                            <p class="text-sm text-orange-700">Plans personnalisés selon votre budget</p>
+                        </div>
+                    </div>
+                    
+                    <!-- OPCO -->
+                    <div class="card p-8 flex flex-col h-full flex-1">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-semibold mb-2" style="color: #6644FF;">OPCO / Entreprises</h3>
+                            <p class="text-gray-600">Opérateurs de compétences</p>
+                        </div>
+                        
+                        <p class="text-gray-700 leading-relaxed mb-6">
+                            Pour les salariés en poste, l'OPCO (Opérateur de Compétences) auquel est rattachée votre entreprise peut financer tout ou partie de votre formation. Votre employeur peut également prendre en charge directement les coûts.
+                        </p>
+                        
+                        <div class="bg-green-50 p-4 rounded-lg mt-auto info-box-padding">
+                            <div class="flex items-center gap-2 mb-2">
+                                <svg class="h-5 w-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="font-semibold text-green-800">Financement via l'entreprise</span>
+                            </div>
+                            <p class="text-sm text-green-700">Pour les salariés et leurs employeurs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="relative py-24 overflow-hidden">
+            <!-- Background avec gradient et image -->
+          <div class="absolute inset-0" style="background: radial-gradient(ellipse at center, hsla(258, 100%, 69%, 0.15) 0%, transparent 70%);">
+              
+          </div>
+            
+            <div class="container relative z-10 text-center">
+                <h2 class="h2 mb-8">Prêt à commencer votre formation ?</h2>
+                <p class="text-xl mb-16 max-w-4xl mx-auto text-muted-foreground leading-relaxed">
+                    Nos conseillers sont là pour vous accompagner dans le choix du financement le plus adapté à votre situation.
+                </p>
+                <a href="#" class="btn btn-primary btn-lg" style="background-color: #6644FF; color: white;">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 mr-2">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </svg>
+                    Parler à un conseiller
+                </a>
+            </div>
+        </section>
+    </main>
+</main>
+    </main>
+
+    
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="https://www.26academy.com/app/themes/course-builder/assets/images/icons/logo_1.svg" alt="Logo 26 Academy" class="footer-logo">
+                <p>Bien plus qu'une formation.</p>
+            </div>
+            
+            <div>
+                <h5 class="footer-title">Nos services</h5>
+                <ul class="footer-links">
+                    <li><a href="#">Formations</a></li>
+                    <li><a href="#">Financement</a></li>
+                    <li><a href="https://cdn.sanity.io/files/29lzrddu/production/ccaf9ad7b48c060ab34a63245139582e45cfda52.pdf">Certification</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="footer-title">À propos</h5>
+                <ul class="footer-links">
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Nous contacter</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="footer-title">Suivez-nous</h5>
+                <div class="footer-social">
+                    <a href="#"><i data-lucide="linkedin"></i></a>
+                    <a href="#"><i data-lucide="twitter"></i></a>
+                    <a href="#"><i data-lucide="youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 26 Academy. Tous droits réservés.</p>
+            <p>
+                <a href="#">Mentions légales</a> | 
+                <a href="#">CGV</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- GESTION GLOBALE DU SITE (ICÔNES, MENU, MODALE) ---
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+
+        const menuToggle = document.getElementById('menu-toggle');
+        if(menuToggle) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = menuToggle.querySelector('i');
+            menuToggle.addEventListener('click', () => {
+                const isOpen = mobileMenu.classList.toggle('is-open');
+                document.body.style.overflow = isOpen ? 'hidden' : '';
+                menuIcon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
+                lucide.createIcons();
+            });
+        }
+
+        const modalTriggers = document.querySelectorAll('.modal-trigger');
+        const modal = document.getElementById('rappel-modal');
+        if(modal) {
+            const modalCloseBtns = document.querySelectorAll('.modal-close-btn');
+            const openModal = () => modal.classList.add('is-open');
+            const closeModal = () => modal.classList.remove('is-open');
+            modalTriggers.forEach(trigger => trigger.addEventListener('click', openModal));
+            modalCloseBtns.forEach(btn => btn.addEventListener('click', closeModal));
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) closeModal();
+            });
+        }
+        
+        // --- LOGIQUE POUR LE FORMULAIRE DE CONTACT ---
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    // On cible la div parente qui contient le formulaire
+    const formContainer = document.getElementById('form-container');
+    contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const formData = new FormData(contactForm);
+                
+                fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString()
+                })
+                .then(() => {
+                    formContainer.innerHTML = `
+                    <div class="text-center py-12">
+                        <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center bg-green-100">
+                            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2 text-gray-900">Merci !</h3>
+                        <p class="text-gray-600">Votre message a bien été envoyé. Notre équipe reviendra vers vous très prochainement.</p>
+                    </div>
+                    `;
+                })
+                .catch((error) => {
+                    formContainer.innerHTML = `
+                    <div class="text-center py-12">
+                        <h3 class="text-2xl font-bold mb-2 text-red-600">Oups !</h3>
+                        <p class="text-gray-600">Une erreur est survenue. Veuillez réessayer plus tard.</p>
+                    </div>
+                    `;
+                });
+            });
+        }
+    });
+    </script>  
+
+
+
+</body>
+</html>
