@@ -45,53 +45,146 @@
 <body class="antialiased page-catalogue">
 
     <header class="site-header fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+<style>
+    .dropdown-container .dropdown-menu {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(0.5rem);
+        transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+    }
+    .dropdown-container:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+</style>
     <nav class="container mx-auto px-6 py-3">
         <div class="header-container rounded-full px-4 py-2 flex justify-between items-center transition-all duration-300 bg-white/80 backdrop-blur-md">
             <div>
-                <a href="#">
+                <a href="/">
                     <img src="https://www.26academy.com/app/themes/course-builder/assets/images/icons/logo_1.svg" alt="Logo 26 Academy" class="h-10" />
                 </a>
             </div>
             
             <div class="hidden lg:flex items-center space-x-2 font-medium text-sm text-gray-800">
-                <div class="nav-item dropdown-container">
-                    <a href="#" class="nav-link flex items-center">
+                <div class="nav-item dropdown-container relative pb-2">
+                    <a href="/catalogue" class="nav-link flex items-center">
                         Formations <i data-lucide="chevron-down" class="ml-1 h-4 w-4"></i>
                     </a>
-                    <div class="dropdown-menu absolute top-full left-0 mt-2 bg-white min-w-80 shadow-lg rounded-xl p-2 border border-gray-200 z-50">
-                        <a href="#" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
-                            <i data-lucide="layout-grid" class="mr-3 h-5 w-5 text-primary"></i>
-                            <div>
-                                <p class="font-semibold">Toutes les formations</p>
-                                <p class="text-xs text-gray-500">Parcourez notre catalogue complet</p>
-                            </div>
-                        </a>
-                        <a href="#" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
-                            <i data-lucide="brain-circuit" class="mr-3 h-5 w-5 text-primary"></i>
-                            <div>
-                                <p class="font-semibold">Intelligence Artificielle</p>
-                                <p class="text-xs text-gray-500">Devenez un expert de l'IA</p>
-                            </div>
-                        </a>
-                        <a href="#" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
-                            <i data-lucide="line-chart" class="mr-3 h-5 w-5 text-primary"></i>
-                            <div>
-                                <p class="font-semibold">Marketing Digital</p>
-                                <p class="text-xs text-gray-500">Maîtrisez les leviers du web</p>
-                            </div>
-                        </a>
+                    <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 bg-white w-[900px] shadow-lg rounded-xl p-4 border border-gray-200 z-50">
+                        <div class="grid grid-cols-3 gap-2">
+                            <a href="/catalogue" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                                <i data-lucide="layout-grid" class="mr-3 h-5 w-5 text-primary"></i>
+                                <div>
+                                    <p class="font-semibold">Toutes les formations</p>
+                                    <p class="text-xs text-gray-500">Parcourez notre catalogue complet</p>
+                                </div>
+                            </a>
+                            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Agilit%C3%A9" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                                <i data-lucide="chart-column" class="mr-3 h-5 w-5 text-primary"></i>
+                                <div>
+                                    <p class="font-semibold">Agilité</p>
+                                    <p class="text-xs text-gray-500">Gérez vos projets avec succès</p>
+                                </div>
+                            </a>
+                            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Intelligence+Artificielle" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                                <i data-lucide="brain-circuit" class="mr-3 h-5 w-5 text-primary"></i>
+                                <div>
+                                    <p class="font-semibold">Intelligence Artificielle</p>
+                                    <p class="text-xs text-gray-500">Devenez un expert de l'IA</p>
+                                </div>
+                            </a>
+                            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Management" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                                <i data-lucide="users" class="mr-3 h-5 w-5 text-primary"></i>
+                                <div>
+                                    <p class="font-semibold">Management</p>
+                                    <p class="text-xs text-gray-500">Développez votre leadership</p>
+                                </div>
+                            </a>
+                             <a href="https://26academy-eleventy.netlify.app/catalogue/?category=RH+%2F+Paie" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                                <i data-lucide="contact" class="mr-3 h-5 w-5 text-primary"></i>
+                                <div>
+                                    <p class="font-semibold">RH / Paie</p>
+                                    <p class="text-xs text-gray-500">Maîtrisez la gestion humaine</p>
+                                </div>
+                            </a>
+                            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Comptabilit%C3%A9" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                                <i data-lucide="calculator" class="mr-3 h-5 w-5 text-primary"></i>
+                                <div>
+                                    <p class="font-semibold">Comptabilité</p>
+                                    <p class="text-xs text-gray-500">Les chiffres n'auront plus de secrets</p>
+                                </div>
+                            </a>
+                            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Marketing+Digital" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                                <i data-lucide="trending-up" class="mr-3 h-5 w-5 text-primary"></i>
+                                <div>
+                                    <p class="font-semibold">Marketing Digital</p>
+                                    <p class="text-xs text-gray-500">Maîtrisez les leviers du web</p>
+                                </div>
+                            </a>
+                            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Commercial" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                                <i data-lucide="briefcase" class="mr-3 h-5 w-5 text-primary"></i>
+                                <div>
+                                    <p class="font-semibold">Commercial</p>
+                                    <p class="text-xs text-gray-500">Boostez vos performances de vente</p>
+                                </div>
+                            </a>
+                            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Formation" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                                <i data-lucide="graduation-cap" class="mr-3 h-5 w-5 text-primary"></i>
+                                <div>
+                                    <p class="font-semibold">Activité de formation</p>
+                                    <p class="text-xs text-gray-500">Devenez formateur certifié</p>
+                                </div>
+                            </a>
+                            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Langues" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                                <i data-lucide="globe" class="mr-3 h-5 w-5 text-primary"></i>
+                                <div>
+                                    <p class="font-semibold">Langues</p>
+                                    <p class="text-xs text-gray-500">Ouvrez-vous au monde</p>
+                                </div>
+                            </a>
+                            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Bureautiques" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                                <i data-lucide="monitor" class="mr-3 h-5 w-5 text-primary"></i>
+                                <div>
+                                    <p class="font-semibold">Bureautique</p>
+                                    <p class="text-xs text-gray-500">Gagnez en productivité</p>
+                                </div>
+                            </a>
+                            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Design" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                                <i data-lucide="palette" class="mr-3 h-5 w-5 text-primary"></i>
+                                <div>
+                                    <p class="font-semibold">Design</p>
+                                    <p class="text-xs text-gray-500">Créez des visuels impactants</p>
+                                </div>
+                            </a>
+                            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=D%C3%A9veloppement+Web" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                                <i data-lucide="code" class="mr-3 h-5 w-5 text-primary"></i>
+                                <div>
+                                    <p class="font-semibold">Développement Web</p>
+                                    <p class="text-xs text-gray-500">Construisez l'avenir du web</p>
+                                </div>
+                            </a>
+                            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Bilan+de+Comp%C3%A9tences" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                                <i data-lucide="clipboard-list" class="mr-3 h-5 w-5 text-primary"></i>
+                                <div>
+                                    <p class="font-semibold">Bilan de compétences</p>
+                                    <p class="text-xs text-gray-500">Donnez un nouveau souffle à votre carrière</p>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <a href="#" class="nav-link">Alternance</a>
-                <a href="#" class="nav-link">Financement</a>
-                <a href="#" class="nav-link">Offres</a>
-                <a href="#" class="nav-link">Qui sommes nous</a>
+                <a href="/financement" class="nav-link">Financement</a>
+                <a href="/recrutement" class="nav-link">Recrutement</a>
             </div>
             
             <div class="hidden lg:flex items-center space-x-2">
-                <button class="btn btn-sm btn-outline-light rounded-full text-xs text-primary">Plateforme</button>
+            <a href ="/form-homepage">
                 <button class="btn btn-sm btn-outline-light rounded-full text-xs text-primary">Prendre RDV</button>
+            </a>
+            <a href ="/form-homepage">
                 <button class="btn btn-sm btn-primary rounded-full text-xs modal-trigger">Rappel immédiat</button>
+            </a>
             </div>
             
             <div class="lg:hidden">
@@ -131,6 +224,8 @@
         </form>
     </div>
 </div>
+
+
 
     <main>
         

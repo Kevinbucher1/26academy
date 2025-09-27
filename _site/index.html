@@ -45,53 +45,146 @@
 <body class="antialiased page-">
 
     <header class="site-header fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+<style>
+    .dropdown-container .dropdown-menu {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(0.5rem);
+        transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+    }
+    .dropdown-container:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+</style>
     <nav class="container mx-auto px-6 py-3">
         <div class="header-container rounded-full px-4 py-2 flex justify-between items-center transition-all duration-300 bg-white/80 backdrop-blur-md">
             <div>
-                <a href="#">
+                <a href="/">
                     <img src="https://www.26academy.com/app/themes/course-builder/assets/images/icons/logo_1.svg" alt="Logo 26 Academy" class="h-10" />
                 </a>
             </div>
             
             <div class="hidden lg:flex items-center space-x-2 font-medium text-sm text-gray-800">
-                <div class="nav-item dropdown-container">
-                    <a href="#" class="nav-link flex items-center">
+                <div class="nav-item dropdown-container relative pb-2">
+                    <a href="/catalogue" class="nav-link flex items-center">
                         Formations <i data-lucide="chevron-down" class="ml-1 h-4 w-4"></i>
                     </a>
-                    <div class="dropdown-menu absolute top-full left-0 mt-2 bg-white min-w-80 shadow-lg rounded-xl p-2 border border-gray-200 z-50">
-                        <a href="#" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
-                            <i data-lucide="layout-grid" class="mr-3 h-5 w-5 text-primary"></i>
-                            <div>
-                                <p class="font-semibold">Toutes les formations</p>
-                                <p class="text-xs text-gray-500">Parcourez notre catalogue complet</p>
-                            </div>
-                        </a>
-                        <a href="#" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
-                            <i data-lucide="brain-circuit" class="mr-3 h-5 w-5 text-primary"></i>
-                            <div>
-                                <p class="font-semibold">Intelligence Artificielle</p>
-                                <p class="text-xs text-gray-500">Devenez un expert de l'IA</p>
-                            </div>
-                        </a>
-                        <a href="#" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
-                            <i data-lucide="line-chart" class="mr-3 h-5 w-5 text-primary"></i>
-                            <div>
-                                <p class="font-semibold">Marketing Digital</p>
-                                <p class="text-xs text-gray-500">Maîtrisez les leviers du web</p>
-                            </div>
-                        </a>
+                    <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 bg-white w-[900px] shadow-lg rounded-xl p-4 border border-gray-200 z-50">
+                        <div class="grid grid-cols-3 gap-2">
+                            <a href="/catalogue" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                                <i data-lucide="layout-grid" class="mr-3 h-5 w-5 text-primary"></i>
+                                <div>
+                                    <p class="font-semibold">Toutes les formations</p>
+                                    <p class="text-xs text-gray-500">Parcourez notre catalogue complet</p>
+                                </div>
+                            </a>
+                            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Agilit%C3%A9" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                                <i data-lucide="chart-column" class="mr-3 h-5 w-5 text-primary"></i>
+                                <div>
+                                    <p class="font-semibold">Agilité</p>
+                                    <p class="text-xs text-gray-500">Gérez vos projets avec succès</p>
+                                </div>
+                            </a>
+                            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Intelligence+Artificielle" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                                <i data-lucide="brain-circuit" class="mr-3 h-5 w-5 text-primary"></i>
+                                <div>
+                                    <p class="font-semibold">Intelligence Artificielle</p>
+                                    <p class="text-xs text-gray-500">Devenez un expert de l'IA</p>
+                                </div>
+                            </a>
+                            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Management" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                                <i data-lucide="users" class="mr-3 h-5 w-5 text-primary"></i>
+                                <div>
+                                    <p class="font-semibold">Management</p>
+                                    <p class="text-xs text-gray-500">Développez votre leadership</p>
+                                </div>
+                            </a>
+                             <a href="https://26academy-eleventy.netlify.app/catalogue/?category=RH+%2F+Paie" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                                <i data-lucide="contact" class="mr-3 h-5 w-5 text-primary"></i>
+                                <div>
+                                    <p class="font-semibold">RH / Paie</p>
+                                    <p class="text-xs text-gray-500">Maîtrisez la gestion humaine</p>
+                                </div>
+                            </a>
+                            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Comptabilit%C3%A9" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                                <i data-lucide="calculator" class="mr-3 h-5 w-5 text-primary"></i>
+                                <div>
+                                    <p class="font-semibold">Comptabilité</p>
+                                    <p class="text-xs text-gray-500">Les chiffres n'auront plus de secrets</p>
+                                </div>
+                            </a>
+                            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Marketing+Digital" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                                <i data-lucide="trending-up" class="mr-3 h-5 w-5 text-primary"></i>
+                                <div>
+                                    <p class="font-semibold">Marketing Digital</p>
+                                    <p class="text-xs text-gray-500">Maîtrisez les leviers du web</p>
+                                </div>
+                            </a>
+                            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Commercial" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                                <i data-lucide="briefcase" class="mr-3 h-5 w-5 text-primary"></i>
+                                <div>
+                                    <p class="font-semibold">Commercial</p>
+                                    <p class="text-xs text-gray-500">Boostez vos performances de vente</p>
+                                </div>
+                            </a>
+                            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Formation" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                                <i data-lucide="graduation-cap" class="mr-3 h-5 w-5 text-primary"></i>
+                                <div>
+                                    <p class="font-semibold">Activité de formation</p>
+                                    <p class="text-xs text-gray-500">Devenez formateur certifié</p>
+                                </div>
+                            </a>
+                            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Langues" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                                <i data-lucide="globe" class="mr-3 h-5 w-5 text-primary"></i>
+                                <div>
+                                    <p class="font-semibold">Langues</p>
+                                    <p class="text-xs text-gray-500">Ouvrez-vous au monde</p>
+                                </div>
+                            </a>
+                            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Bureautiques" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                                <i data-lucide="monitor" class="mr-3 h-5 w-5 text-primary"></i>
+                                <div>
+                                    <p class="font-semibold">Bureautique</p>
+                                    <p class="text-xs text-gray-500">Gagnez en productivité</p>
+                                </div>
+                            </a>
+                            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Design" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                                <i data-lucide="palette" class="mr-3 h-5 w-5 text-primary"></i>
+                                <div>
+                                    <p class="font-semibold">Design</p>
+                                    <p class="text-xs text-gray-500">Créez des visuels impactants</p>
+                                </div>
+                            </a>
+                            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=D%C3%A9veloppement+Web" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                                <i data-lucide="code" class="mr-3 h-5 w-5 text-primary"></i>
+                                <div>
+                                    <p class="font-semibold">Développement Web</p>
+                                    <p class="text-xs text-gray-500">Construisez l'avenir du web</p>
+                                </div>
+                            </a>
+                            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Bilan+de+Comp%C3%A9tences" class="dropdown-item flex items-center p-3 rounded-lg hover:bg-gray-50">
+                                <i data-lucide="clipboard-list" class="mr-3 h-5 w-5 text-primary"></i>
+                                <div>
+                                    <p class="font-semibold">Bilan de compétences</p>
+                                    <p class="text-xs text-gray-500">Donnez un nouveau souffle à votre carrière</p>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <a href="#" class="nav-link">Alternance</a>
-                <a href="#" class="nav-link">Financement</a>
-                <a href="#" class="nav-link">Offres</a>
-                <a href="#" class="nav-link">Qui sommes nous</a>
+                <a href="/financement" class="nav-link">Financement</a>
+                <a href="/recrutement" class="nav-link">Recrutement</a>
             </div>
             
             <div class="hidden lg:flex items-center space-x-2">
-                <button class="btn btn-sm btn-outline-light rounded-full text-xs text-primary">Plateforme</button>
+            <a href ="/form-homepage">
                 <button class="btn btn-sm btn-outline-light rounded-full text-xs text-primary">Prendre RDV</button>
+            </a>
+            <a href ="/form-homepage">
                 <button class="btn btn-sm btn-primary rounded-full text-xs modal-trigger">Rappel immédiat</button>
+            </a>
             </div>
             
             <div class="lg:hidden">
@@ -131,6 +224,8 @@
         </form>
     </div>
 </div>
+
+
 
     <main>
         <main>
@@ -259,188 +354,224 @@
 
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
 
-      <div class="group cursor-pointer opacity-100">
-        <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
-          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-chart-column" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
-              <path d="M18 17V9"></path>
-              <path d="M13 17V5"></path>
-              <path d="M8 17v-3"></path>
-            </svg>
+      <!-- Lien ajouté -->
+      <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Agilit%C3%A9">
+        <div class="group cursor-pointer opacity-100">
+          <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-chart-column" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                <path d="M18 17V9"></path>
+                <path d="M13 17V5"></path>
+                <path d="M8 17v-3"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Gestion de projet et agilité</h3>
+            <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
           </div>
-          <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Gestion de projet et agilité</h3>
-          <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
         </div>
-      </div>
+      </a>
 
-      <div class="group cursor-pointer opacity-100">
-        <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
-          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-brain-circuit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"></path>
-              <path d="M9 13a4.5 4.5 0 0 0 3-4"></path>
-              <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"></path>
-              <path d="M3.477 10.896a4 4 0 0 1 .585-.396"></path>
-              <path d="M6 18a4 4 0 0 1-1.967-.516"></path>
-              <path d="M12 13h4"></path>
-              <path d="M12 18h6a2 2 0 0 1 2 2v1"></path>
-              <path d="M12 8h8"></path>
-              <path d="M16 8V5a2 2 0 0 1 2-2"></path>
-              <circle cx="16" cy="13" r=".5"></circle>
-              <circle cx="18" cy="3" r=".5"></circle>
-              <circle cx="20" cy="21" r=".5"></circle>
-              <circle cx="20" cy="8" r=".5"></circle>
-            </svg>
+      <!-- Lien ajouté -->
+      <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Intelligence+Artificielle">
+        <div class="group cursor-pointer opacity-100">
+          <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-brain-circuit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"></path>
+                <path d="M9 13a4.5 4.5 0 0 0 3-4"></path>
+                <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"></path>
+                <path d="M3.477 10.896a4 4 0 0 1 .585-.396"></path>
+                <path d="M6 18a4 4 0 0 1-1.967-.516"></path>
+                <path d="M12 13h4"></path>
+                <path d="M12 18h6a2 2 0 0 1 2 2v1"></path>
+                <path d="M12 8h8"></path>
+                <path d="M16 8V5a2 2 0 0 1 2-2"></path>
+                <circle cx="16" cy="13" r=".5"></circle>
+                <circle cx="18" cy="3" r=".5"></circle>
+                <circle cx="20" cy="21" r=".5"></circle>
+                <circle cx="20" cy="8" r=".5"></circle>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Intelligence artificielle</h3>
+            <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
           </div>
-          <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Intelligence artificielle</h3>
-          <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
         </div>
-      </div>
+      </a>
 
-      <div class="group cursor-pointer opacity-100">
-        <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
-          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-              <circle cx="9" cy="7" r="4"></circle>
-              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-            </svg>
+      <!-- Lien ajouté -->
+      <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Management">
+        <div class="group cursor-pointer opacity-100">
+          <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Management</h3>
+            <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
           </div>
-          <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Management</h3>
-          <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
         </div>
-      </div>
+      </a>
 
-      <div class="group cursor-pointer opacity-100">
-        <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
-          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-              <circle cx="9" cy="7" r="4"></circle>
-              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-            </svg>
+      <!-- Lien ajouté -->
+      <a href="https://26academy-eleventy.netlify.app/catalogue/?category=RH+%2F+Paie">
+        <div class="group cursor-pointer opacity-100">
+          <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Ressources humaines</h3>
+            <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
           </div>
-          <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Ressources humaines</h3>
-          <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
         </div>
-      </div>
+      </a>
 
-      <div class="group cursor-pointer opacity-100">
-        <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
-          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-calculator" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect width="16" height="20" x="4" y="2" rx="2"></rect>
-              <line x1="8" x2="16" y1="6" y2="6"></line>
-              <line x1="16" x2="16" y1="14" y2="18"></line>
-              <path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path>
-              <path d="M12 14h.01"></path><path d="M8 14h.01"></path>
-              <path d="M12 18h.01"></path><path d="M8 18h.01"></path>
-            </svg>
+      <!-- Lien ajouté -->
+      <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Comptabilit%C3%A9">
+        <div class="group cursor-pointer opacity-100">
+          <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-calculator" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="16" height="20" x="4" y="2" rx="2"></rect>
+                <line x1="8" x2="16" y1="6" y2="6"></line>
+                <line x1="16" x2="16" y1="14" y2="18"></line>
+                <path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path>
+                <path d="M12 14h.01"></path><path d="M8 14h.01"></path>
+                <path d="M12 18h.01"></path><path d="M8 18h.01"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Comptabilité et paie</h3>
+            <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
           </div>
-          <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Comptabilité et paie</h3>
-          <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
         </div>
-      </div>
+      </a>
 
-      <div class="group cursor-pointer opacity-100">
-        <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
-          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-trending-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
-              <polyline points="16 7 22 7 22 13"></polyline>
-            </svg>
+      <!-- Lien ajouté -->
+      <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Marketing+Digital">
+        <div class="group cursor-pointer opacity-100">
+          <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-trending-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                <polyline points="16 7 22 7 22 13"></polyline>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Marketing digital</h3>
+            <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
           </div>
-          <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Marketing digital</h3>
-          <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
         </div>
-      </div>
+      </a>
 
-      <div class="group cursor-pointer opacity-100">
-        <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
-          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-              <rect width="20" height="14" x="2" y="6" rx="2"></rect>
-            </svg>
+      <!-- Lien ajouté -->
+      <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Commercial">
+        <div class="group cursor-pointer opacity-100">
+          <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                <rect width="20" height="14" x="2" y="6" rx="2"></rect>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Commercial</h3>
+            <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
           </div>
-          <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Commercial</h3>
-          <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
         </div>
-      </div>
+      </a>
 
-      <div class="group cursor-pointer opacity-100">
-        <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
-          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-graduation-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path>
-              <path d="M22 10v6"></path>
-              <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
-            </svg>
+      <!-- Lien ajouté -->
+      <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Formation">
+        <div class="group cursor-pointer opacity-100">
+          <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-graduation-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path>
+                <path d="M22 10v6"></path>
+                <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Activité de formation</h3>
+            <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
           </div>
-          <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Activité de formation</h3>
-          <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
         </div>
-      </div>
+      </a>
 
-      <div class="group cursor-pointer opacity-100">
-        <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
-          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
-              <path d="M2 12h20"></path>
-            </svg>
+      <!-- Lien ajouté -->
+      <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Langues">
+        <div class="group cursor-pointer opacity-100">
+          <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                <path d="M2 12h20"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Langues</h3>
+            <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
           </div>
-          <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Langues</h3>
-          <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
         </div>
-      </div>
+      </a>
 
-      <div class="group cursor-pointer opacity-100">
-        <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
-          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect width="20" height="14" x="2" y="3" rx="2"></rect>
-              <line x1="8" x2="16" y1="21" y2="21"></line>
-              <line x1="12" x2="12" y1="17" y2="21"></line>
-            </svg>
+      <!-- Lien ajouté -->
+      <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Bureautiques">
+        <div class="group cursor-pointer opacity-100">
+          <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="14" x="2" y="3" rx="2"></rect>
+                <line x1="8" x2="16" y1="21" y2="21"></line>
+                <line x1="12" x2="12" y1="17" y2="21"></line>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Bureautique</h3>
+            <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
           </div>
-          <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Bureautique</h3>
-          <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
         </div>
-      </div>
+      </a>
 
-      <div class="group cursor-pointer opacity-100">
-        <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
-          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-palette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
-              <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
-              <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
-              <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
-              <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path>
-            </svg>
+      <!-- Lien ajouté -->
+      <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Design">
+        <div class="group cursor-pointer opacity-100">
+          <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-palette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
+                <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
+                <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
+                <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
+                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Design</h3>
+            <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
           </div>
-          <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Design</h3>
-          <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
         </div>
-      </div>
+      </a>
 
-      <div class="group cursor-pointer opacity-100">
-        <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
-          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="16 18 22 12 16 6"></polyline>
-              <polyline points="8 6 2 12 8 18"></polyline>
-            </svg>
+      <!-- Lien ajouté -->
+      <a href="https://26academy-eleventy.netlify.app/catalogue/?category=D%C3%A9veloppement+Web">
+        <div class="group cursor-pointer opacity-100">
+          <div class="bg-transparent rounded-2xl p-6 text-center h-full hover:scale-105 transition-all duration-300">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white lucide lucide-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Développement web</h3>
+            <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
           </div>
-          <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">Développement web</h3>
-          <div class="w-12 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
         </div>
-      </div>
+      </a>
 
     </div>
 
