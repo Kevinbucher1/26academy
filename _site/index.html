@@ -57,6 +57,13 @@
         visibility: visible;
         transform: translateY(0);
     }
+    .nav-link {
+        padding: 1rem 0.75rem; /* py-4 px-3 */
+    }
+    #mobile-formations-submenu {
+        display: none;
+        padding-left: 1rem;
+    }
 </style>
     <nav class="container mx-auto px-6 py-3">
         <div class="header-container rounded-full px-4 py-2 flex justify-between items-center transition-all duration-300 bg-white/80 backdrop-blur-md">
@@ -66,8 +73,8 @@
                 </a>
             </div>
             
-            <div class="hidden lg:flex items-center space-x-2 font-medium text-sm text-gray-800">
-                <div class="nav-item dropdown-container relative pb-2">
+            <div class="hidden lg:flex items-center space-x-2 font-medium text-sm text-gray-800 relative">
+                <div class="nav-item dropdown-container">
                     <a href="/catalogue" class="nav-link flex items-center">
                         Formations <i data-lucide="chevron-down" class="ml-1 h-4 w-4"></i>
                     </a>
@@ -196,12 +203,32 @@
     </nav>
 </header>
 
-<div id="mobile-menu" class="mobile-nav fixed inset-0 z-40 bg-white flex-col pt-20 px-6 lg:hidden">
-    <a href="#" class="mobile-nav-link">Home</a>
-    <a href="#" class="mobile-nav-link">Formations</a>
-    <a href="#" class="mobile-nav-link">Alternance</a>
-    <a href="#" class="mobile-nav-link">Financement</a>
-    <a href="#" class="mobile-nav-link">Contact</a>
+<div id="mobile-menu" class="mobile-nav fixed inset-0 z-40 bg-white flex-col pt-20 px-6 lg:hidden overflow-y-auto">
+    <a href="/" class="mobile-nav-link">Accueil</a>
+    <div>
+        <button id="mobile-formations-toggle" class="mobile-nav-link w-full inline-flex justify-center items-center gap-2">
+            Formations
+            <i data-lucide="chevron-down" class="h-5 w-5 transition-transform"></i>
+        </button>
+        <div id="mobile-formations-submenu" class="text-center">
+            <a href="/catalogue" class="block py-2 text-gray-700">Toutes les formations</a>
+            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Agilit%C3%A9" class="block py-2 text-gray-700">Agilité</a>
+            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Intelligence+Artificielle" class="block py-2 text-gray-700">Intelligence Artificielle</a>
+            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Management" class="block py-2 text-gray-700">Management</a>
+            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=RH+%2F+Paie" class="block py-2 text-gray-700">RH / Paie</a>
+            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Comptabilit%C3%A9" class="block py-2 text-gray-700">Comptabilité</a>
+            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Marketing+Digital" class="block py-2 text-gray-700">Marketing Digital</a>
+            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Commercial" class="block py-2 text-gray-700">Commercial</a>
+            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Formation" class="block py-2 text-gray-700">Activité de formation</a>
+            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Langues" class="block py-2 text-gray-700">Langues</a>
+            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Bureautiques" class="block py-2 text-gray-700">Bureautique</a>
+            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Design" class="block py-2 text-gray-700">Design</a>
+            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=D%C3%A9veloppement+Web" class="block py-2 text-gray-700">Développement Web</a>
+            <a href="https://26academy-eleventy.netlify.app/catalogue/?category=Bilan+de+Comp%C3%A9tences" class="block py-2 text-gray-700">Bilan de compétences</a>
+        </div>
+    </div>
+    <a href="/financement" class="mobile-nav-link">Financement</a>
+    <a href="/recrutement" class="mobile-nav-link">Recrutement</a>
 </div>
 
 <div id="rappel-modal" class="modal-overlay fixed inset-0 bg-slate-900/50 items-center justify-center z-100">
@@ -224,6 +251,20 @@
         </form>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileFormationsToggle = document.getElementById('mobile-formations-toggle');
+        const mobileFormationsSubmenu = document.getElementById('mobile-formations-submenu');
+        const chevron = mobileFormationsToggle.querySelector('i');
+
+        mobileFormationsToggle.addEventListener('click', () => {
+            const isOpen = mobileFormationsSubmenu.style.display === 'block';
+            mobileFormationsSubmenu.style.display = isOpen ? 'none' : 'block';
+            chevron.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+        });
+    });
+</script>
 
 
 
@@ -1085,8 +1126,8 @@
             <div>
                 <h5 class="footer-title">Nos services</h5>
                 <ul class="footer-links">
-                    <li><a href="#">Formations</a></li>
-                    <li><a href="#">Financement</a></li>
+                    <li><a href="/catalogue">Formations</a></li>
+                    <li><a href="/financement">Financement</a></li>
                     <li><a href="https://cdn.sanity.io/files/29lzrddu/production/ccaf9ad7b48c060ab34a63245139582e45cfda52.pdf">Certification</a></li>
                 </ul>
             </div>
@@ -1094,18 +1135,17 @@
             <div>
                 <h5 class="footer-title">À propos</h5>
                 <ul class="footer-links">
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Nous contacter</a></li>
+                    <li><a href="/contact">Nous contacter</a></li>
                 </ul>
             </div>
 
             <div>
                 <h5 class="footer-title">Suivez-nous</h5>
                 <div class="footer-social">
-                    <a href="#"><i data-lucide="linkedin"></i></a>
-                    <a href="#"><i data-lucide="twitter"></i></a>
-                    <a href="#"><i data-lucide="youtube"></i></a>
+                    <a href="https://www.facebook.com/26academy/"><i data-lucide="facebook"></i></a>
+                    <a href="https://fr.linkedin.com/company/26-academy"><i data-lucide="linkedin"></i></a>
+                    <a href="https://x.com/26_academy"><i data-lucide="twitter"></i></a>
+                    <a href="https://www.youtube.com/channel/UCoS29gFkyp6x7DQ6qmzksDA"><i data-lucide="youtube"></i></a>
                 </div>
             </div>
         </div>
@@ -1113,8 +1153,8 @@
         <div class="footer-bottom">
             <p>&copy; 2024 26 Academy. Tous droits réservés.</p>
             <p>
-                <a href="#">Mentions légales</a> | 
-                <a href="#">CGV</a>
+                <a href="/politique-de-confidentialite">Politique de confidentialité</a> | 
+                <a href="/cgu">Conditions générales d'utilisation</a>
             </p>
         </div>
     </div>
