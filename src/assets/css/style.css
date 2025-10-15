@@ -174,7 +174,7 @@ body { font-family: 'Inter', sans-serif; background-color: var(--background); co
 .logos {display: flex; width: max-content; animation: scroll 40s linear infinite; }
 .logo-item {flex-shrink: 0; margin: 0 32px;  padding: 16px; transition: transform 0.3s; }
 .logo-item:hover { transform: scale(1.1); }
-.logo-item img { height: 48px; object-fit: contain; filter: grayscale(100%); opacity: 0.6; transition: all 0.3s; }
+.logo-item img { height: 48px; object-fit: contain; transition: all 0.3s; }
 .logo-item:hover img { filter: grayscale(0%); opacity: 1; }
 
 /* ==========================================================================
